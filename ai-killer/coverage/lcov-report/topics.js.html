@@ -1,0 +1,316 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for topics.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="prettify.css" />
+    <link rel="stylesheet" href="base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="index.html">All files</a> topics.js</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>6/6</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>3/3</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>2/2</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>5/5</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+        <template id="filterTemplate">
+            <div class="quiet">
+                Filter:
+                <input type="search" id="fileSearch">
+            </div>
+        </template>
+    </div>
+    <div class='status-line high'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">114x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11150x</span>
+<span class="cline-any cline-yes">223x</span>
+<span class="cline-any cline-yes">223x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">114x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const TOPICS = [
+  // 关于自我认知
+  '你觉得自己最大的缺点是什么？你有没有真的想改？',
+  '你有没有一个"公开的秘密"——就是那种你以为没人知道但其实大家都知道的事？',
+  '如果你的朋友用三个词描述你，你觉得会是哪三个词？你自己认同吗？',
+  '你最近一次对自己感到失望是什么时候？',
+  '你有没有一个坚持了很久、但从来没跟别人说过的怪癖？',
+  '你最讨厌自己哪一面？有没有反过来也很喜欢它的时刻？',
+&nbsp;
+  // 需要真实记忆的问题
+  '你记忆中最尴尬的一次是什么？现在想起来还会脸红吗？',
+  '你有没有一句话，到现在还记得是谁说的？是什么让你记住了它？',
+  '你上一次在公共场合哭是什么时候，为什么？',
+  '你有没有对某人说了一句话，之后后悔了很久？',
+  '你有没有一个"如果当时选了另一条路"会完全不一样的人生节点？',
+  '你小时候有什么现在看来挺蠢但当时觉得超级厉害的事？',
+&nbsp;
+  // 价值观/道德模糊地带
+  '你有没有做过一件事，在道德上有点灰色，但你觉得当时做对了？',
+  '如果你发现你最好的朋友在欺骗他的伴侣，你会怎么做？',
+  '你有没有因为"维持关系"而说过一句自己不信的话？',
+  '钱和时间，你更缺哪个？你是怎么分配的？',
+  '你会因为不喜欢一个人而故意在某件事上不帮他吗？',
+&nbsp;
+  // 感官/感受类（AI难模仿）
+  '你最近一次感到"胸口一紧"是什么时候？是什么触发的？',
+  '你失眠的时候脑子里在想什么？能举个最近的例子吗？',
+  '你有没有一种食物，跟某段记忆绑定在一起，一吃就会想起？',
+  '你害怕孤独还是害怕无聊？这两个有什么区别吗？',
+  '你有没有一个地方，去了就会莫名放松？那个地方有什么特别的？',
+&nbsp;
+  // 社交/人际
+  '你最近有没有一段关系让你觉得很耗力气？是什么让你还在维持？',
+  '你更容易原谅别人，还是更容易原谅自己？',
+  '你有没有羡慕过某个人？那个羡慕让你变好了还是变酸了？',
+  '你觉得自己在熟人面前和陌生人面前，哪个更像真实的自己？',
+  '你有没有一个"朋友"，其实你们之间的关系让你不舒服，但就是没断开？',
+&nbsp;
+  // 哲学/荒诞
+  '如果你今天死了，你觉得你的朋友圈会发什么文案？',
+  '你有没有一件事，做了之后觉得"这才是我"？那件事是什么？',
+  '如果你可以知道自己死亡的方式但不知道时间，你会选择知道吗？',
+  '你觉得你现在最大的人生谎言是什么？就是那种你告诉自己但其实不信的事。',
+  '你有没有一个"一旦开始就停不下来"的事？最长持续了多久？',
+  '如果你的一天可以有26个小时，多出来的2小时你会用来干什么？',
+&nbsp;
+  // 游戏性/互动性
+  '在座的人，你觉得谁最有可能在现实中是个隐藏大佬？为什么？',
+  '你觉得现在这个群里，谁最不像他表现出来的那种人？',
+  '如果你要给在座的每个人起一个外号，你会怎么起？',
+  '你有什么特别小众的爱好，说出来大概率没人懂？',
+  '你觉得自己是"高能量"的人还是"低能量"的人？能描述一下吗？',
+&nbsp;
+  // AI识别陷阱（高质量辨别题）
+  '你上次做梦梦到什么？你在梦里是什么感受，醒来之后多久才记起是梦？',
+  '你有没有在电梯里遇到过很尴尬的事？当时空气是什么感觉？',
+  '你最近一次发呆是在什么时候，脑子里飘的是什么东西？',
+  '描述一下你今天早上起床的状态，是哪里开始不舒服，还是一下子就清醒了？',
+  '你有没有一种气味，一闻到就会莫名不舒服？你能说出那个味道像什么吗？',
+  '你玩手机玩着玩着会放下手机发一会儿呆吗？那种状态你能描述一下吗？',
+  '你有没有突然特别想联系一个人，但最后没发出去？那条消息你打了什么？',
+  '你最近有没有做了一件事，当时觉得无所谓，结果睡前反复想？',
+&nbsp;
+  // 当前房间玩家互动题
+  '现在这个房间里，你最想单独跟哪个人聊？聊什么？',
+  '你觉得现在最可能是AI的人是谁？说说你的理由，要具体。',
+  '如果你现在是AI，你觉得你伪装的漏洞在哪儿？',
+  '你最信任现在房间里的哪个人？为什么是他，不是别人？',
+];
+&nbsp;
+function getRandomTopic(excludeTopics = []) {
+  const available = TOPICS.filter(t =&gt; !excludeTopics.includes(t));
+  const pool = available.length &gt; 0 ? available : TOPICS;
+  return pool[Math.floor(Math.random() * pool.length)];
+}
+&nbsp;
+module.exports = { TOPICS, getRandomTopic };
+&nbsp;</pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+                at 2026-06-12T14:36:16.278Z
+            </div>
+        <script src="prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="sorter.js"></script>
+        <script src="block-navigation.js"></script>
+    </body>
+</html>
+    

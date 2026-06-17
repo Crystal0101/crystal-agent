@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  background: #0d0d14;
+  color: #e2e8f0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  min-height: 100vh;
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #7e22ce; border-radius: 2px; }
+
+@layer components {
+  .card {
+    @apply bg-[#13131f] border border-[#1e1e3a] rounded-2xl;
+  }
+  .btn-primary {
+    @apply bg-gradient-to-r from-purple-700 to-purple-500 text-white font-semibold
+           rounded-xl px-5 py-2.5 hover:opacity-90 active:scale-95 transition-all
+           disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+  .btn-ghost {
+    @apply border border-[#2d2d50] text-slate-300 rounded-xl px-5 py-2.5
+           hover:border-purple-600 hover:text-white transition-all;
+  }
+  .input {
+    @apply bg-[#1a1a2e] border border-[#2d2d50] rounded-xl px-4 py-3 text-slate-200
+           placeholder-slate-600 outline-none focus:border-purple-600 focus:ring-1
+           focus:ring-purple-600/30 transition-all w-full;
+  }
+  .textarea {
+    @apply bg-[#1a1a2e] border border-[#2d2d50] rounded-xl px-4 py-3 text-slate-200
+           placeholder-slate-600 outline-none focus:border-purple-600 focus:ring-1
+           focus:ring-purple-600/30 transition-all w-full resize-none;
+  }
+  .tag {
+    @apply text-xs px-2 py-0.5 rounded-full font-medium;
+  }
+}
+
+.prose-dark { @apply text-slate-300 leading-relaxed; }
+.prose-dark h1, .prose-dark h2, .prose-dark h3 { @apply text-white font-semibold mb-2 mt-4; }
+.prose-dark ul { @apply list-disc pl-5 space-y-1; }
+.prose-dark ol { @apply list-decimal pl-5 space-y-1; }
+.prose-dark li { @apply text-slate-300; }
+.prose-dark strong { @apply text-white; }
+.prose-dark p { @apply mb-3; }
+.prose-dark code { @apply bg-[#1e1e3a] px-1.5 py-0.5 rounded text-purple-300 text-sm; }
+
+.gradient-text {
+  @apply bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent;
+}
+
+.glow-purple {
+  box-shadow: 0 0 30px rgba(147, 51, 234, 0.15);
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.shimmer {
+  background: linear-gradient(90deg, #1a1a2e 25%, #2d2d50 50%, #1a1a2e 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
