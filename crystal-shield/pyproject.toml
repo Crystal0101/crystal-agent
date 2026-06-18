@@ -24,8 +24,8 @@ dependencies = []
 dev = ["pytest", "pytest-cov", "ruff", "mypy"]
 
 [project.urls]
-Homepage = "https://github.com/yangning910526/crystal-agent"
-Repository = "https://github.com/yangning910526/crystal-agent"
+Homepage = "https://github.com/Crystal0101/crystal-agent"
+Repository = "https://github.com/Crystal0101/crystal-agent"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/crystal_shield"]

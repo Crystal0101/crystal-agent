@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from enum import IntEnum
+from enum import Enum, IntEnum
 from typing import Any
 
 
@@ -15,7 +15,7 @@ class Severity(IntEnum):
         return self.name
 
 
-class InjectionType(str):
+class InjectionType(str, Enum):
     INSTRUCTION_OVERRIDE = "instruction_override"
     ROLE_HIJACKING = "role_hijacking"
     EXFILTRATION = "exfiltration"

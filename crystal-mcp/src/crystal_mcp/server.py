@@ -50,7 +50,6 @@ class MCPServer:
         protocol = asyncio.StreamReaderProtocol(reader)
         loop = asyncio.get_event_loop()
         await loop.connect_read_pipe(lambda: protocol, sys.stdin)
-        _, writer = await loop.connect_write_pipe(asyncio.BaseProtocol, sys.stdout)
 
         while True:
             try:
@@ -60,7 +59,8 @@ class MCPServer:
                 request = json.loads(line.decode())
                 response = await self._handle(request)
                 if response is not None:
-                    writer.write((json.dumps(response) + "\n").encode())
+                    sys.stdout.write(json.dumps(response) + "\n")
+                    sys.stdout.flush()
             except (json.JSONDecodeError, EOFError):
                 break
 
