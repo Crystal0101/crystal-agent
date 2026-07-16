@@ -1,0 +1,19 @@
+name: dpfl-medical-ai CI
+on:
+  push:
+    paths: ["dpfl-medical-ai/**", ".github/workflows/dpfl-medical-ai-ci.yml"]
+  pull_request:
+    paths: ["dpfl-medical-ai/**"]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults: {run: {working-directory: dpfl-medical-ai}}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install -e ".[dev]"
+      - run: ruff check src tests
+      - run: mypy src
+      - run: pytest -q
+      - run: dpfl --rounds 2 --clients 3 --output /tmp/result.json

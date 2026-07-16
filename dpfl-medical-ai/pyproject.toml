@@ -1,0 +1,28 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "dpfl-medical-ai"
+version = "0.1.0"
+description = "Reproducible differentially private federated learning for tabular medical AI"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24", "scikit-learn>=1.3"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.8", "mypy>=1.10"]
+
+[project.scripts]
+dpfl = "dpfl.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/dpfl"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.mypy]
+python_version = "3.10"
+ignore_missing_imports = true
