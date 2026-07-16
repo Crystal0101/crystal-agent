@@ -1,0 +1,15 @@
+[build-system]
+requires=["hatchling"]
+build-backend="hatchling.build"
+[project]
+name="adaptive-kdfa"
+version="0.1.0"
+description="Architecture-agnostic KD and feature alignment primitives for heterogeneous FL"
+readme="README.md"
+license={text="MIT"}
+requires-python=">=3.10"
+dependencies=["numpy>=1.24"]
+[project.optional-dependencies]
+dev=["pytest>=8","ruff>=0.8"]
+[tool.hatch.build.targets.wheel]
+packages=["src/adaptive_kdfa"]
