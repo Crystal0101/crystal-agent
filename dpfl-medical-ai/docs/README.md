@@ -3,6 +3,7 @@
 ## 文档导航
 
 - [系统与方法全览](technical-guide.md)
+- [硕士论文审稿式评估与代码对齐](paper-assessment.md)
 - 代码入口：[`src/dpfl/core.py`](../src/dpfl/core.py)
 - 可执行入口：[`src/dpfl/cli.py`](../src/dpfl/cli.py)
 - 验证用例：[`tests/test_dpfl.py`](../tests/test_dpfl.py)
