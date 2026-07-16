@@ -9,6 +9,7 @@ Usage:
 from __future__ import annotations
 
 import os
+import json
 from pathlib import Path
 
 import click
@@ -18,13 +19,16 @@ from .collector.scanner import scan
 from .profiler.interview import run_interview
 from .profiler.builder import build
 from .planner.engine import generate
+from .planner.plan import Plan
 from .executor.runner import execute
 from .executor.snapshot import list_snapshots, restore_snapshot
+from . import __version__
 
 console = Console()
 
 
 @click.group()
+@click.version_option(__version__)
 def main():
     """crystal-mind — your personal AI planning system."""
 
@@ -37,9 +41,17 @@ def main():
 @click.option("--who", default=None, metavar="TEXT",
               help="Who you are. Skips interview question ①.")
 @click.option("--log", default=".crystal-mind/run.log", help="Path to write execution log")
-@click.option("--model", default="claude-sonnet-4-6", show_default=True,
+@click.option("--model", default=lambda: os.environ.get("CRYSTAL_MIND_MODEL", "claude-sonnet-4-6"),
+              show_default="claude-sonnet-4-6 or CRYSTAL_MIND_MODEL",
               help="Claude model to use for planning.")
-def run(roots: tuple, goal: str | None, who: str | None, log: str, model: str):
+@click.option("--plan-out", default=".crystal-mind/plan.json", show_default=True,
+              help="Save the validated generated plan as JSON.")
+@click.option("--dry-run", is_flag=True, help="Generate and validate the plan without changing files.")
+@click.option("--yes", is_flag=True, help="Approve all high-risk actions (automation only).")
+def run(
+    roots: tuple[str, ...], goal: str | None, who: str | None, log: str,
+    model: str, plan_out: str, dry_run: bool, yes: bool,
+):
     """Full pipeline: interview → scan → plan → execute.
 
     Pass --roots / --goal / --who to skip the interactive interview.
@@ -65,6 +77,8 @@ def run(roots: tuple, goal: str | None, who: str | None, log: str, model: str):
 
     # Step 2: Scan
     console.print("  Scanning data...", style="dim")
+    if not intent.data_roots:
+        raise click.UsageError("At least one existing data root is required")
     scans = [scan(root) for root in intent.data_roots]
     for s in scans:
         console.print(f"  {s.summary()}", style="dim")
@@ -76,19 +90,72 @@ def run(roots: tuple, goal: str | None, who: str | None, log: str, model: str):
     # Step 4: Generate plan
     console.print(f"  Generating plan (model: {model})...\n", style="dim")
     plan = generate(profile, model=model)
+    saved_plan = plan.save(plan_out)
+    console.print(f"  Plan saved: {saved_plan}", style="dim")
 
     # Step 5: Execute
-    execute(plan, log_path=Path(log))
+    execute(plan, log_path=Path(log), dry_run=dry_run, assume_yes=yes)
 
     console.print("\n  Done.", style="bold green")
 
 
 @main.command()
-@click.argument("path")
-def scan_cmd(path: str):
+@click.argument("path", type=click.Path(exists=True, file_okay=False, path_type=Path))
+@click.option("--max-files", default=10_000, show_default=True, type=click.IntRange(min=1))
+@click.option("--json-output", is_flag=True, help="Print machine-readable JSON.")
+def scan_cmd(path: Path, max_files: int, json_output: bool):
     """Scan a directory and print a summary."""
-    result = scan(path)
-    console.print(result.summary())
+    result = scan(path, max_files=max_files)
+    if json_output:
+        click.echo(json.dumps({
+            "root": str(result.root),
+            "files": len(result.files),
+            "directories": result.dir_count,
+            "total_bytes": result.total_bytes,
+            "extensions": {key or "no-ext": len(value) for key, value in result.by_extension().items()},
+        }, ensure_ascii=False, indent=2))
+    else:
+        console.print(result.summary())
+
+
+@main.command("doctor")
+def doctor_cmd():
+    """Check whether crystal-mind is ready to run."""
+    checks = [
+        ("ANTHROPIC_API_KEY", bool(os.environ.get("ANTHROPIC_API_KEY")), "required for plan generation"),
+        ("State directory", _is_writable(Path(".crystal-mind")), "must be writable"),
+    ]
+    failed = False
+    for name, ok, detail in checks:
+        failed = failed or not ok
+        console.print(f"  {'✓' if ok else '✗'} {name}: {detail}", style="green" if ok else "red")
+    if failed:
+        raise click.ClickException("Environment is not ready; fix the failed checks above")
+
+
+def _is_writable(path: Path) -> bool:
+    try:
+        path.mkdir(parents=True, exist_ok=True)
+        probe = path / ".write-test"
+        probe.write_text("ok", encoding="utf-8")
+        probe.unlink()
+        return True
+    except OSError:
+        return False
+
+
+@main.command("apply")
+@click.argument("plan_path", type=click.Path(exists=True, dir_okay=False, path_type=Path))
+@click.option("--log", default=".crystal-mind/run.log", show_default=True)
+@click.option("--dry-run", is_flag=True, help="Validate and preview without changing files.")
+@click.option("--yes", is_flag=True, help="Approve all high-risk actions (automation only).")
+def apply_cmd(plan_path: Path, log: str, dry_run: bool, yes: bool):
+    """Validate and execute a previously generated PLAN_PATH."""
+    try:
+        plan = Plan.load(plan_path)
+        execute(plan, log_path=Path(log), dry_run=dry_run, assume_yes=yes)
+    except (OSError, ValueError) as exc:
+        raise click.ClickException(str(exc)) from exc
 
 
 @main.command("snapshots")
@@ -119,7 +186,7 @@ def snapshots_cmd(log: str):
         )
 
     console.print(table)
-    console.print(f"\nTo rollback: crystal-mind rollback <SNAPSHOT_ID>", style="dim")
+    console.print("\nTo rollback: crystal-mind rollback <SNAPSHOT_ID>", style="dim")
 
 
 @main.command("rollback")

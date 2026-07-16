@@ -4,6 +4,7 @@ __pycache__/
 dist/
 build/
 .venv/
+.venv*/
 venv/
 .env
 *.log
@@ -11,3 +12,5 @@ venv/
 node_modules/
 .next/
 .env.local
+coverage/
+*.tsbuildinfo

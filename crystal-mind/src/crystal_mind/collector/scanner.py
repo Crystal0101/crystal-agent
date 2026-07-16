@@ -50,15 +50,34 @@ class ScanResult:
         )
 
 
-def scan(root: str | Path, max_preview_chars: int = 200) -> ScanResult:
-    root = Path(root).expanduser().resolve()
-    result = ScanResult(root=root)
+MAX_FILES_DEFAULT = 10_000
 
-    for dirpath, dirnames, filenames in os.walk(root):
+
+def scan(
+    root: str | Path,
+    max_preview_chars: int = 200,
+    max_files: int = MAX_FILES_DEFAULT,
+) -> ScanResult:
+    root = Path(root).expanduser().resolve()
+    if not root.exists():
+        raise FileNotFoundError(f"Scan root does not exist: {root}")
+    if not root.is_dir():
+        raise NotADirectoryError(f"Scan root is not a directory: {root}")
+    if max_files < 1:
+        raise ValueError("max_files must be at least 1")
+    result = ScanResult(root=root)
+    file_count = 0
+    truncated = False
+
+    for dirpath, dirnames, filenames in os.walk(root, followlinks=False):
         dirnames[:] = [d for d in dirnames if d not in SKIP_DIRS]
         result.dir_count += len(dirnames)
 
         for fname in filenames:
+            if file_count >= max_files:
+                truncated = True
+                break
+
             fpath = Path(dirpath) / fname
             ext = fpath.suffix.lower()
             if ext in SKIP_EXTENSIONS or fname.startswith("."):
@@ -67,6 +86,9 @@ def scan(root: str | Path, max_preview_chars: int = 200) -> ScanResult:
             try:
                 stat = fpath.stat()
             except OSError:
+                continue
+
+            if fpath.is_symlink():
                 continue
 
             node = FileNode(
@@ -85,5 +107,15 @@ def scan(root: str | Path, max_preview_chars: int = 200) -> ScanResult:
 
             result.files.append(node)
             result.total_bytes += stat.st_size
+            file_count += 1
+
+        if truncated:
+            import warnings
+            warnings.warn(
+                f"scan() stopped at {max_files} files under {root}. "
+                "Pass a larger max_files if you need the full tree.",
+                stacklevel=2,
+            )
+            break
 
     return result

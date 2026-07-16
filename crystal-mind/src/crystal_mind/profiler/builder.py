@@ -5,17 +5,16 @@ that the planner can reason over.
 
 from __future__ import annotations
 
-import json
-from dataclasses import dataclass, asdict, field
+from dataclasses import dataclass, field
 from pathlib import Path
 
 from ..collector.scanner import ScanResult, FileNode
 from ..collector.extractor import extract
+from ..security import sanitize
 from .types import UserIntent
 
 MAX_FILE_SAMPLES = 40       # max files to include full previews for
 MAX_PREVIEW_CHARS = 800     # per file
-
 
 @dataclass
 class FileSnapshot:
@@ -66,11 +65,12 @@ def build(intent: UserIntent, scans: list[ScanResult]) -> UserProfile:
     snapshots = []
     for node in priority_files:
         content = node.preview or extract(node.path, MAX_PREVIEW_CHARS)
+        content = sanitize(str(node.path), content[:MAX_PREVIEW_CHARS])
         snapshots.append(FileSnapshot(
             path=str(node.path),
             extension=node.extension,
             size_kb=node.size_bytes / 1024,
-            preview=content[:MAX_PREVIEW_CHARS],
+            preview=content,
         ))
 
     return UserProfile(

@@ -21,8 +21,8 @@ echo "=== 安装 crystal-mind（开发模式）==="
 pip install -q -e ".[dev]"
 
 echo ""
-echo "=== 离线测试 (11 个) ==="
-PYTHONPATH=src pytest tests/test_all.py -m offline -v
+echo "=== 离线测试 ==="
+PYTHONPATH=src pytest -m offline -v
 
 echo ""
 echo "=== 在线测试 (2 个，调用 Claude API) ==="

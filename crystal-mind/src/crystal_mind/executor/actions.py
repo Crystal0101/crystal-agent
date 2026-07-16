@@ -6,6 +6,7 @@ All operations are logged before execution.
 from __future__ import annotations
 
 import shutil
+import tempfile
 from pathlib import Path
 
 
@@ -29,7 +30,17 @@ def move_file(src: str, dst: str) -> str:
 def write_file(path: str, content: str) -> str:
     p = Path(path)
     p.parent.mkdir(parents=True, exist_ok=True)
-    p.write_text(content, encoding="utf-8")
+    # Atomic replacement prevents a crash from leaving a partially-written file.
+    fd, temporary = tempfile.mkstemp(prefix=f".{p.name}.", dir=p.parent)
+    temp_path = Path(temporary)
+    try:
+        with open(fd, "w", encoding="utf-8", closefd=True) as handle:
+            handle.write(content)
+            handle.flush()
+        temp_path.replace(p)
+    except Exception:
+        temp_path.unlink(missing_ok=True)
+        raise
     return f"Written: {path} ({len(content)} chars)"
 
 

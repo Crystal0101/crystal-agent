@@ -5,6 +5,7 @@ Returns plain text for LLM consumption.
 
 from __future__ import annotations
 
+import warnings
 from pathlib import Path
 
 
@@ -30,7 +31,7 @@ def _read_text(path: Path, max_chars: int) -> str:
 
 def _read_pdf(path: Path, max_chars: int) -> str:
     try:
-        import fitz  # pymupdf
+        import fitz  # type: ignore[import-untyped]  # pymupdf
         doc = fitz.open(str(path))
         text = ""
         for page in doc:
@@ -38,7 +39,11 @@ def _read_pdf(path: Path, max_chars: int) -> str:
             if len(text) >= max_chars:
                 break
         return text[:max_chars]
-    except Exception:
+    except ImportError:
+        warnings.warn(f"pymupdf not installed; skipping {path.name}", stacklevel=3)
+        return ""
+    except Exception as exc:
+        warnings.warn(f"PDF extraction failed for {path.name}: {exc}", stacklevel=3)
         return ""
 
 
@@ -48,5 +53,9 @@ def _read_docx(path: Path, max_chars: int) -> str:
         doc = Document(str(path))
         text = "\n".join(p.text for p in doc.paragraphs)
         return text[:max_chars]
-    except Exception:
+    except ImportError:
+        warnings.warn(f"python-docx not installed; skipping {path.name}", stacklevel=3)
+        return ""
+    except Exception as exc:
+        warnings.warn(f"DOCX extraction failed for {path.name}: {exc}", stacklevel=3)
         return ""

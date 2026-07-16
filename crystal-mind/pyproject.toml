@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "crystal-mind"
-version = "0.1.0"
+version = "0.2.0"
 description = "Your personal AI chief of staff — scan your data, understand your context, execute your goals"
 readme = "README.md"
 license = { text = "MIT" }
@@ -30,6 +30,7 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = ["pytest", "pytest-cov", "ruff", "mypy"]
+security = ["crystal-shield>=0.1.0"]
 
 [project.scripts]
 crystal-mind = "crystal_mind.cli:main"
@@ -46,3 +47,12 @@ markers = [
     "offline: tests that run without network or API keys",
     "online: tests that require ANTHROPIC_API_KEY and network",
 ]
+
+[tool.mypy]
+python_version = "3.10"
+warn_unused_ignores = true
+
+# Third-party packages without type stubs / py.typed markers.
+[[tool.mypy.overrides]]
+module = ["fitz", "crystal_shield", "crystal_shield.*"]
+ignore_missing_imports = true
