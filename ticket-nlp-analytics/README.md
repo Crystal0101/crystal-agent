@@ -2,6 +2,8 @@
 
 A clean-room reference pipeline for hierarchical service-ticket classification. It combines TF-IDF n-grams, calibrated class probabilities, an explicit human-review threshold and aggregate resolution/satisfaction metrics.
 
+Detailed pipeline design, taxonomy governance and evaluation guidance: [`docs/`](docs/README.md).
+
 ```bash
 pip install -e ".[dev]"
 pytest -q

@@ -2,6 +2,8 @@
 
 A clean-room, dependency-light reference for an internal self-service knowledge assistant. It uses SQLite FTS5, document-level ACLs, citation-labelled context and basic indirect-prompt-injection blocking.
 
+Detailed security architecture, threat model and evaluation guidance: [`docs/`](docs/README.md).
+
 ```bash
 pip install -e ".[dev]"
 pytest -q

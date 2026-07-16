@@ -2,6 +2,8 @@
 
 A reproducible reference implementation of Laplace DP-FedAvg for breast-cancer prediction, reconstructed from the public methodology described in Ning Yang's MSc research materials.
 
+Detailed architecture, equations, evaluation protocol and paper-writing guidance: [`docs/`](docs/README.md).
+
 ## What is implemented
 
 - Wisconsin Diagnostic Breast Cancer dataset from scikit-learn (no patient data is bundled)

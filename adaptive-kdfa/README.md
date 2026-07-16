@@ -2,6 +2,8 @@
 
 Tested, framework-neutral primitives for heterogeneous federated learning: temperature-scaled knowledge distillation, projected-feature alignment, communication accounting and fixed/decayed coefficient schedules.
 
+Detailed objectives, communication analysis and experimental protocol: [`docs/`](docs/README.md).
+
 ```bash
 pip install -e ".[dev]"
 pytest -q

@@ -2,6 +2,8 @@
 
 Reusable code for benchmarking classifier calibration under six reproducible image degradations and applying Quality-Aware Confidence Adjustment (QACA). It contains no medical images or pretrained clinical model.
 
+Detailed methodology, benchmark protocol, validity threats and paper figures: [`docs/`](docs/README.md).
+
 ```bash
 pip install -e ".[dev]"
 pytest -q
