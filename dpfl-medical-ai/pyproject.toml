@@ -9,7 +9,7 @@ description = "Reproducible differentially private federated learning for tabula
 readme = "README.md"
 license = {text = "MIT"}
 requires-python = ">=3.10"
-dependencies = ["numpy>=1.24", "scikit-learn>=1.3"]
+dependencies = ["numpy>=1.24,<2.3", "scikit-learn>=1.3"]
 
 [project.optional-dependencies]
 dev = ["pytest>=8", "ruff>=0.8", "mypy>=1.10"]
@@ -26,3 +26,9 @@ line-length = 100
 [tool.mypy]
 python_version = "3.10"
 ignore_missing_imports = true
+
+# Scikit-learn is not part of this project's type-checking boundary. NumPy is
+# capped below 2.3 so its stubs remain compatible with the Python 3.10 target.
+[[tool.mypy.overrides]]
+module = ["sklearn", "sklearn.*"]
+follow_imports = "skip"

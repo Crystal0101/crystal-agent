@@ -14,6 +14,6 @@ jobs:
         with: {python-version: "3.12"}
       - run: pip install -e ".[dev]"
       - run: ruff check src tests
-      - run: mypy src
+      - run: mypy --no-incremental src
       - run: pytest -q
       - run: dpfl --rounds 2 --clients 3 --output /tmp/result.json
