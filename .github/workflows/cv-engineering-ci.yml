@@ -1,0 +1,17 @@
+name: CV engineering references CI
+on:
+  push:
+    paths: ["smp-rag-reference/**","ticket-nlp-analytics/**",".github/workflows/cv-engineering-ci.yml"]
+  pull_request:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy: {matrix: {project: [smp-rag-reference, ticket-nlp-analytics]}}
+    defaults: {run: {working-directory: "${{ matrix.project }}"}}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install -e ".[dev]"
+      - run: ruff check src tests
+      - run: pytest -q
