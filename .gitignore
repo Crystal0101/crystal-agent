@@ -13,4 +13,6 @@ node_modules/
 .next/
 .env.local
 coverage/
+.coverage
+.coverage.*
 *.tsbuildinfo

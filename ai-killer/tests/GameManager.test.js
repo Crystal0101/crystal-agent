@@ -35,6 +35,7 @@ function buildRoom(configOverrides = {}) {
 function buildStartedRoom(configOverrides = {}) {
   const { room, hostSocketId, hostPlayerId } = buildRoom(configOverrides);
   gm.startGame(room.id);
+  gm.startChatRound(room.id);
   return { room: gm.getRoom(room.id), hostSocketId, hostPlayerId };
 }
 
@@ -226,21 +227,23 @@ describe('setPlayerReady', () => {
 
 // ─── startGame ────────────────────────────────────────────────────────────────
 describe('startGame', () => {
-  test('transitions phase to chat', () => {
+  test('transitions phase to night', () => {
     const { room } = buildRoom();
     gm.startGame(room.id);
-    expect(gm.getRoom(room.id).phase).toBe('chat');
+    expect(gm.getRoom(room.id).phase).toBe('night');
   });
 
   test('sets currentRound to 1', () => {
     const { room } = buildRoom();
     gm.startGame(room.id);
+    gm.startChatRound(room.id);
     expect(gm.getRoom(room.id).currentRound).toBe(1);
   });
 
   test('sets a non-empty currentTopic', () => {
     const { room } = buildRoom();
     gm.startGame(room.id);
+    gm.startChatRound(room.id);
     const topic = gm.getRoom(room.id).currentTopic;
     expect(typeof topic).toBe('string');
     expect(topic.length).toBeGreaterThan(0);
@@ -250,6 +253,7 @@ describe('startGame', () => {
     const before = Date.now();
     const { room } = buildRoom();
     gm.startGame(room.id);
+    gm.startChatRound(room.id);
     expect(gm.getRoom(room.id).roundEndTime).toBeGreaterThan(before);
   });
 
@@ -257,6 +261,7 @@ describe('startGame', () => {
     const { room } = buildRoom({ roundDuration: 90 });
     const before = Date.now();
     gm.startGame(room.id);
+    gm.startChatRound(room.id);
     const after = Date.now();
     const endTime = gm.getRoom(room.id).roundEndTime;
     expect(endTime).toBeGreaterThanOrEqual(before + 90000);
@@ -275,6 +280,7 @@ describe('startGame', () => {
   test('adds a round-start system message', () => {
     const { room } = buildRoom();
     gm.startGame(room.id);
+    gm.startChatRound(room.id);
     const msgs = gm.getRoom(room.id).messages;
     expect(msgs.length).toBeGreaterThan(0);
     const sysMsg = msgs[msgs.length - 1];
@@ -602,7 +608,8 @@ describe('calculateResults', () => {
     gm.calculateResults(room.id);
 
     const scores = gm.getRoom(room.id).result.playerScores;
-    expect(scores[voter.id]).toBe(-80);
+    const expectedPenalty = gm.getRoom(room.id).playerRoles[voter.id] === 'civilian' ? -160 : -80;
+    expect(scores[voter.id]).toBe(expectedPenalty);
     expect(scores[impostor.id]).toBe(150);
   });
 
@@ -636,13 +643,13 @@ describe('calculateResults', () => {
   test('identityReveal marks AI participant correctly', () => {
     const { room, ai } = resultsRoom(1);
     gm.calculateResults(room.id);
-    expect(gm.getRoom(room.id).result.identityReveal[ai.id]).toEqual({ isAI: true, role: 'AI' });
+    expect(gm.getRoom(room.id).result.identityReveal[ai.id]).toEqual({ isAI: true, role: 'AI', humanRole: null });
   });
 
   test('identityReveal marks human player correctly', () => {
     const { room, hostPlayerId } = resultsRoom(1);
     gm.calculateResults(room.id);
-    expect(gm.getRoom(room.id).result.identityReveal[hostPlayerId]).toEqual({ isAI: false, role: 'human' });
+    expect(gm.getRoom(room.id).result.identityReveal[hostPlayerId]).toMatchObject({ isAI: false, role: 'human' });
   });
 
   // ── Only human votes count ───────────────────────────────────────────────

@@ -62,6 +62,8 @@ class Policy:
             return report.text
 
         sev = report.max_severity
+        if sev is None:
+            return report.text
         rule = self._match_rule(sev)
 
         if self.log_fn:

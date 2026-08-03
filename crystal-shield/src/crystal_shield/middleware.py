@@ -4,11 +4,12 @@ Framework-agnostic middleware — wrap any LLM call with injection protection.
 
 from __future__ import annotations
 
-from typing import Any, Callable
+import functools
+from typing import Callable
 
 from .detector import InjectionDetector
 from .policy import BALANCED, Policy
-from .report import DetectionReport, Severity
+from .report import DetectionReport
 
 
 class ShieldMiddleware:
@@ -76,6 +77,7 @@ class ShieldMiddleware:
     def protect(self, fn: Callable) -> Callable:
         """Decorator — scans `messages` kwarg or first positional arg."""
 
+        @functools.wraps(fn)
         def wrapper(*args, **kwargs):
             messages = kwargs.get("messages") or (args[0] if args and isinstance(args[0], list) else None)
             if messages:
@@ -84,7 +86,6 @@ class ShieldMiddleware:
                     self.policy.enforce(report)
             return fn(*args, **kwargs)
 
-        wrapper.__wrapped__ = fn
         return wrapper
 
     def wrap_tool_output(self, tool_name: str, output: str) -> str:

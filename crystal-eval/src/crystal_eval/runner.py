@@ -1,11 +1,8 @@
 from __future__ import annotations
 
-import asyncio
 import concurrent.futures
-from typing import Callable
 
-from .case import EvalCase, EvalResult, Verdict
-from .metrics import Metrics
+from .case import EvalResult
 from .report import EvalReport
 from .suite import EvalSuite
 

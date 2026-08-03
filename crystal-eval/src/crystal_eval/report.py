@@ -31,7 +31,7 @@ class EvalReport:
         print(f"  ⚠️  Error: {m.errors}")
         print(f"  ⏱  Avg latency: {m.avg_latency_ms:.0f}ms")
         if m.by_category:
-            print(f"\n  By category:")
+            print("\n  By category:")
             for cat, d in sorted(m.by_category.items()):
                 print(f"    {cat:<20} {d['passed']}/{d['total']}  ({d['pass_rate']*100:.0f}%)")
         print(f"{'─'*50}\n")

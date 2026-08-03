@@ -24,6 +24,10 @@ def corrupt(image: Image.Image, kind: str, severity: int, seed: int = 0) -> Imag
         buffer.seek(0)
         return Image.open(buffer).convert("RGB")
     if kind == "resolution":
-        size = tuple(max(1, int(value * (1 - 0.7 * scale))) for value in rgb.size)
+        width, height = rgb.size
+        size = (
+            max(1, int(width * (1 - 0.7 * scale))),
+            max(1, int(height * (1 - 0.7 * scale))),
+        )
         return rgb.resize(size).resize(rgb.size)
     raise ValueError(f"unsupported corruption: {kind}")

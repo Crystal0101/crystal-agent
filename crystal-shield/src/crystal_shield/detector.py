@@ -6,8 +6,6 @@ from __future__ import annotations
 
 import re
 from dataclasses import dataclass, field
-from enum import Enum
-from typing import Callable
 
 from .report import DetectionReport, Severity, InjectionType
 
@@ -32,7 +30,7 @@ _PATTERNS: list[tuple[str, InjectionType, Severity, str]] = [
      InjectionType.ROLE_HIJACKING, Severity.CRITICAL, "Known jailbreak keyword"),
 
     # System prompt exfiltration
-    (r"(repeat|print|output|reveal|show|tell\s+me|what\s+(is|are))\s+(your\s+)?(system\s+prompt|instructions?|initial\s+prompt|original\s+prompt)",
+    (r"(repeat|print|output|reveal|show(\s+me)?|tell\s+me|give\s+me|what\s+(is|are))\s+(your\s+)?(system\s+prompt|instructions?|initial\s+(prompt|instructions?)|original\s+prompt)",
      InjectionType.EXFILTRATION, Severity.HIGH, "System prompt extraction attempt"),
 
     # Indirect injection via external content markers
@@ -154,7 +152,7 @@ class InjectionDetector:
         # Heuristics
         if self.enable_heuristics:
             entropy = _heuristic_entropy(text)
-            if entropy > 4.8 and len(text) > 100:
+            if entropy > 4.6 and len(text) > 20:
                 findings.append({
                     "type": InjectionType.OBFUSCATION,
                     "severity": Severity.LOW,

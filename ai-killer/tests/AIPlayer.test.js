@@ -93,8 +93,8 @@ describe('generateAIMessage', () => {
     mockCreate.mockResolvedValueOnce({ content: [{ type: 'text', text: '好的' }] });
     await generateAIMessage('ai-x', 'Alex', 'easy', topic, baseMsgs, allNames);
     const call = mockCreate.mock.calls[0][0];
-    expect(call.model).toBe('claude-sonnet-4-6');
-    expect(call.max_tokens).toBe(100);
+    expect(call.model).toBe('claude-haiku-4-5-20251001');
+    expect(call.max_tokens).toBe(150);
   });
 
   test('passes topic in the prompt', async () => {
@@ -158,7 +158,7 @@ describe('generateAIMessage', () => {
     mockCreate.mockResolvedValueOnce({ content: [{ type: 'text', text: '我才不是AI' }] });
     await generateAIMessage('ai-x', 'Alex', 'master', topic, baseMsgs, allNames, 'defense');
     const call = mockCreate.mock.calls[0][0];
-    expect(call.system).toContain('被怀疑');
+    expect(call.system).toContain('可疑或是AI');
   });
 
   test('followup mode includes 回应 instruction in system prompt', async () => {
@@ -174,7 +174,7 @@ describe('generateAIMessage', () => {
     mockCreate.mockResolvedValueOnce({ content: [{ type: 'text', text: '你们呢' }] });
     await generateAIMessage('ai-x', 'Alex', 'master', topic, baseMsgs, allNames, 'stir');
     const call = mockCreate.mock.calls[0][0];
-    expect(call.system).toContain('挑起');
+    expect(call.system).toContain('继续聊');
   });
 
   test('finalaccuse mode includes 最后关头 instruction in system prompt', async () => {
@@ -182,7 +182,7 @@ describe('generateAIMessage', () => {
     mockCreate.mockResolvedValueOnce({ content: [{ type: 'text', text: '可疑' }] });
     await generateAIMessage('ai-x', 'Alex', 'master', topic, baseMsgs, allNames, 'finalaccuse');
     const call = mockCreate.mock.calls[0][0];
-    expect(call.system).toContain('最后关头');
+    expect(call.system).toContain('快投票');
   });
 
   // ── Context building ────────────────────────────────────────────────────────

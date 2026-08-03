@@ -1,0 +1,16 @@
+#!/bin/sh
+set -eu
+
+allowed_name='Crystal Yang'
+allowed_email='151534715+Crystal0101@users.noreply.github.com'
+
+author_name=$(git var GIT_AUTHOR_IDENT | sed 's/ <.*//')
+author_email=$(git var GIT_AUTHOR_IDENT | sed -n 's/.*<\([^>]*\)>.*/\1/p')
+committer_name=$(git var GIT_COMMITTER_IDENT | sed 's/ <.*//')
+committer_email=$(git var GIT_COMMITTER_IDENT | sed -n 's/.*<\([^>]*\)>.*/\1/p')
+
+if [ "$author_name" != "$allowed_name" ] || [ "$author_email" != "$allowed_email" ] ||
+   [ "$committer_name" != "$allowed_name" ] || [ "$committer_email" != "$allowed_email" ]; then
+  echo "拒绝提交：Author 和 Committer 必须是 $allowed_name <$allowed_email>。" >&2
+  exit 1
+fi

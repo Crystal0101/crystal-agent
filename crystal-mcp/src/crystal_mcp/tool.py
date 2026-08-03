@@ -8,13 +8,11 @@ import functools
 import inspect
 from typing import Any, Callable, get_type_hints
 
-from .types import ToolResult, ResourceContent, PromptMessage
 
 _REGISTRY: dict[str, dict] = {"tools": {}, "resources": {}, "prompts": {}}
 
 
 def _python_type_to_json_schema(annotation: Any) -> dict:
-    import types
     origin = getattr(annotation, "__origin__", None)
     if annotation is str or annotation is inspect.Parameter.empty:
         return {"type": "string"}
@@ -71,7 +69,7 @@ def tool(
         def wrapper(*args, **kwargs):
             return fn(*args, **kwargs)
 
-        wrapper._mcp_tool = tool_name
+        setattr(wrapper, "_mcp_tool", tool_name)
         return wrapper
 
     return decorator
@@ -99,7 +97,7 @@ def resource(uri_template: str, description: str = "", mime_type: str = "text/pl
         def wrapper(*args, **kwargs):
             return fn(*args, **kwargs)
 
-        wrapper._mcp_resource = uri_template
+        setattr(wrapper, "_mcp_resource", uri_template)
         return wrapper
 
     return decorator
@@ -117,7 +115,6 @@ def prompt(name: str | None = None, description: str = ""):
     """
     def decorator(fn: Callable) -> Callable:
         prompt_name = name or fn.__name__
-        hints = get_type_hints(fn)
         sig = inspect.signature(fn)
 
         _REGISTRY["prompts"][prompt_name] = {
@@ -138,7 +135,7 @@ def prompt(name: str | None = None, description: str = ""):
         def wrapper(*args, **kwargs):
             return fn(*args, **kwargs)
 
-        wrapper._mcp_prompt = prompt_name
+        setattr(wrapper, "_mcp_prompt", prompt_name)
         return wrapper
 
     return decorator

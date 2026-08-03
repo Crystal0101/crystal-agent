@@ -1,0 +1,7 @@
+#!/bin/sh
+set -eu
+
+if grep -Eiq '^(Co-authored-by|Signed-off-by):.*(codex|claude|openai|anthropic)' "$1"; then
+  echo '拒绝提交：提交信息包含 Codex/Claude/OpenAI/Anthropic 人员归属 trailer。' >&2
+  exit 1
+fi

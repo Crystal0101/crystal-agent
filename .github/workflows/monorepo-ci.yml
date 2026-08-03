@@ -1,0 +1,40 @@
+name: monorepo CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -e "crystal-shield[dev]" -e "crystal-mcp[dev]" -e "crystal-eval[dev]" -e "crystal-mind[dev]"
+      - run: pytest -q crystal-shield/tests crystal-mcp/tests crystal-eval/tests crystal-mind/tests -m "not online"
+      - run: ruff check crystal-shield/src crystal-shield/tests crystal-mcp/src crystal-mcp/tests crystal-eval/src crystal-eval/tests crystal-mind/src crystal-mind/tests
+      - run: mypy crystal-shield/src crystal-mcp/src crystal-eval/src crystal-mind/src
+
+  web:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        app: [ai-tools, ai-killer]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: ${{ matrix.app }}/package-lock.json
+      - run: npm ci
+        working-directory: ${{ matrix.app }}
+      - run: npm test -- --runInBand
+        if: matrix.app == 'ai-killer'
+        working-directory: ${{ matrix.app }}
+      - run: npm run build
+        working-directory: ${{ matrix.app }}
+      - run: npm audit --omit=dev --audit-level=high
+        working-directory: ${{ matrix.app }}

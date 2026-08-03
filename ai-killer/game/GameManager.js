@@ -111,6 +111,7 @@ function assignHumanRoles(room) {
 function startGame(roomId) {
   const room = rooms.get(roomId);
   if (!room) return { error: '房间不存在' };
+  if (room.phase !== 'lobby') return { error: '游戏已经开始' };
   if (room.players.length < 1) return { error: '至少需要1名玩家' };
 
   const shuffled = [...room.players].sort(() => Math.random() - 0.5);
@@ -129,6 +130,9 @@ function startGame(roomId) {
   room.nightActions = {};
   room.guardedPlayerId = null;
   room.lastActivityAt = Date.now();
+  // Mark the room active atomically. The server immediately calls
+  // startNightPhase(), but callers must never leave a started room joinable.
+  room.phase = 'night';
 
   return room;
 }
@@ -603,8 +607,9 @@ function cleanupStaleRooms() {
   }
 }
 
-// Run cleanup every 30 minutes
-setInterval(cleanupStaleRooms, 30 * 60 * 1000);
+// Run cleanup every 30 minutes without keeping CLI/test processes alive.
+const cleanupTimer = setInterval(cleanupStaleRooms, 30 * 60 * 1000);
+cleanupTimer.unref?.();
 
 module.exports = {
   createRoom, joinRoom, getRoom, getRoomBySocket,

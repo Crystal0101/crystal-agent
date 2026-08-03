@@ -1,0 +1,38 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "crystal-mcp"
+version = "0.1.0"
+description = "Zero-boilerplate MCP (Model Context Protocol) server toolkit for LLM agents"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+keywords = ["mcp", "llm", "agent", "model-context-protocol", "ai"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest", "pytest-asyncio", "pytest-cov", "ruff", "mypy"]
+
+[project.urls]
+Homepage = "https://github.com/Crystal0101/crystal-agent"
+Repository = "https://github.com/Crystal0101/crystal-agent"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/crystal_mcp"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+
+[tool.mypy]
+python_version = "3.9"
+strict = true

@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
@@ -16,11 +16,7 @@ class Metrics:
     skipped: int = 0
     avg_latency_ms: float = 0.0
     pass_rate: float = 0.0
-    by_category: dict[str, dict] = None
-
-    def __post_init__(self):
-        if self.by_category is None:
-            self.by_category = {}
+    by_category: dict[str, dict] = field(default_factory=dict)
 
     @classmethod
     def from_results(cls, results: list[EvalResult]) -> Metrics:
