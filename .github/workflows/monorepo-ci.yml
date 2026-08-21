@@ -38,3 +38,20 @@ jobs:
         working-directory: ${{ matrix.app }}
       - run: npm audit --omit=dev --audit-level=high
         working-directory: ${{ matrix.app }}
+
+  research-code:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: |
+            dermacal/pyproject.toml
+            quality-conformal/requirements.txt
+      - run: pip install -e "dermacal[dev]" -r quality-conformal/requirements.txt
+      - run: pytest -q tests
+        working-directory: dermacal
+      - run: pytest -q tests
+        working-directory: quality-conformal

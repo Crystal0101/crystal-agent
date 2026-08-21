@@ -1,0 +1,2198 @@
+{
+  "version": "qualityconformal-clustered-coverage-audit-v2",
+  "protocol": "qualityconformal-natural-domain-v1-five-class",
+  "model": "resnet50",
+  "seed": 2026,
+  "formal_result_sha256": "669b193cb10f650cd2a4df035224585f98cf2626de3e752ab5f9c3afb424728d",
+  "checkpoint_sha256": "03a37532e859853f975a549d3e0a1c3a56aa11e96028918bcac068263358ea79",
+  "data_audit_sha256": "71edcc6d500fd67f3bd390e680774f769b00bd1a777e3f996f84f839a65700d8",
+  "quality_cache_sha256": {
+    "calibration": "0e79dfafc1bba7c64037779b1827d1ddb46af85997c6918c4aaf060245d609f4",
+    "test": "1189a60529cd4b75d2eb2e5ae21ab3b247fda727c71d0c241eeb88c95011e82f",
+    "external": "5a2134005722930c343b76726d899a1ed23ba61550ea2744cf57981bdd387d51"
+  },
+  "code_sha256": {
+    "QualityConformal/reanalyse_clustered_coverage.py": "ea8e0dd4f0f28641fbbec136bff69277503ebbc8dcbb9bedb4aeec7d1e6ba65c",
+    "QualityConformal/run_natural_domain.py": "0d9e98edcab41ee1c323f6f720dd452ff76815cf17750f44ea96a9e062eb9752",
+    "QualityConformal/natural_domain_data.py": "a8396790ae7dffbf95a3d8e99e6de137ea1692fc88989a9d2a4753bbd8c5b59b",
+    "QualityConformal/quality_conformal.py": "c21a3e7f41e2f261d955080261e3a90a06d3a2068701b777c4479e12de764f4b",
+    "DermaCal/experiments/src/models.py": "931feeade8c7e0fe22a0b38caa9ed1009c4f388cb529c87870cb389708bc8664",
+    "DermaCal/experiments/src/qaca.py": "c7d1d1139d49306787fa790d50c9b92c91057a2ff7bc0f159fefc3ef1c18c128"
+  },
+  "runtime": {
+    "python": "3.13.1",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "torch": "2.12.1",
+    "torchvision": "0.27.1",
+    "device": "mps"
+  },
+  "bootstrap": {
+    "scheme": "one_stage_nonparametric_resampling_of_whole_lesion_or_patient_groups",
+    "estimand": "image_weighted_ratio_of_cluster_sums_to_cluster_counts",
+    "replicates": 10000,
+    "confidence": 0.95,
+    "seed_scheme": "sha256_of_version_model_domain_method_stratum_metric"
+  },
+  "historical_interval_policy": "Image-level Clopper-Pearson intervals in the frozen result JSON are retained for provenance but excluded from inference because images are clustered.",
+  "domains": {
+    "test": {
+      "group_unit": "HAM10000_lesion",
+      "n_images": 1480,
+      "n_groups": 1094,
+      "methods": {
+        "pooled_lac": {
+          "coverage": {
+            "n_images": 1480,
+            "n_groups": 1094,
+            "estimate": 0.9013513513513514,
+            "cluster_bootstrap_95ci": [
+              0.8824306472919419,
+              0.919104025193598
+            ],
+            "bootstrap_replicates": 10000,
+            "one_image_per_group_sensitivity": {
+              "selection_rule": "lexicographically_first_image_id_within_group",
+              "n_groups": 1094,
+              "covered_groups": 1008,
+              "coverage": 0.9213893967093236,
+              "group_level_exact_95ci": [
+                0.9038252830006221,
+                0.9366435765005477
+              ]
+            }
+          },
+          "average_set_size": {
+            "n_images": 1480,
+            "n_groups": 1094,
+            "estimate": 1.2662162162162163,
+            "cluster_bootstrap_95ci": [
+              1.2379951268797518,
+              1.2951688536936032
+            ],
+            "bootstrap_replicates": 10000,
+            "one_image_per_group_sensitivity": null
+          },
+          "by_quality": {
+            "0": {
+              "coverage": {
+                "n_images": 463,
+                "n_groups": 365,
+                "estimate": 0.8812095032397408,
+                "cluster_bootstrap_95ci": [
+                  0.844017094017094,
+                  0.9157427937915743
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": {
+                  "selection_rule": "lexicographically_first_image_id_within_group",
+                  "n_groups": 365,
+                  "covered_groups": 327,
+                  "coverage": 0.8958904109589041,
+                  "group_level_exact_95ci": [
+                    0.8599081483961177,
+                    0.9252665248588884
+                  ]
+                }
+              },
+              "average_set_size": {
+                "n_images": 463,
+                "n_groups": 365,
+                "estimate": 1.287257019438445,
+                "cluster_bootstrap_95ci": [
+                  1.236323851203501,
+                  1.3413566739606126
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": null
+              }
+            },
+            "1": {
+              "coverage": {
+                "n_images": 453,
+                "n_groups": 390,
+                "estimate": 0.8874172185430463,
+                "cluster_bootstrap_95ci": [
+                  0.8538783325968479,
+                  0.919285197885831
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": {
+                  "selection_rule": "lexicographically_first_image_id_within_group",
+                  "n_groups": 390,
+                  "covered_groups": 351,
+                  "coverage": 0.9,
+                  "group_level_exact_95ci": [
+                    0.8658365122711192,
+                    0.9279199188367143
+                  ]
+                }
+              },
+              "average_set_size": {
+                "n_images": 453,
+                "n_groups": 390,
+                "estimate": 1.2649006622516556,
+                "cluster_bootstrap_95ci": [
+                  1.218543046357616,
+                  1.3150984682713347
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": null
+              }
+            },
+            "2": {
+              "coverage": {
+                "n_images": 564,
+                "n_groups": 474,
+                "estimate": 0.9290780141843972,
+                "cluster_bootstrap_95ci": [
+                  0.9041806333524457,
+                  0.9516994633273703
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": {
+                  "selection_rule": "lexicographically_first_image_id_within_group",
+                  "n_groups": 474,
+                  "covered_groups": 444,
+                  "coverage": 0.9367088607594937,
+                  "group_level_exact_95ci": [
+                    0.9108781246612946,
+                    0.9568939537393043
+                  ]
+                }
+              },
+              "average_set_size": {
+                "n_images": 564,
+                "n_groups": 474,
+                "estimate": 1.25,
+                "cluster_bootstrap_95ci": [
+                  1.2060931899641576,
+                  1.2963621874226292
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": null
+              }
+            }
+          }
+        },
+        "quality_lac": {
+          "coverage": {
+            "n_images": 1480,
+            "n_groups": 1094,
+            "estimate": 0.8945945945945946,
+            "cluster_bootstrap_95ci": [
+              0.8758387033521395,
+              0.9130156258803729
+            ],
+            "bootstrap_replicates": 10000,
+            "one_image_per_group_sensitivity": {
+              "selection_rule": "lexicographically_first_image_id_within_group",
+              "n_groups": 1094,
+              "covered_groups": 1004,
+              "coverage": 0.9177330895795247,
+              "group_level_exact_95ci": [
+                0.8998467985501862,
+                0.9333311490489129
+              ]
+            }
+          },
+          "average_set_size": {
+            "n_images": 1480,
+            "n_groups": 1094,
+            "estimate": 1.2533783783783783,
+            "cluster_bootstrap_95ci": [
+              1.2252556751919499,
+              1.2819503109389878
+            ],
+            "bootstrap_replicates": 10000,
+            "one_image_per_group_sensitivity": null
+          },
+          "by_quality": {
+            "0": {
+              "coverage": {
+                "n_images": 463,
+                "n_groups": 365,
+                "estimate": 0.8984881209503239,
+                "cluster_bootstrap_95ci": [
+                  0.8622219902574809,
+                  0.9316239316239316
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": {
+                  "selection_rule": "lexicographically_first_image_id_within_group",
+                  "n_groups": 365,
+                  "covered_groups": 333,
+                  "coverage": 0.9123287671232877,
+                  "group_level_exact_95ci": [
+                    0.8784888666854183,
+                    0.9392600163961389
+                  ]
+                }
+              },
+              "average_set_size": {
+                "n_images": 463,
+                "n_groups": 365,
+                "estimate": 1.369330453563715,
+                "cluster_bootstrap_95ci": [
+                  1.3080260303687636,
+                  1.4339622641509433
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": null
+              }
+            },
+            "1": {
+              "coverage": {
+                "n_images": 453,
+                "n_groups": 390,
+                "estimate": 0.8874172185430463,
+                "cluster_bootstrap_95ci": [
+                  0.8536036036036037,
+                  0.918859649122807
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": {
+                  "selection_rule": "lexicographically_first_image_id_within_group",
+                  "n_groups": 390,
+                  "covered_groups": 351,
+                  "coverage": 0.9,
+                  "group_level_exact_95ci": [
+                    0.8658365122711192,
+                    0.9279199188367143
+                  ]
+                }
+              },
+              "average_set_size": {
+                "n_images": 453,
+                "n_groups": 390,
+                "estimate": 1.2538631346578366,
+                "cluster_bootstrap_95ci": [
+                  1.208237986270023,
+                  1.2995647637576992
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": null
+              }
+            },
+            "2": {
+              "coverage": {
+                "n_images": 564,
+                "n_groups": 474,
+                "estimate": 0.8971631205673759,
+                "cluster_bootstrap_95ci": [
+                  0.8687050359712231,
+                  0.9244288224956063
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": {
+                  "selection_rule": "lexicographically_first_image_id_within_group",
+                  "n_groups": 474,
+                  "covered_groups": 433,
+                  "coverage": 0.9135021097046413,
+                  "group_level_exact_95ci": [
+                    0.8844854703216267,
+                    0.9372133633883508
+                  ]
+                }
+              },
+              "average_set_size": {
+                "n_images": 564,
+                "n_groups": 474,
+                "estimate": 1.1578014184397163,
+                "cluster_bootstrap_95ci": [
+                  1.1247739602169982,
+                  1.1919014084507042
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": null
+              }
+            }
+          }
+        },
+        "pooled_aps": {
+          "coverage": {
+            "n_images": 1480,
+            "n_groups": 1094,
+            "estimate": 0.8898648648648648,
+            "cluster_bootstrap_95ci": [
+              0.8728282599938787,
+              0.906085121842164
+            ],
+            "bootstrap_replicates": 10000,
+            "one_image_per_group_sensitivity": {
+              "selection_rule": "lexicographically_first_image_id_within_group",
+              "n_groups": 1094,
+              "covered_groups": 940,
+              "coverage": 0.8592321755027422,
+              "group_level_exact_95ci": [
+                0.8372009122358712,
+                0.8793100249230189
+              ]
+            }
+          },
+          "average_set_size": {
+            "n_images": 1480,
+            "n_groups": 1094,
+            "estimate": 2.8277027027027026,
+            "cluster_bootstrap_95ci": [
+              2.75,
+              2.904276985743381
+            ],
+            "bootstrap_replicates": 10000,
+            "one_image_per_group_sensitivity": null
+          },
+          "by_quality": {
+            "0": {
+              "coverage": {
+                "n_images": 463,
+                "n_groups": 365,
+                "estimate": 0.896328293736501,
+                "cluster_bootstrap_95ci": [
+                  0.8653846153846154,
+                  0.9244060475161987
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": {
+                  "selection_rule": "lexicographically_first_image_id_within_group",
+                  "n_groups": 365,
+                  "covered_groups": 320,
+                  "coverage": 0.8767123287671232,
+                  "group_level_exact_95ci": [
+                    0.8385273084754865,
+                    0.9086342863293553
+                  ]
+                }
+              },
+              "average_set_size": {
+                "n_images": 463,
+                "n_groups": 365,
+                "estimate": 3.0669546436285096,
+                "cluster_bootstrap_95ci": [
+                  2.9331813677622938,
+                  3.1915802225828886
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": null
+              }
+            },
+            "1": {
+              "coverage": {
+                "n_images": 453,
+                "n_groups": 390,
+                "estimate": 0.8940397350993378,
+                "cluster_bootstrap_95ci": [
+                  0.8639455782312925,
+                  0.9225512528473804
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": {
+                  "selection_rule": "lexicographically_first_image_id_within_group",
+                  "n_groups": 390,
+                  "covered_groups": 343,
+                  "coverage": 0.8794871794871795,
+                  "group_level_exact_95ci": [
+                    0.8429815899721381,
+                    0.9100930843492444
+                  ]
+                }
+              },
+              "average_set_size": {
+                "n_images": 453,
+                "n_groups": 390,
+                "estimate": 2.8675496688741724,
+                "cluster_bootstrap_95ci": [
+                  2.7396061269146608,
+                  2.991130820399113
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": null
+              }
+            },
+            "2": {
+              "coverage": {
+                "n_images": 564,
+                "n_groups": 474,
+                "estimate": 0.8812056737588653,
+                "cluster_bootstrap_95ci": [
+                  0.8522502937720329,
+                  0.9078260869565218
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": {
+                  "selection_rule": "lexicographically_first_image_id_within_group",
+                  "n_groups": 474,
+                  "covered_groups": 408,
+                  "coverage": 0.8607594936708861,
+                  "group_level_exact_95ci": [
+                    0.8262856566962458,
+                    0.8906479460696777
+                  ]
+                }
+              },
+              "average_set_size": {
+                "n_images": 564,
+                "n_groups": 474,
+                "estimate": 2.599290780141844,
+                "cluster_bootstrap_95ci": [
+                  2.4807339449541286,
+                  2.718637992831541
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": null
+              }
+            }
+          }
+        },
+        "quality_aps": {
+          "coverage": {
+            "n_images": 1480,
+            "n_groups": 1094,
+            "estimate": 0.8831081081081081,
+            "cluster_bootstrap_95ci": [
+              0.8650990284882902,
+              0.9002677376171352
+            ],
+            "bootstrap_replicates": 10000,
+            "one_image_per_group_sensitivity": {
+              "selection_rule": "lexicographically_first_image_id_within_group",
+              "n_groups": 1094,
+              "covered_groups": 932,
+              "coverage": 0.8519195612431444,
+              "group_level_exact_95ci": [
+                0.8294716307053603,
+                0.8724549504079442
+              ]
+            }
+          },
+          "average_set_size": {
+            "n_images": 1480,
+            "n_groups": 1094,
+            "estimate": 2.787837837837838,
+            "cluster_bootstrap_95ci": [
+              2.710210017217466,
+              2.8619785719777897
+            ],
+            "bootstrap_replicates": 10000,
+            "one_image_per_group_sensitivity": null
+          },
+          "by_quality": {
+            "0": {
+              "coverage": {
+                "n_images": 463,
+                "n_groups": 365,
+                "estimate": 0.8488120950323974,
+                "cluster_bootstrap_95ci": [
+                  0.8126410835214447,
+                  0.8831168831168831
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": {
+                  "selection_rule": "lexicographically_first_image_id_within_group",
+                  "n_groups": 365,
+                  "covered_groups": 300,
+                  "coverage": 0.821917808219178,
+                  "group_level_exact_95ci": [
+                    0.7787330450504806,
+                    0.8597870220302515
+                  ]
+                }
+              },
+              "average_set_size": {
+                "n_images": 463,
+                "n_groups": 365,
+                "estimate": 2.7213822894168467,
+                "cluster_bootstrap_95ci": [
+                  2.5736952593537414,
+                  2.8632769648739997
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": null
+              }
+            },
+            "1": {
+              "coverage": {
+                "n_images": 453,
+                "n_groups": 390,
+                "estimate": 0.8940397350993378,
+                "cluster_bootstrap_95ci": [
+                  0.8647450110864745,
+                  0.921875
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": {
+                  "selection_rule": "lexicographically_first_image_id_within_group",
+                  "n_groups": 390,
+                  "covered_groups": 343,
+                  "coverage": 0.8794871794871795,
+                  "group_level_exact_95ci": [
+                    0.8429815899721381,
+                    0.9100930843492444
+                  ]
+                }
+              },
+              "average_set_size": {
+                "n_images": 453,
+                "n_groups": 390,
+                "estimate": 2.8609271523178808,
+                "cluster_bootstrap_95ci": [
+                  2.732739420935412,
+                  2.9887892376681613
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": null
+              }
+            },
+            "2": {
+              "coverage": {
+                "n_images": 564,
+                "n_groups": 474,
+                "estimate": 0.9024822695035462,
+                "cluster_bootstrap_95ci": [
+                  0.8768115942028986,
+                  0.9267036742707554
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": {
+                  "selection_rule": "lexicographically_first_image_id_within_group",
+                  "n_groups": 474,
+                  "covered_groups": 420,
+                  "coverage": 0.8860759493670886,
+                  "group_level_exact_95ci": [
+                    0.8539780235075723,
+                    0.9132487029383983
+                  ]
+                }
+              },
+              "average_set_size": {
+                "n_images": 564,
+                "n_groups": 474,
+                "estimate": 2.7836879432624113,
+                "cluster_bootstrap_95ci": [
+                  2.667863394460118,
+                  2.8961272766414234
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": null
+              }
+            }
+          }
+        },
+        "pooled_raps": {
+          "coverage": {
+            "n_images": 1480,
+            "n_groups": 1094,
+            "estimate": 0.8905405405405405,
+            "cluster_bootstrap_95ci": [
+              0.8731335563561503,
+              0.9073590161516598
+            ],
+            "bootstrap_replicates": 10000,
+            "one_image_per_group_sensitivity": {
+              "selection_rule": "lexicographically_first_image_id_within_group",
+              "n_groups": 1094,
+              "covered_groups": 948,
+              "coverage": 0.8665447897623401,
+              "group_level_exact_95ci": [
+                0.8449488863761647,
+                0.8861462585146312
+              ]
+            }
+          },
+          "average_set_size": {
+            "n_images": 1480,
+            "n_groups": 1094,
+            "estimate": 2.4864864864864864,
+            "cluster_bootstrap_95ci": [
+              2.4291525423728815,
+              2.5417528347650733
+            ],
+            "bootstrap_replicates": 10000,
+            "one_image_per_group_sensitivity": null
+          },
+          "by_quality": {
+            "0": {
+              "coverage": {
+                "n_images": 463,
+                "n_groups": 365,
+                "estimate": 0.8876889848812095,
+                "cluster_bootstrap_95ci": [
+                  0.8526315789473684,
+                  0.9192563067874615
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": {
+                  "selection_rule": "lexicographically_first_image_id_within_group",
+                  "n_groups": 365,
+                  "covered_groups": 320,
+                  "coverage": 0.8767123287671232,
+                  "group_level_exact_95ci": [
+                    0.8385273084754865,
+                    0.9086342863293553
+                  ]
+                }
+              },
+              "average_set_size": {
+                "n_images": 463,
+                "n_groups": 365,
+                "estimate": 2.615550755939525,
+                "cluster_bootstrap_95ci": [
+                  2.5145381627702794,
+                  2.7083333333333335
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": null
+              }
+            },
+            "1": {
+              "coverage": {
+                "n_images": 453,
+                "n_groups": 390,
+                "estimate": 0.8962472406181016,
+                "cluster_bootstrap_95ci": [
+                  0.8668122270742358,
+                  0.9234135667396062
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": {
+                  "selection_rule": "lexicographically_first_image_id_within_group",
+                  "n_groups": 390,
+                  "covered_groups": 344,
+                  "coverage": 0.882051282051282,
+                  "group_level_exact_95ci": [
+                    0.8458208751241999,
+                    0.9123395185605848
+                  ]
+                }
+              },
+              "average_set_size": {
+                "n_images": 453,
+                "n_groups": 390,
+                "estimate": 2.507726269315673,
+                "cluster_bootstrap_95ci": [
+                  2.4101967606099506,
+                  2.600423179187016
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": null
+              }
+            },
+            "2": {
+              "coverage": {
+                "n_images": 564,
+                "n_groups": 474,
+                "estimate": 0.8882978723404256,
+                "cluster_bootstrap_95ci": [
+                  0.8604640890788068,
+                  0.9143910172116537
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": {
+                  "selection_rule": "lexicographically_first_image_id_within_group",
+                  "n_groups": 474,
+                  "covered_groups": 412,
+                  "coverage": 0.869198312236287,
+                  "group_level_exact_95ci": [
+                    0.8354742162681877,
+                    0.8982246183706326
+                  ]
+                }
+              },
+              "average_set_size": {
+                "n_images": 564,
+                "n_groups": 474,
+                "estimate": 2.3634751773049647,
+                "cluster_bootstrap_95ci": [
+                  2.27194415279313,
+                  2.451499118165785
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": null
+              }
+            }
+          }
+        },
+        "quality_raps": {
+          "coverage": {
+            "n_images": 1480,
+            "n_groups": 1094,
+            "estimate": 0.8831081081081081,
+            "cluster_bootstrap_95ci": [
+              0.8656207366984994,
+              0.9002025192863924
+            ],
+            "bootstrap_replicates": 10000,
+            "one_image_per_group_sensitivity": {
+              "selection_rule": "lexicographically_first_image_id_within_group",
+              "n_groups": 1094,
+              "covered_groups": 937,
+              "coverage": 0.856489945155393,
+              "group_level_exact_95ci": [
+                0.8343003053858697,
+                0.8767415146343862
+              ]
+            }
+          },
+          "average_set_size": {
+            "n_images": 1480,
+            "n_groups": 1094,
+            "estimate": 2.4567567567567568,
+            "cluster_bootstrap_95ci": [
+              2.3986618683901293,
+              2.513812245565571
+            ],
+            "bootstrap_replicates": 10000,
+            "one_image_per_group_sensitivity": null
+          },
+          "by_quality": {
+            "0": {
+              "coverage": {
+                "n_images": 463,
+                "n_groups": 365,
+                "estimate": 0.8488120950323974,
+                "cluster_bootstrap_95ci": [
+                  0.8105715279387897,
+                  0.8841201716738197
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": {
+                  "selection_rule": "lexicographically_first_image_id_within_group",
+                  "n_groups": 365,
+                  "covered_groups": 302,
+                  "coverage": 0.8273972602739726,
+                  "group_level_exact_95ci": [
+                    0.7846419085026793,
+                    0.8647437632257977
+                  ]
+                }
+              },
+              "average_set_size": {
+                "n_images": 463,
+                "n_groups": 365,
+                "estimate": 2.4319654427645787,
+                "cluster_bootstrap_95ci": [
+                  2.319738057473409,
+                  2.5384743875278395
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": null
+              }
+            },
+            "1": {
+              "coverage": {
+                "n_images": 453,
+                "n_groups": 390,
+                "estimate": 0.8984547461368654,
+                "cluster_bootstrap_95ci": [
+                  0.869098712446352,
+                  0.9252136752136753
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": {
+                  "selection_rule": "lexicographically_first_image_id_within_group",
+                  "n_groups": 390,
+                  "covered_groups": 345,
+                  "coverage": 0.8846153846153846,
+                  "group_level_exact_95ci": [
+                    0.8486648938771122,
+                    0.9145810918255658
+                  ]
+                }
+              },
+              "average_set_size": {
+                "n_images": 453,
+                "n_groups": 390,
+                "estimate": 2.5275938189845473,
+                "cluster_bootstrap_95ci": [
+                  2.4343868727892044,
+                  2.6170678336980306
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": null
+              }
+            },
+            "2": {
+              "coverage": {
+                "n_images": 564,
+                "n_groups": 474,
+                "estimate": 0.898936170212766,
+                "cluster_bootstrap_95ci": [
+                  0.8725305190112266,
+                  0.92375926748272
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": {
+                  "selection_rule": "lexicographically_first_image_id_within_group",
+                  "n_groups": 474,
+                  "covered_groups": 418,
+                  "coverage": 0.8818565400843882,
+                  "group_level_exact_95ci": [
+                    0.8493350826811773,
+                    0.9095100384308558
+                  ]
+                }
+              },
+              "average_set_size": {
+                "n_images": 564,
+                "n_groups": 474,
+                "estimate": 2.4202127659574466,
+                "cluster_bootstrap_95ci": [
+                  2.3327063035471736,
+                  2.5044567265839497
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": null
+              }
+            }
+          }
+        },
+        "class_conditional_lac": {
+          "coverage": {
+            "n_images": 1480,
+            "n_groups": 1094,
+            "estimate": 0.9033783783783784,
+            "cluster_bootstrap_95ci": [
+              0.8857331208345407,
+              0.9203855315631608
+            ],
+            "bootstrap_replicates": 10000,
+            "one_image_per_group_sensitivity": {
+              "selection_rule": "lexicographically_first_image_id_within_group",
+              "n_groups": 1094,
+              "covered_groups": 1012,
+              "coverage": 0.9250457038391224,
+              "group_level_exact_95ci": [
+                0.9078137888717656,
+                0.9399458281793521
+              ]
+            }
+          },
+          "average_set_size": {
+            "n_images": 1480,
+            "n_groups": 1094,
+            "estimate": 1.5148648648648648,
+            "cluster_bootstrap_95ci": [
+              1.4723755975339161,
+              1.5582833462265595
+            ],
+            "bootstrap_replicates": 10000,
+            "one_image_per_group_sensitivity": null
+          },
+          "by_quality": {
+            "0": {
+              "coverage": {
+                "n_images": 463,
+                "n_groups": 365,
+                "estimate": 0.8898488120950324,
+                "cluster_bootstrap_95ci": [
+                  0.8550098533307489,
+                  0.9221052631578948
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": {
+                  "selection_rule": "lexicographically_first_image_id_within_group",
+                  "n_groups": 365,
+                  "covered_groups": 326,
+                  "coverage": 0.8931506849315068,
+                  "group_level_exact_95ci": [
+                    0.8568357130531109,
+                    0.9229090746010485
+                  ]
+                }
+              },
+              "average_set_size": {
+                "n_images": 463,
+                "n_groups": 365,
+                "estimate": 1.6285097192224622,
+                "cluster_bootstrap_95ci": [
+                  1.543859649122807,
+                  1.713973916514063
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": null
+              }
+            },
+            "1": {
+              "coverage": {
+                "n_images": 453,
+                "n_groups": 390,
+                "estimate": 0.8940397350993378,
+                "cluster_bootstrap_95ci": [
+                  0.8630427337701013,
+                  0.9232456140350878
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": {
+                  "selection_rule": "lexicographically_first_image_id_within_group",
+                  "n_groups": 390,
+                  "covered_groups": 355,
+                  "coverage": 0.9102564102564102,
+                  "group_level_exact_95ci": [
+                    0.8773992962869483,
+                    0.9366937464388441
+                  ]
+                }
+              },
+              "average_set_size": {
+                "n_images": 453,
+                "n_groups": 390,
+                "estimate": 1.4966887417218544,
+                "cluster_bootstrap_95ci": [
+                  1.4301552106430155,
+                  1.566881113512284
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": null
+              }
+            },
+            "2": {
+              "coverage": {
+                "n_images": 564,
+                "n_groups": 474,
+                "estimate": 0.9219858156028369,
+                "cluster_bootstrap_95ci": [
+                  0.8976650015261964,
+                  0.9442510182220548
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": {
+                  "selection_rule": "lexicographically_first_image_id_within_group",
+                  "n_groups": 474,
+                  "covered_groups": 442,
+                  "coverage": 0.9324894514767933,
+                  "group_level_exact_95ci": [
+                    0.9060290979759777,
+                    0.9533679673091283
+                  ]
+                }
+              },
+              "average_set_size": {
+                "n_images": 564,
+                "n_groups": 474,
+                "estimate": 1.4361702127659575,
+                "cluster_bootstrap_95ci": [
+                  1.374777975133215,
+                  1.499130733089716
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": null
+              }
+            }
+          }
+        },
+        "confidence_mondrian_control": {
+          "coverage": {
+            "n_images": 1480,
+            "n_groups": 1094,
+            "estimate": 0.8871621621621621,
+            "cluster_bootstrap_95ci": [
+              0.867961839134791,
+              0.9054872487721065
+            ],
+            "bootstrap_replicates": 10000,
+            "one_image_per_group_sensitivity": {
+              "selection_rule": "lexicographically_first_image_id_within_group",
+              "n_groups": 1094,
+              "covered_groups": 987,
+              "coverage": 0.9021937842778793,
+              "group_level_exact_95ci": [
+                0.8830372107723378,
+                0.9191529764682518
+              ]
+            }
+          },
+          "average_set_size": {
+            "n_images": 1480,
+            "n_groups": 1094,
+            "estimate": 1.322972972972973,
+            "cluster_bootstrap_95ci": [
+              1.287395919043319,
+              1.359760775936419
+            ],
+            "bootstrap_replicates": 10000,
+            "one_image_per_group_sensitivity": null
+          },
+          "by_quality": {
+            "0": {
+              "coverage": {
+                "n_images": 463,
+                "n_groups": 365,
+                "estimate": 0.8768898488120951,
+                "cluster_bootstrap_95ci": [
+                  0.8398243968221395,
+                  0.9117662871600253
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": {
+                  "selection_rule": "lexicographically_first_image_id_within_group",
+                  "n_groups": 365,
+                  "covered_groups": 323,
+                  "coverage": 0.8849315068493151,
+                  "group_level_exact_95ci": [
+                    0.8476555833601293,
+                    0.9157983749102613
+                  ]
+                }
+              },
+              "average_set_size": {
+                "n_images": 463,
+                "n_groups": 365,
+                "estimate": 1.349892008639309,
+                "cluster_bootstrap_95ci": [
+                  1.2841362103660197,
+                  1.4154210088032357
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": null
+              }
+            },
+            "1": {
+              "coverage": {
+                "n_images": 453,
+                "n_groups": 390,
+                "estimate": 0.869757174392936,
+                "cluster_bootstrap_95ci": [
+                  0.8351409978308026,
+                  0.9028697571743929
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": {
+                  "selection_rule": "lexicographically_first_image_id_within_group",
+                  "n_groups": 390,
+                  "covered_groups": 343,
+                  "coverage": 0.8794871794871795,
+                  "group_level_exact_95ci": [
+                    0.8429815899721381,
+                    0.9100930843492444
+                  ]
+                }
+              },
+              "average_set_size": {
+                "n_images": 453,
+                "n_groups": 390,
+                "estimate": 1.3134657836644592,
+                "cluster_bootstrap_95ci": [
+                  1.256179775280899,
+                  1.3741797840050822
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": null
+              }
+            },
+            "2": {
+              "coverage": {
+                "n_images": 564,
+                "n_groups": 474,
+                "estimate": 0.9095744680851063,
+                "cluster_bootstrap_95ci": [
+                  0.8835108798314443,
+                  0.9339134316770187
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": {
+                  "selection_rule": "lexicographically_first_image_id_within_group",
+                  "n_groups": 474,
+                  "covered_groups": 433,
+                  "coverage": 0.9135021097046413,
+                  "group_level_exact_95ci": [
+                    0.8844854703216267,
+                    0.9372133633883508
+                  ]
+                }
+              },
+              "average_set_size": {
+                "n_images": 564,
+                "n_groups": 474,
+                "estimate": 1.3085106382978724,
+                "cluster_bootstrap_95ci": [
+                  1.2527472527472527,
+                  1.3633217993079585
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": null
+              }
+            }
+          }
+        }
+      }
+    },
+    "external": {
+      "group_unit": "PAD_UFES_20_patient",
+      "n_images": 2106,
+      "n_groups": 1297,
+      "methods": {
+        "pooled_lac": {
+          "coverage": {
+            "n_images": 2106,
+            "n_groups": 1297,
+            "estimate": 0.36562203228869894,
+            "cluster_bootstrap_95ci": [
+              0.3424265877240982,
+              0.38880923237451215
+            ],
+            "bootstrap_replicates": 10000,
+            "one_image_per_group_sensitivity": {
+              "selection_rule": "lexicographically_first_image_id_within_group",
+              "n_groups": 1297,
+              "covered_groups": 491,
+              "coverage": 0.37856592135697764,
+              "group_level_exact_95ci": [
+                0.35208445217582385,
+                0.40559916529539397
+              ]
+            }
+          },
+          "average_set_size": {
+            "n_images": 2106,
+            "n_groups": 1297,
+            "estimate": 1.6861348528015194,
+            "cluster_bootstrap_95ci": [
+              1.6525661396597342,
+              1.719382268364583
+            ],
+            "bootstrap_replicates": 10000,
+            "one_image_per_group_sensitivity": null
+          },
+          "by_quality": {
+            "0": {
+              "coverage": {
+                "n_images": 1367,
+                "n_groups": 976,
+                "estimate": 0.38697878566203364,
+                "cluster_bootstrap_95ci": [
+                  0.359373308982684,
+                  0.4157636964934003
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": {
+                  "selection_rule": "lexicographically_first_image_id_within_group",
+                  "n_groups": 976,
+                  "covered_groups": 378,
+                  "coverage": 0.38729508196721313,
+                  "group_level_exact_95ci": [
+                    0.35660101075013356,
+                    0.418671321693274
+                  ]
+                }
+              },
+              "average_set_size": {
+                "n_images": 1367,
+                "n_groups": 976,
+                "estimate": 1.6605705925384053,
+                "cluster_bootstrap_95ci": [
+                  1.6183899515232918,
+                  1.7022226368159206
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": null
+              }
+            },
+            "1": {
+              "coverage": {
+                "n_images": 362,
+                "n_groups": 314,
+                "estimate": 0.32044198895027626,
+                "cluster_bootstrap_95ci": [
+                  0.27170868347338933,
+                  0.36932133838383835
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": {
+                  "selection_rule": "lexicographically_first_image_id_within_group",
+                  "n_groups": 314,
+                  "covered_groups": 103,
+                  "coverage": 0.32802547770700635,
+                  "group_level_exact_95ci": [
+                    0.2763445977089891,
+                    0.38298816882371806
+                  ]
+                }
+              },
+              "average_set_size": {
+                "n_images": 362,
+                "n_groups": 314,
+                "estimate": 1.7596685082872927,
+                "cluster_bootstrap_95ci": [
+                  1.6845033047446691,
+                  1.8342696629213484
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": null
+              }
+            },
+            "2": {
+              "coverage": {
+                "n_images": 377,
+                "n_groups": 309,
+                "estimate": 0.33156498673740054,
+                "cluster_bootstrap_95ci": [
+                  0.2846153846153846,
+                  0.3800577689802336
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": {
+                  "selection_rule": "lexicographically_first_image_id_within_group",
+                  "n_groups": 309,
+                  "covered_groups": 108,
+                  "coverage": 0.34951456310679613,
+                  "group_level_exact_95ci": [
+                    0.2964024703671704,
+                    0.40554382690671903
+                  ]
+                }
+              },
+              "average_set_size": {
+                "n_images": 377,
+                "n_groups": 309,
+                "estimate": 1.7082228116710876,
+                "cluster_bootstrap_95ci": [
+                  1.6370967741935485,
+                  1.7824990973099837
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": null
+              }
+            }
+          }
+        },
+        "quality_lac": {
+          "coverage": {
+            "n_images": 2106,
+            "n_groups": 1297,
+            "estimate": 0.3898385565052232,
+            "cluster_bootstrap_95ci": [
+              0.3673752310536044,
+              0.41250134762817436
+            ],
+            "bootstrap_replicates": 10000,
+            "one_image_per_group_sensitivity": {
+              "selection_rule": "lexicographically_first_image_id_within_group",
+              "n_groups": 1297,
+              "covered_groups": 523,
+              "coverage": 0.40323824209714726,
+              "group_level_exact_95ci": [
+                0.37640094900580445,
+                0.43051511093534467
+              ]
+            }
+          },
+          "average_set_size": {
+            "n_images": 2106,
+            "n_groups": 1297,
+            "estimate": 1.7853751187084521,
+            "cluster_bootstrap_95ci": [
+              1.7488359097791941,
+              1.8233369875289884
+            ],
+            "bootstrap_replicates": 10000,
+            "one_image_per_group_sensitivity": null
+          },
+          "by_quality": {
+            "0": {
+              "coverage": {
+                "n_images": 1367,
+                "n_groups": 976,
+                "estimate": 0.4381858083394294,
+                "cluster_bootstrap_95ci": [
+                  0.40984763951045217,
+                  0.4664207974209706
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": {
+                  "selection_rule": "lexicographically_first_image_id_within_group",
+                  "n_groups": 976,
+                  "covered_groups": 426,
+                  "coverage": 0.4364754098360656,
+                  "group_level_exact_95ci": [
+                    0.4050807600989326,
+                    0.4682544088254367
+                  ]
+                }
+              },
+              "average_set_size": {
+                "n_images": 1367,
+                "n_groups": 976,
+                "estimate": 1.8997805413313826,
+                "cluster_bootstrap_95ci": [
+                  1.8493335378833955,
+                  1.9505176984020411
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": null
+              }
+            },
+            "1": {
+              "coverage": {
+                "n_images": 362,
+                "n_groups": 314,
+                "estimate": 0.31215469613259667,
+                "cluster_bootstrap_95ci": [
+                  0.26439715351748205,
+                  0.36141304347826086
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": {
+                  "selection_rule": "lexicographically_first_image_id_within_group",
+                  "n_groups": 314,
+                  "covered_groups": 100,
+                  "coverage": 0.3184713375796178,
+                  "group_level_exact_95ci": [
+                    0.26727820741222236,
+                    0.3731296083972718
+                  ]
+                }
+              },
+              "average_set_size": {
+                "n_images": 362,
+                "n_groups": 314,
+                "estimate": 1.723756906077348,
+                "cluster_bootstrap_95ci": [
+                  1.6510956667985752,
+                  1.7961445607258353
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": null
+              }
+            },
+            "2": {
+              "coverage": {
+                "n_images": 377,
+                "n_groups": 309,
+                "estimate": 0.2891246684350133,
+                "cluster_bootstrap_95ci": [
+                  0.24331370140193673,
+                  0.33518044228477695
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": {
+                  "selection_rule": "lexicographically_first_image_id_within_group",
+                  "n_groups": 309,
+                  "covered_groups": 95,
+                  "coverage": 0.3074433656957929,
+                  "group_level_exact_95ci": [
+                    0.2564421019971775,
+                    0.3621819846244006
+                  ]
+                }
+              },
+              "average_set_size": {
+                "n_images": 377,
+                "n_groups": 309,
+                "estimate": 1.429708222811671,
+                "cluster_bootstrap_95ci": [
+                  1.3731333813167663,
+                  1.4868455317982456
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": null
+              }
+            }
+          }
+        },
+        "pooled_aps": {
+          "coverage": {
+            "n_images": 2106,
+            "n_groups": 1297,
+            "estimate": 0.7701804368471035,
+            "cluster_bootstrap_95ci": [
+              0.7512216593518806,
+              0.7882531344355898
+            ],
+            "bootstrap_replicates": 10000,
+            "one_image_per_group_sensitivity": {
+              "selection_rule": "lexicographically_first_image_id_within_group",
+              "n_groups": 1297,
+              "covered_groups": 999,
+              "coverage": 0.7702390131071704,
+              "group_level_exact_95ci": [
+                0.7463609049284938,
+                0.7928857002218375
+              ]
+            }
+          },
+          "average_set_size": {
+            "n_images": 2106,
+            "n_groups": 1297,
+            "estimate": 3.8561253561253563,
+            "cluster_bootstrap_95ci": [
+              3.8308963278293775,
+              3.879368721067301
+            ],
+            "bootstrap_replicates": 10000,
+            "one_image_per_group_sensitivity": null
+          },
+          "by_quality": {
+            "0": {
+              "coverage": {
+                "n_images": 1367,
+                "n_groups": 976,
+                "estimate": 0.783467446964155,
+                "cluster_bootstrap_95ci": [
+                  0.7609502598366741,
+                  0.8058608058608059
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": {
+                  "selection_rule": "lexicographically_first_image_id_within_group",
+                  "n_groups": 976,
+                  "covered_groups": 760,
+                  "coverage": 0.7786885245901639,
+                  "group_level_exact_95ci": [
+                    0.7513117529621168,
+                    0.8043722555353008
+                  ]
+                }
+              },
+              "average_set_size": {
+                "n_images": 1367,
+                "n_groups": 976,
+                "estimate": 3.8500365764447695,
+                "cluster_bootstrap_95ci": [
+                  3.817653742783989,
+                  3.8805315374253135
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": null
+              }
+            },
+            "1": {
+              "coverage": {
+                "n_images": 362,
+                "n_groups": 314,
+                "estimate": 0.7403314917127072,
+                "cluster_bootstrap_95ci": [
+                  0.6931818181818182,
+                  0.7851239669421488
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": {
+                  "selection_rule": "lexicographically_first_image_id_within_group",
+                  "n_groups": 314,
+                  "covered_groups": 237,
+                  "coverage": 0.7547770700636943,
+                  "group_level_exact_95ci": [
+                    0.7033234635584626,
+                    0.8013521263253275
+                  ]
+                }
+              },
+              "average_set_size": {
+                "n_images": 362,
+                "n_groups": 314,
+                "estimate": 3.903314917127072,
+                "cluster_bootstrap_95ci": [
+                  3.8575342465753426,
+                  3.942364244006216
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": null
+              }
+            },
+            "2": {
+              "coverage": {
+                "n_images": 377,
+                "n_groups": 309,
+                "estimate": 0.7506631299734748,
+                "cluster_bootstrap_95ci": [
+                  0.7052315109133291,
+                  0.7956989247311828
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": {
+                  "selection_rule": "lexicographically_first_image_id_within_group",
+                  "n_groups": 309,
+                  "covered_groups": 230,
+                  "coverage": 0.7443365695792881,
+                  "group_level_exact_95ci": [
+                    0.6918759957344816,
+                    0.7920442861982513
+                  ]
+                }
+              },
+              "average_set_size": {
+                "n_images": 377,
+                "n_groups": 309,
+                "estimate": 3.8328912466843503,
+                "cluster_bootstrap_95ci": [
+                  3.779004780271329,
+                  3.88265306122449
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": null
+              }
+            }
+          }
+        },
+        "quality_aps": {
+          "coverage": {
+            "n_images": 2106,
+            "n_groups": 1297,
+            "estimate": 0.7635327635327636,
+            "cluster_bootstrap_95ci": [
+              0.7451264560679132,
+              0.7822618488972314
+            ],
+            "bootstrap_replicates": 10000,
+            "one_image_per_group_sensitivity": {
+              "selection_rule": "lexicographically_first_image_id_within_group",
+              "n_groups": 1297,
+              "covered_groups": 993,
+              "coverage": 0.7656129529683886,
+              "group_level_exact_95ci": [
+                0.7415860286868762,
+                0.7884297157688489
+              ]
+            }
+          },
+          "average_set_size": {
+            "n_images": 2106,
+            "n_groups": 1297,
+            "estimate": 3.799145299145299,
+            "cluster_bootstrap_95ci": [
+              3.7695548897013675,
+              3.8273615635179152
+            ],
+            "bootstrap_replicates": 10000,
+            "one_image_per_group_sensitivity": null
+          },
+          "by_quality": {
+            "0": {
+              "coverage": {
+                "n_images": 1367,
+                "n_groups": 976,
+                "estimate": 0.7710314557425019,
+                "cluster_bootstrap_95ci": [
+                  0.7482064706914525,
+                  0.7939661515820456
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": {
+                  "selection_rule": "lexicographically_first_image_id_within_group",
+                  "n_groups": 976,
+                  "covered_groups": 750,
+                  "coverage": 0.7684426229508197,
+                  "group_level_exact_95ci": [
+                    0.7406782866267376,
+                    0.7945768055984739
+                  ]
+                }
+              },
+              "average_set_size": {
+                "n_images": 1367,
+                "n_groups": 976,
+                "estimate": 3.7527432333577178,
+                "cluster_bootstrap_95ci": [
+                  3.713048947752375,
+                  3.791066577033093
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": null
+              }
+            },
+            "1": {
+              "coverage": {
+                "n_images": 362,
+                "n_groups": 314,
+                "estimate": 0.7403314917127072,
+                "cluster_bootstrap_95ci": [
+                  0.6931818181818182,
+                  0.7861111111111111
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": {
+                  "selection_rule": "lexicographically_first_image_id_within_group",
+                  "n_groups": 314,
+                  "covered_groups": 237,
+                  "coverage": 0.7547770700636943,
+                  "group_level_exact_95ci": [
+                    0.7033234635584626,
+                    0.8013521263253275
+                  ]
+                }
+              },
+              "average_set_size": {
+                "n_images": 362,
+                "n_groups": 314,
+                "estimate": 3.9005524861878453,
+                "cluster_bootstrap_95ci": [
+                  3.8541099720410066,
+                  3.940845794561715
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": null
+              }
+            },
+            "2": {
+              "coverage": {
+                "n_images": 377,
+                "n_groups": 309,
+                "estimate": 0.7586206896551724,
+                "cluster_bootstrap_95ci": [
+                  0.7139238875114186,
+                  0.8015468964496245
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": {
+                  "selection_rule": "lexicographically_first_image_id_within_group",
+                  "n_groups": 309,
+                  "covered_groups": 232,
+                  "coverage": 0.7508090614886731,
+                  "group_level_exact_95ci": [
+                    0.6986924035598618,
+                    0.7980452787096814
+                  ]
+                }
+              },
+              "average_set_size": {
+                "n_images": 377,
+                "n_groups": 309,
+                "estimate": 3.870026525198939,
+                "cluster_bootstrap_95ci": [
+                  3.821805933531255,
+                  3.9122340425531914
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": null
+              }
+            }
+          }
+        },
+        "pooled_raps": {
+          "coverage": {
+            "n_images": 2106,
+            "n_groups": 1297,
+            "estimate": 0.6680911680911681,
+            "cluster_bootstrap_95ci": [
+              0.6465219398331215,
+              0.6894868831198881
+            ],
+            "bootstrap_replicates": 10000,
+            "one_image_per_group_sensitivity": {
+              "selection_rule": "lexicographically_first_image_id_within_group",
+              "n_groups": 1297,
+              "covered_groups": 877,
+              "coverage": 0.6761757902852737,
+              "group_level_exact_95ci": [
+                0.6499464561485271,
+                0.7016040670081571
+              ]
+            }
+          },
+          "average_set_size": {
+            "n_images": 2106,
+            "n_groups": 1297,
+            "estimate": 3.314339981006648,
+            "cluster_bootstrap_95ci": [
+              3.287835110527799,
+              3.341568284410968
+            ],
+            "bootstrap_replicates": 10000,
+            "one_image_per_group_sensitivity": null
+          },
+          "by_quality": {
+            "0": {
+              "coverage": {
+                "n_images": 1367,
+                "n_groups": 976,
+                "estimate": 0.6934893928310168,
+                "cluster_bootstrap_95ci": [
+                  0.6673736897274634,
+                  0.7195657011998451
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": {
+                  "selection_rule": "lexicographically_first_image_id_within_group",
+                  "n_groups": 976,
+                  "covered_groups": 674,
+                  "coverage": 0.6905737704918032,
+                  "group_level_exact_95ci": [
+                    0.6605176682570836,
+                    0.7194750654832449
+                  ]
+                }
+              },
+              "average_set_size": {
+                "n_images": 1367,
+                "n_groups": 976,
+                "estimate": 3.3050475493782003,
+                "cluster_bootstrap_95ci": [
+                  3.2720463411319805,
+                  3.3387215282880236
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": null
+              }
+            },
+            "1": {
+              "coverage": {
+                "n_images": 362,
+                "n_groups": 314,
+                "estimate": 0.6104972375690608,
+                "cluster_bootstrap_95ci": [
+                  0.5589041095890411,
+                  0.6611111111111111
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": {
+                  "selection_rule": "lexicographically_first_image_id_within_group",
+                  "n_groups": 314,
+                  "covered_groups": 198,
+                  "coverage": 0.6305732484076433,
+                  "group_level_exact_95ci": [
+                    0.574563649525055,
+                    0.6840936505851214
+                  ]
+                }
+              },
+              "average_set_size": {
+                "n_images": 362,
+                "n_groups": 314,
+                "estimate": 3.3591160220994474,
+                "cluster_bootstrap_95ci": [
+                  3.2986291722940386,
+                  3.4162217697149204
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": null
+              }
+            },
+            "2": {
+              "coverage": {
+                "n_images": 377,
+                "n_groups": 309,
+                "estimate": 0.6312997347480106,
+                "cluster_bootstrap_95ci": [
+                  0.577235257795616,
+                  0.6836495543801173
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": {
+                  "selection_rule": "lexicographically_first_image_id_within_group",
+                  "n_groups": 309,
+                  "covered_groups": 196,
+                  "coverage": 0.6343042071197411,
+                  "group_level_exact_95ci": [
+                    0.5779006004668215,
+                    0.688105285345086
+                  ]
+                }
+              },
+              "average_set_size": {
+                "n_images": 377,
+                "n_groups": 309,
+                "estimate": 3.3050397877984086,
+                "cluster_bootstrap_95ci": [
+                  3.2459893048128343,
+                  3.36316985645933
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": null
+              }
+            }
+          }
+        },
+        "quality_raps": {
+          "coverage": {
+            "n_images": 2106,
+            "n_groups": 1297,
+            "estimate": 0.6657169990503324,
+            "cluster_bootstrap_95ci": [
+              0.6438928417636888,
+              0.6870820733499471
+            ],
+            "bootstrap_replicates": 10000,
+            "one_image_per_group_sensitivity": {
+              "selection_rule": "lexicographically_first_image_id_within_group",
+              "n_groups": 1297,
+              "covered_groups": 872,
+              "coverage": 0.6723207401696222,
+              "group_level_exact_95ci": [
+                0.6460223436149051,
+                0.6978356541824573
+              ]
+            }
+          },
+          "average_set_size": {
+            "n_images": 2106,
+            "n_groups": 1297,
+            "estimate": 3.292022792022792,
+            "cluster_bootstrap_95ci": [
+              3.2627833048057573,
+              3.320320408378611
+            ],
+            "bootstrap_replicates": 10000,
+            "one_image_per_group_sensitivity": null
+          },
+          "by_quality": {
+            "0": {
+              "coverage": {
+                "n_images": 1367,
+                "n_groups": 976,
+                "estimate": 0.6891002194586686,
+                "cluster_bootstrap_95ci": [
+                  0.6635093352568772,
+                  0.7141844155844155
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": {
+                  "selection_rule": "lexicographically_first_image_id_within_group",
+                  "n_groups": 976,
+                  "covered_groups": 669,
+                  "coverage": 0.6854508196721312,
+                  "group_level_exact_95ci": [
+                    0.6552802163872058,
+                    0.7144977716787662
+                  ]
+                }
+              },
+              "average_set_size": {
+                "n_images": 1367,
+                "n_groups": 976,
+                "estimate": 3.2670080468178493,
+                "cluster_bootstrap_95ci": [
+                  3.2282123273848375,
+                  3.305255961660695
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": null
+              }
+            },
+            "1": {
+              "coverage": {
+                "n_images": 362,
+                "n_groups": 314,
+                "estimate": 0.6104972375690608,
+                "cluster_bootstrap_95ci": [
+                  0.5577451245937162,
+                  0.6622123465914003
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": {
+                  "selection_rule": "lexicographically_first_image_id_within_group",
+                  "n_groups": 314,
+                  "covered_groups": 198,
+                  "coverage": 0.6305732484076433,
+                  "group_level_exact_95ci": [
+                    0.574563649525055,
+                    0.6840936505851214
+                  ]
+                }
+              },
+              "average_set_size": {
+                "n_images": 362,
+                "n_groups": 314,
+                "estimate": 3.361878453038674,
+                "cluster_bootstrap_95ci": [
+                  3.3027027027027027,
+                  3.41873743578289
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": null
+              }
+            },
+            "2": {
+              "coverage": {
+                "n_images": 377,
+                "n_groups": 309,
+                "estimate": 0.6339522546419099,
+                "cluster_bootstrap_95ci": [
+                  0.581452176954013,
+                  0.6860158311345647
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": {
+                  "selection_rule": "lexicographically_first_image_id_within_group",
+                  "n_groups": 309,
+                  "covered_groups": 196,
+                  "coverage": 0.6343042071197411,
+                  "group_level_exact_95ci": [
+                    0.5779006004668215,
+                    0.688105285345086
+                  ]
+                }
+              },
+              "average_set_size": {
+                "n_images": 377,
+                "n_groups": 309,
+                "estimate": 3.315649867374005,
+                "cluster_bootstrap_95ci": [
+                  3.258485639686684,
+                  3.372031662269129
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": null
+              }
+            }
+          }
+        },
+        "class_conditional_lac": {
+          "coverage": {
+            "n_images": 2106,
+            "n_groups": 1297,
+            "estimate": 0.5213675213675214,
+            "cluster_bootstrap_95ci": [
+              0.4978742498973335,
+              0.5448663225634779
+            ],
+            "bootstrap_replicates": 10000,
+            "one_image_per_group_sensitivity": {
+              "selection_rule": "lexicographically_first_image_id_within_group",
+              "n_groups": 1297,
+              "covered_groups": 681,
+              "coverage": 0.5250578257517348,
+              "group_level_exact_95ci": [
+                0.4974645608526874,
+                0.5525372934654882
+              ]
+            }
+          },
+          "average_set_size": {
+            "n_images": 2106,
+            "n_groups": 1297,
+            "estimate": 2.335232668566002,
+            "cluster_bootstrap_95ci": [
+              2.2903692211762667,
+              2.3810886763732175
+            ],
+            "bootstrap_replicates": 10000,
+            "one_image_per_group_sensitivity": null
+          },
+          "by_quality": {
+            "0": {
+              "coverage": {
+                "n_images": 1367,
+                "n_groups": 976,
+                "estimate": 0.5471836137527433,
+                "cluster_bootstrap_95ci": [
+                  0.5189582014361238,
+                  0.5753427069264904
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": {
+                  "selection_rule": "lexicographically_first_image_id_within_group",
+                  "n_groups": 976,
+                  "covered_groups": 530,
+                  "coverage": 0.5430327868852459,
+                  "group_level_exact_95ci": [
+                    0.5111783430172593,
+                    0.5746268891882025
+                  ]
+                }
+              },
+              "average_set_size": {
+                "n_images": 1367,
+                "n_groups": 976,
+                "estimate": 2.337966349670812,
+                "cluster_bootstrap_95ci": [
+                  2.2831591285855426,
+                  2.39433707876287
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": null
+              }
+            },
+            "1": {
+              "coverage": {
+                "n_images": 362,
+                "n_groups": 314,
+                "estimate": 0.4585635359116022,
+                "cluster_bootstrap_95ci": [
+                  0.405992536110867,
+                  0.5113636363636364
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": {
+                  "selection_rule": "lexicographically_first_image_id_within_group",
+                  "n_groups": 314,
+                  "covered_groups": 146,
+                  "coverage": 0.46496815286624205,
+                  "group_level_exact_95ci": [
+                    0.4087678131204003,
+                    0.5218355359322943
+                  ]
+                }
+              },
+              "average_set_size": {
+                "n_images": 362,
+                "n_groups": 314,
+                "estimate": 2.3535911602209945,
+                "cluster_bootstrap_95ci": [
+                  2.2464965929065035,
+                  2.4594594594594597
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": null
+              }
+            },
+            "2": {
+              "coverage": {
+                "n_images": 377,
+                "n_groups": 309,
+                "estimate": 0.4880636604774536,
+                "cluster_bootstrap_95ci": [
+                  0.4360313315926893,
+                  0.5409003112103375
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": {
+                  "selection_rule": "lexicographically_first_image_id_within_group",
+                  "n_groups": 309,
+                  "covered_groups": 155,
+                  "coverage": 0.5016181229773463,
+                  "group_level_exact_95ci": [
+                    0.4444683057402912,
+                    0.5587366270116465
+                  ]
+                }
+              },
+              "average_set_size": {
+                "n_images": 377,
+                "n_groups": 309,
+                "estimate": 2.3076923076923075,
+                "cluster_bootstrap_95ci": [
+                  2.2043582080806305,
+                  2.407008086253369
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": null
+              }
+            }
+          }
+        },
+        "confidence_mondrian_control": {
+          "coverage": {
+            "n_images": 2106,
+            "n_groups": 1297,
+            "estimate": 0.4131054131054131,
+            "cluster_bootstrap_95ci": [
+              0.3899277747090024,
+              0.43670068047770444
+            ],
+            "bootstrap_replicates": 10000,
+            "one_image_per_group_sensitivity": {
+              "selection_rule": "lexicographically_first_image_id_within_group",
+              "n_groups": 1297,
+              "covered_groups": 550,
+              "coverage": 0.42405551272166536,
+              "group_level_exact_95ci": [
+                0.39697260361513703,
+                0.4514833803974903
+              ]
+            }
+          },
+          "average_set_size": {
+            "n_images": 2106,
+            "n_groups": 1297,
+            "estimate": 1.9226020892687559,
+            "cluster_bootstrap_95ci": [
+              1.88041260448991,
+              1.9635537146231372
+            ],
+            "bootstrap_replicates": 10000,
+            "one_image_per_group_sensitivity": null
+          },
+          "by_quality": {
+            "0": {
+              "coverage": {
+                "n_images": 1367,
+                "n_groups": 976,
+                "estimate": 0.43452816386247256,
+                "cluster_bootstrap_95ci": [
+                  0.4057968326667527,
+                  0.4625555606847978
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": {
+                  "selection_rule": "lexicographically_first_image_id_within_group",
+                  "n_groups": 976,
+                  "covered_groups": 425,
+                  "coverage": 0.4354508196721312,
+                  "group_level_exact_95ci": [
+                    0.40406755012739276,
+                    0.46722463983442425
+                  ]
+                }
+              },
+              "average_set_size": {
+                "n_images": 1367,
+                "n_groups": 976,
+                "estimate": 1.8880760790051208,
+                "cluster_bootstrap_95ci": [
+                  1.8378368323680825,
+                  1.938628488474815
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": null
+              }
+            },
+            "1": {
+              "coverage": {
+                "n_images": 362,
+                "n_groups": 314,
+                "estimate": 0.35911602209944754,
+                "cluster_bootstrap_95ci": [
+                  0.3087431693989071,
+                  0.4085721966205837
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": {
+                  "selection_rule": "lexicographically_first_image_id_within_group",
+                  "n_groups": 314,
+                  "covered_groups": 116,
+                  "coverage": 0.36942675159235666,
+                  "group_level_exact_95ci": [
+                    0.3159063494148786,
+                    0.42543635047494505
+                  ]
+                }
+              },
+              "average_set_size": {
+                "n_images": 362,
+                "n_groups": 314,
+                "estimate": 1.9751381215469612,
+                "cluster_bootstrap_95ci": [
+                  1.882509643201543,
+                  2.069252077562327
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": null
+              }
+            },
+            "2": {
+              "coverage": {
+                "n_images": 377,
+                "n_groups": 309,
+                "estimate": 0.38726790450928383,
+                "cluster_bootstrap_95ci": [
+                  0.3385416666666667,
+                  0.4368421052631579
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": {
+                  "selection_rule": "lexicographically_first_image_id_within_group",
+                  "n_groups": 309,
+                  "covered_groups": 122,
+                  "coverage": 0.3948220064724919,
+                  "group_level_exact_95ci": [
+                    0.33994333021566686,
+                    0.451737700920087
+                  ]
+                }
+              },
+              "average_set_size": {
+                "n_images": 377,
+                "n_groups": 309,
+                "estimate": 1.9973474801061009,
+                "cluster_bootstrap_95ci": [
+                  1.9029649595687332,
+                  2.093264248704663
+                ],
+                "bootstrap_replicates": 10000,
+                "one_image_per_group_sensitivity": null
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

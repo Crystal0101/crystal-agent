@@ -1,0 +1,87 @@
+{
+  "manifest_version": "qualityconformal-reproducibility-manifest-v1",
+  "generated_from_local_files_on": "2026-08-13",
+  "claim_boundary": "Synthetic corruption and PAD-UFES-20 external-domain evaluations are stress tests; no exchangeability guarantee is claimed for shifted domains.",
+  "protocol_files": [
+    "PROTOCOL_v0.1.md",
+    "NATURAL_DOMAIN_PROTOCOL_v0.1.md"
+  ],
+  "core_code": {
+    "quality_conformal.py": "c21a3e7f41e2f261d955080261e3a90a06d3a2068701b777c4479e12de764f4b",
+    "run_medmnist_external.py": "8af3fa0f3c87779a1d17929cb2ed589260aabb8a19746fed2a23359eec45cce7",
+    "run_natural_domain.py": "c71846064e33a66890a9e1c10c280dfe2ef30bd0c83eb646ea5ba34c17e88573",
+    "reanalyse_clustered_coverage.py": "a438d0e76532986bfbd073bdcdb8d38848cc3d63c2dbcea5e7208c10ba1a398b"
+  },
+  "independent_medmnist": {
+    "protocol": "independent-medmnist-oracle-quality-v2-noleak",
+    "datasets": {
+      "dermamnist": {"n_train_fit": 6306, "n_model_selection": 701, "n_calibration": 1003, "n_test": 2005},
+      "bloodmnist": {"n_train_fit": 10764, "n_model_selection": 1195, "n_calibration": 1712, "n_test": 3421}
+    },
+    "seeds": [2026, 2027, 2028, 2029, 2030, 2031, 2032, 2033, 2034, 2035],
+    "epochs_recorded_in_all_formal_results": 8,
+    "formal_result_count": 20,
+    "aggregate_result": {
+      "path": "results/external_aggregate.json",
+      "sha256": "6ce8c0ecce1c2616f666589549ef05db9c9149f07d51d0ce04a09e5e6fd74ef2"
+    },
+    "quality": "oracle inverse corruption severity",
+    "historical_pilots_without_noleak_v2": "excluded"
+  },
+  "natural_domain": {
+    "protocol": "qualityconformal-natural-domain-v1-five-class",
+    "seed": 2026,
+    "source": "HAM10000",
+    "external": "PAD-UFES-20",
+    "classes": ["actinic_keratosis", "basal_cell_carcinoma", "melanoma", "nevus", "seborrheic_keratosis"],
+    "data_counts": {
+      "ham_raw": 10015,
+      "ham_retained": 9758,
+      "ham_train_images": 5831,
+      "ham_selection_images": 980,
+      "ham_calibration_images": 1467,
+      "ham_test_images": 1480,
+      "pad_raw": 2298,
+      "pad_retained_external_images": 2106,
+      "pad_external_patients": 1297
+    },
+    "metadata_sha256": {
+      "ham": "06aee5e603d313ba69de38263053c792a1dff030eb9c44a96ceb477ceefb99a5",
+      "pad": "14d145235cedb022548257acb0d84dcd949e2c916f65d2baa7c38ed5339e9527"
+    },
+    "pad_archive": {
+      "dataset_id": "zr7vgbcyr2",
+      "version": 1,
+      "sha256": "609d8dd25688823786d18291db57ee78933d8ec5914061c679798a8fafdca612"
+    },
+    "formal_models": {
+      "resnet50": {"epochs_run": 13, "checkpoint_sha256": "03a37532e859853f975a549d3e0a1c3a56aa11e96028918bcac068263358ea79", "result_sha256": "f052d37cb701d40f6c21a18c0b2e1fc17c176d7853849c5cc63157e12960d4c3"},
+      "efficientnet_b0": {"epochs_run": 18, "checkpoint_sha256": "de7827d34ca0ae197d5ce6f26876edfc3801a791e5a339b40b75465ad48388d7", "result_sha256": "d700c045d5d8db21661794e6dcea6de0b8a9a56e312329cbc4e3705f9b156f74"},
+      "vit_b_16": {"epochs_run": 22, "checkpoint_sha256": "74702b234ea8ef726ee9f8b402242cfad31c21e465245de65e3fa9d66b4b2852", "result_sha256": "538b7172653cd3d8f53ffb02840bb876c822919af12f88e1cef318ee084bd8ce"}
+    },
+    "quality_normalizer": {"p5": 4.592370510101318, "p95": 31.880359649658203, "edges": [0.35571231444676715, 0.5940435727437336]},
+    "cluster_bootstrap": {
+      "required_replicates": 10000,
+      "ham_unit": "lesion",
+      "pad_unit": "patient",
+      "status": "complete_strictly_validated_and_transactionally_integrated",
+      "expected_directory": "results/natural_domain_v1/cluster_audit_v1",
+      "formal_audit_count": 3,
+      "ham_test_lesions": 1094,
+      "pad_external_patients": 1297,
+      "audit_sha256": {
+        "resnet50": "4d497322716210a30a9611a5a10107d185fee47b79082732507c8ef6533ae440",
+        "efficientnet_b0": "47a0fe843fc940adf3af8278201f814fc8d11ebbf7c08e4916ba6e5be4d278d1",
+        "vit_b_16": "00a08f5881846e2593cc08a040640aafdf4b72622b94f692a19aef78f3fdef95"
+      },
+      "integration_manifest": "results/natural_domain_v1/cluster_audit_v1/integration_manifest.json"
+    }
+  },
+  "known_gaps": [
+    "No complete dependency lockfile or container specification is present.",
+    "Exact hardware model, memory and operating-system version are not recorded in formal results.",
+    "Deterministic backend settings are not recorded.",
+    "Natural-domain original result JSON files do not bind a code commit or code hashes.",
+    "HAM10000 source URL and raw image-archive hashes are not frozen in the data audit."
+  ]
+}

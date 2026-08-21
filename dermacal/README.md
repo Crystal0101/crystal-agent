@@ -1,14 +1,35 @@
 # DermaCal
 
-Reusable code for benchmarking classifier calibration under six reproducible image degradations and applying Quality-Aware Confidence Adjustment (QACA). It contains no medical images or pretrained clinical model.
+Code companion for *DermaCal: Reliability Benchmarking and Quality-Aware
+Confidence Calibration of Dermatology AI under Real-World Image Degradation*.
 
-Detailed methodology, benchmark protocol, validity threats and paper figures: [`docs/`](docs/README.md).
+**Status:** paper completed and published; bibliographic metadata/DOI should be
+added here when the final publisher record is available.
+
+DermaCal evaluates calibration degradation across common image corruptions and
+implements Quality-Aware Confidence Adjustment (QACA), a post-hoc temperature
+rule whose correction strength depends on image quality.
+
+## Paper-to-code map
+
+| Paper component | Repository location |
+|---|---|
+| QACA definition and calibration metrics | `src/dermacal/calibration.py` |
+| Reusable corruption primitives | `src/dermacal/corruptions.py` |
+| Full corruption benchmark | `experiments/run_benchmark.py` |
+| Backbone training | `experiments/train.py`, `experiments/src/models.py` |
+| QACA fitting and evaluation | `experiments/run_qaca.py`, `experiments/src/qaca.py` |
+| Ablation, LOCO, risk-coverage and uncertainty analyses | `experiments/run_qaca_*.py` |
+| Publication-linked aggregate outputs | `experiments/results/qaca/` |
+
+## Quick verification
 
 ```bash
-pip install -e ".[dev]"
-pytest -q
+python -m pytest -q dermacal/tests
 ```
 
-`quality` must be normalized to `[0,1]`; higher means better. `QACA.fit` selects two scalar parameters on a calibration split using Brier score. This is research software, not a medical device. The original local experiments and manuscript are not copied because they contain large datasets, generated artifacts and work-in-progress material.
+See [`experiments/README.md`](./experiments/README.md) for end-to-end
+reproduction. Raw HAM10000 images, model weights, cached logits and local logs
+are intentionally excluded. This is research software, not a medical device.
 
 MIT License.

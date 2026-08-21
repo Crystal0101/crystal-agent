@@ -1,0 +1,999 @@
+{
+  "protocol": "predefined-matched-sensitivity-v1",
+  "models": [
+    "resnet50",
+    "efficientnet_b0",
+    "dinov2_b",
+    "vit_b_16"
+  ],
+  "alphas": [
+    0.05,
+    0.1,
+    0.2
+  ],
+  "bins": [
+    2,
+    3,
+    4,
+    5
+  ],
+  "min_bin_sizes": [
+    20,
+    50,
+    100
+  ],
+  "records": [
+    {
+      "alpha": 0.05,
+      "bins": 2,
+      "min_bin_size": 20,
+      "n_paired_conditions": 72,
+      "summary": {
+        "pooled": {
+          "coverage": 0.9585367564534231,
+          "coverage_gap": 0.008536756453423168,
+          "average_set_size": 3.1181327160493826,
+          "singleton_selective_risk": 0.11029104211914506,
+          "fallback_condition_fraction": 0.0
+        },
+        "quality_mondrian": {
+          "coverage": 0.958999719416386,
+          "coverage_gap": 0.00899971941638613,
+          "average_set_size": 3.128605499438833,
+          "singleton_selective_risk": 0.10577655779609205,
+          "fallback_condition_fraction": 0.5
+        },
+        "paired_delta_mondrian_minus_pooled": {
+          "coverage": 0.0004629629629628873,
+          "average_set_size": 0.010472783389450235,
+          "singleton_selective_risk": -0.004514484323053014
+        }
+      }
+    },
+    {
+      "alpha": 0.05,
+      "bins": 2,
+      "min_bin_size": 50,
+      "n_paired_conditions": 72,
+      "summary": {
+        "pooled": {
+          "coverage": 0.9585367564534231,
+          "coverage_gap": 0.008536756453423168,
+          "average_set_size": 3.1181327160493826,
+          "singleton_selective_risk": 0.11029104211914506,
+          "fallback_condition_fraction": 0.0
+        },
+        "quality_mondrian": {
+          "coverage": 0.958999719416386,
+          "coverage_gap": 0.00899971941638613,
+          "average_set_size": 3.128605499438833,
+          "singleton_selective_risk": 0.10577655779609205,
+          "fallback_condition_fraction": 0.5
+        },
+        "paired_delta_mondrian_minus_pooled": {
+          "coverage": 0.0004629629629628873,
+          "average_set_size": 0.010472783389450235,
+          "singleton_selective_risk": -0.004514484323053014
+        }
+      }
+    },
+    {
+      "alpha": 0.05,
+      "bins": 2,
+      "min_bin_size": 100,
+      "n_paired_conditions": 72,
+      "summary": {
+        "pooled": {
+          "coverage": 0.9585367564534231,
+          "coverage_gap": 0.008536756453423168,
+          "average_set_size": 3.1181327160493826,
+          "singleton_selective_risk": 0.11029104211914506,
+          "fallback_condition_fraction": 0.0
+        },
+        "quality_mondrian": {
+          "coverage": 0.958999719416386,
+          "coverage_gap": 0.00899971941638613,
+          "average_set_size": 3.128605499438833,
+          "singleton_selective_risk": 0.10577655779609205,
+          "fallback_condition_fraction": 0.5
+        },
+        "paired_delta_mondrian_minus_pooled": {
+          "coverage": 0.0004629629629628873,
+          "average_set_size": 0.010472783389450235,
+          "singleton_selective_risk": -0.004514484323053014
+        }
+      }
+    },
+    {
+      "alpha": 0.05,
+      "bins": 3,
+      "min_bin_size": 20,
+      "n_paired_conditions": 72,
+      "summary": {
+        "pooled": {
+          "coverage": 0.9585367564534231,
+          "coverage_gap": 0.008536756453423168,
+          "average_set_size": 3.1181327160493826,
+          "singleton_selective_risk": 0.11029104211914506,
+          "fallback_condition_fraction": 0.0
+        },
+        "quality_mondrian": {
+          "coverage": 0.9587121212121212,
+          "coverage_gap": 0.008712121212121256,
+          "average_set_size": 3.1287387766554433,
+          "singleton_selective_risk": 0.10728312708391304,
+          "fallback_condition_fraction": 0.5555555555555556
+        },
+        "paired_delta_mondrian_minus_pooled": {
+          "coverage": 0.00017536475869817103,
+          "average_set_size": 0.01060606060606073,
+          "singleton_selective_risk": -0.0030079150352320255
+        }
+      }
+    },
+    {
+      "alpha": 0.05,
+      "bins": 3,
+      "min_bin_size": 50,
+      "n_paired_conditions": 72,
+      "summary": {
+        "pooled": {
+          "coverage": 0.9585367564534231,
+          "coverage_gap": 0.008536756453423168,
+          "average_set_size": 3.1181327160493826,
+          "singleton_selective_risk": 0.11029104211914506,
+          "fallback_condition_fraction": 0.0
+        },
+        "quality_mondrian": {
+          "coverage": 0.9587121212121212,
+          "coverage_gap": 0.008712121212121256,
+          "average_set_size": 3.1287387766554433,
+          "singleton_selective_risk": 0.10728312708391304,
+          "fallback_condition_fraction": 0.5555555555555556
+        },
+        "paired_delta_mondrian_minus_pooled": {
+          "coverage": 0.00017536475869817103,
+          "average_set_size": 0.01060606060606073,
+          "singleton_selective_risk": -0.0030079150352320255
+        }
+      }
+    },
+    {
+      "alpha": 0.05,
+      "bins": 3,
+      "min_bin_size": 100,
+      "n_paired_conditions": 72,
+      "summary": {
+        "pooled": {
+          "coverage": 0.9585367564534231,
+          "coverage_gap": 0.008536756453423168,
+          "average_set_size": 3.1181327160493826,
+          "singleton_selective_risk": 0.11029104211914506,
+          "fallback_condition_fraction": 0.0
+        },
+        "quality_mondrian": {
+          "coverage": 0.9587121212121212,
+          "coverage_gap": 0.008712121212121256,
+          "average_set_size": 3.1287387766554433,
+          "singleton_selective_risk": 0.10728312708391304,
+          "fallback_condition_fraction": 0.5555555555555556
+        },
+        "paired_delta_mondrian_minus_pooled": {
+          "coverage": 0.00017536475869817103,
+          "average_set_size": 0.01060606060606073,
+          "singleton_selective_risk": -0.0030079150352320255
+        }
+      }
+    },
+    {
+      "alpha": 0.05,
+      "bins": 4,
+      "min_bin_size": 20,
+      "n_paired_conditions": 72,
+      "summary": {
+        "pooled": {
+          "coverage": 0.9585367564534231,
+          "coverage_gap": 0.008536756453423168,
+          "average_set_size": 3.1181327160493826,
+          "singleton_selective_risk": 0.11029104211914506,
+          "fallback_condition_fraction": 0.0
+        },
+        "quality_mondrian": {
+          "coverage": 0.959203142536476,
+          "coverage_gap": 0.009203142536475917,
+          "average_set_size": 3.1439674523007857,
+          "singleton_selective_risk": 0.10529167762810386,
+          "fallback_condition_fraction": 0.6111111111111112
+        },
+        "paired_delta_mondrian_minus_pooled": {
+          "coverage": 0.0006663860830529167,
+          "average_set_size": 0.02583473625140309,
+          "singleton_selective_risk": -0.0049993644910412
+        }
+      }
+    },
+    {
+      "alpha": 0.05,
+      "bins": 4,
+      "min_bin_size": 50,
+      "n_paired_conditions": 72,
+      "summary": {
+        "pooled": {
+          "coverage": 0.9585367564534231,
+          "coverage_gap": 0.008536756453423168,
+          "average_set_size": 3.1181327160493826,
+          "singleton_selective_risk": 0.11029104211914506,
+          "fallback_condition_fraction": 0.0
+        },
+        "quality_mondrian": {
+          "coverage": 0.959203142536476,
+          "coverage_gap": 0.009203142536475917,
+          "average_set_size": 3.1439674523007857,
+          "singleton_selective_risk": 0.10529167762810386,
+          "fallback_condition_fraction": 0.6111111111111112
+        },
+        "paired_delta_mondrian_minus_pooled": {
+          "coverage": 0.0006663860830529167,
+          "average_set_size": 0.02583473625140309,
+          "singleton_selective_risk": -0.0049993644910412
+        }
+      }
+    },
+    {
+      "alpha": 0.05,
+      "bins": 4,
+      "min_bin_size": 100,
+      "n_paired_conditions": 72,
+      "summary": {
+        "pooled": {
+          "coverage": 0.9585367564534231,
+          "coverage_gap": 0.008536756453423168,
+          "average_set_size": 3.1181327160493826,
+          "singleton_selective_risk": 0.11029104211914506,
+          "fallback_condition_fraction": 0.0
+        },
+        "quality_mondrian": {
+          "coverage": 0.959203142536476,
+          "coverage_gap": 0.009203142536475917,
+          "average_set_size": 3.1439674523007857,
+          "singleton_selective_risk": 0.10529167762810386,
+          "fallback_condition_fraction": 0.6111111111111112
+        },
+        "paired_delta_mondrian_minus_pooled": {
+          "coverage": 0.0006663860830529167,
+          "average_set_size": 0.02583473625140309,
+          "singleton_selective_risk": -0.0049993644910412
+        }
+      }
+    },
+    {
+      "alpha": 0.05,
+      "bins": 5,
+      "min_bin_size": 20,
+      "n_paired_conditions": 72,
+      "summary": {
+        "pooled": {
+          "coverage": 0.9585367564534231,
+          "coverage_gap": 0.008536756453423168,
+          "average_set_size": 3.1181327160493826,
+          "singleton_selective_risk": 0.11029104211914506,
+          "fallback_condition_fraction": 0.0
+        },
+        "quality_mondrian": {
+          "coverage": 0.9587822671156003,
+          "coverage_gap": 0.008782267115600493,
+          "average_set_size": 3.141266835016835,
+          "singleton_selective_risk": 0.10521905009617706,
+          "fallback_condition_fraction": 0.6666666666666666
+        },
+        "paired_delta_mondrian_minus_pooled": {
+          "coverage": 0.0002455106621772618,
+          "average_set_size": 0.023134118967452544,
+          "singleton_selective_risk": -0.005071992022968
+        }
+      }
+    },
+    {
+      "alpha": 0.05,
+      "bins": 5,
+      "min_bin_size": 50,
+      "n_paired_conditions": 72,
+      "summary": {
+        "pooled": {
+          "coverage": 0.9585367564534231,
+          "coverage_gap": 0.008536756453423168,
+          "average_set_size": 3.1181327160493826,
+          "singleton_selective_risk": 0.11029104211914506,
+          "fallback_condition_fraction": 0.0
+        },
+        "quality_mondrian": {
+          "coverage": 0.9587822671156003,
+          "coverage_gap": 0.008782267115600493,
+          "average_set_size": 3.141266835016835,
+          "singleton_selective_risk": 0.10521905009617706,
+          "fallback_condition_fraction": 0.6666666666666666
+        },
+        "paired_delta_mondrian_minus_pooled": {
+          "coverage": 0.0002455106621772618,
+          "average_set_size": 0.023134118967452544,
+          "singleton_selective_risk": -0.005071992022968
+        }
+      }
+    },
+    {
+      "alpha": 0.05,
+      "bins": 5,
+      "min_bin_size": 100,
+      "n_paired_conditions": 72,
+      "summary": {
+        "pooled": {
+          "coverage": 0.9585367564534231,
+          "coverage_gap": 0.008536756453423168,
+          "average_set_size": 3.1181327160493826,
+          "singleton_selective_risk": 0.11029104211914506,
+          "fallback_condition_fraction": 0.0
+        },
+        "quality_mondrian": {
+          "coverage": 0.9587822671156003,
+          "coverage_gap": 0.008782267115600493,
+          "average_set_size": 3.141266835016835,
+          "singleton_selective_risk": 0.10521905009617706,
+          "fallback_condition_fraction": 0.6666666666666666
+        },
+        "paired_delta_mondrian_minus_pooled": {
+          "coverage": 0.0002455106621772618,
+          "average_set_size": 0.023134118967452544,
+          "singleton_selective_risk": -0.005071992022968
+        }
+      }
+    },
+    {
+      "alpha": 0.1,
+      "bins": 2,
+      "min_bin_size": 20,
+      "n_paired_conditions": 72,
+      "summary": {
+        "pooled": {
+          "coverage": 0.9119037598204266,
+          "coverage_gap": 0.011903759820426461,
+          "average_set_size": 2.5044542648709314,
+          "singleton_selective_risk": 0.14258837207860028,
+          "fallback_condition_fraction": 0.0
+        },
+        "quality_mondrian": {
+          "coverage": 0.9133698092031425,
+          "coverage_gap": 0.01336980920314251,
+          "average_set_size": 2.520629910213243,
+          "singleton_selective_risk": 0.14293771340435707,
+          "fallback_condition_fraction": 0.5
+        },
+        "paired_delta_mondrian_minus_pooled": {
+          "coverage": 0.0014660493827158838,
+          "average_set_size": 0.01617564534231164,
+          "singleton_selective_risk": 0.00034934132575678567
+        }
+      }
+    },
+    {
+      "alpha": 0.1,
+      "bins": 2,
+      "min_bin_size": 50,
+      "n_paired_conditions": 72,
+      "summary": {
+        "pooled": {
+          "coverage": 0.9119037598204266,
+          "coverage_gap": 0.011903759820426461,
+          "average_set_size": 2.5044542648709314,
+          "singleton_selective_risk": 0.14258837207860028,
+          "fallback_condition_fraction": 0.0
+        },
+        "quality_mondrian": {
+          "coverage": 0.9133698092031425,
+          "coverage_gap": 0.01336980920314251,
+          "average_set_size": 2.520629910213243,
+          "singleton_selective_risk": 0.14293771340435707,
+          "fallback_condition_fraction": 0.5
+        },
+        "paired_delta_mondrian_minus_pooled": {
+          "coverage": 0.0014660493827158838,
+          "average_set_size": 0.01617564534231164,
+          "singleton_selective_risk": 0.00034934132575678567
+        }
+      }
+    },
+    {
+      "alpha": 0.1,
+      "bins": 2,
+      "min_bin_size": 100,
+      "n_paired_conditions": 72,
+      "summary": {
+        "pooled": {
+          "coverage": 0.9119037598204266,
+          "coverage_gap": 0.011903759820426461,
+          "average_set_size": 2.5044542648709314,
+          "singleton_selective_risk": 0.14258837207860028,
+          "fallback_condition_fraction": 0.0
+        },
+        "quality_mondrian": {
+          "coverage": 0.9133698092031425,
+          "coverage_gap": 0.01336980920314251,
+          "average_set_size": 2.520629910213243,
+          "singleton_selective_risk": 0.14293771340435707,
+          "fallback_condition_fraction": 0.5
+        },
+        "paired_delta_mondrian_minus_pooled": {
+          "coverage": 0.0014660493827158838,
+          "average_set_size": 0.01617564534231164,
+          "singleton_selective_risk": 0.00034934132575678567
+        }
+      }
+    },
+    {
+      "alpha": 0.1,
+      "bins": 3,
+      "min_bin_size": 20,
+      "n_paired_conditions": 72,
+      "summary": {
+        "pooled": {
+          "coverage": 0.9119037598204266,
+          "coverage_gap": 0.011903759820426461,
+          "average_set_size": 2.5044542648709314,
+          "singleton_selective_risk": 0.14258837207860028,
+          "fallback_condition_fraction": 0.0
+        },
+        "quality_mondrian": {
+          "coverage": 0.9130050505050507,
+          "coverage_gap": 0.013005050505050474,
+          "average_set_size": 2.5184343434343432,
+          "singleton_selective_risk": 0.14386045316060092,
+          "fallback_condition_fraction": 0.5555555555555556
+        },
+        "paired_delta_mondrian_minus_pooled": {
+          "coverage": 0.0011012906846240567,
+          "average_set_size": 0.01398007856341188,
+          "singleton_selective_risk": 0.0012720810820006367
+        }
+      }
+    },
+    {
+      "alpha": 0.1,
+      "bins": 3,
+      "min_bin_size": 50,
+      "n_paired_conditions": 72,
+      "summary": {
+        "pooled": {
+          "coverage": 0.9119037598204266,
+          "coverage_gap": 0.011903759820426461,
+          "average_set_size": 2.5044542648709314,
+          "singleton_selective_risk": 0.14258837207860028,
+          "fallback_condition_fraction": 0.0
+        },
+        "quality_mondrian": {
+          "coverage": 0.9130050505050507,
+          "coverage_gap": 0.013005050505050474,
+          "average_set_size": 2.5184343434343432,
+          "singleton_selective_risk": 0.14386045316060092,
+          "fallback_condition_fraction": 0.5555555555555556
+        },
+        "paired_delta_mondrian_minus_pooled": {
+          "coverage": 0.0011012906846240567,
+          "average_set_size": 0.01398007856341188,
+          "singleton_selective_risk": 0.0012720810820006367
+        }
+      }
+    },
+    {
+      "alpha": 0.1,
+      "bins": 3,
+      "min_bin_size": 100,
+      "n_paired_conditions": 72,
+      "summary": {
+        "pooled": {
+          "coverage": 0.9119037598204266,
+          "coverage_gap": 0.011903759820426461,
+          "average_set_size": 2.5044542648709314,
+          "singleton_selective_risk": 0.14258837207860028,
+          "fallback_condition_fraction": 0.0
+        },
+        "quality_mondrian": {
+          "coverage": 0.9130050505050507,
+          "coverage_gap": 0.013005050505050474,
+          "average_set_size": 2.5184343434343432,
+          "singleton_selective_risk": 0.14386045316060092,
+          "fallback_condition_fraction": 0.5555555555555556
+        },
+        "paired_delta_mondrian_minus_pooled": {
+          "coverage": 0.0011012906846240567,
+          "average_set_size": 0.01398007856341188,
+          "singleton_selective_risk": 0.0012720810820006367
+        }
+      }
+    },
+    {
+      "alpha": 0.1,
+      "bins": 4,
+      "min_bin_size": 20,
+      "n_paired_conditions": 72,
+      "summary": {
+        "pooled": {
+          "coverage": 0.9119037598204266,
+          "coverage_gap": 0.011903759820426461,
+          "average_set_size": 2.5044542648709314,
+          "singleton_selective_risk": 0.14258837207860028,
+          "fallback_condition_fraction": 0.0
+        },
+        "quality_mondrian": {
+          "coverage": 0.914344837261504,
+          "coverage_gap": 0.014344837261503905,
+          "average_set_size": 2.5334175084175086,
+          "singleton_selective_risk": 0.142012921975183,
+          "fallback_condition_fraction": 0.6111111111111112
+        },
+        "paired_delta_mondrian_minus_pooled": {
+          "coverage": 0.002441077441077355,
+          "average_set_size": 0.0289632435465772,
+          "singleton_selective_risk": -0.0005754501034172799
+        }
+      }
+    },
+    {
+      "alpha": 0.1,
+      "bins": 4,
+      "min_bin_size": 50,
+      "n_paired_conditions": 72,
+      "summary": {
+        "pooled": {
+          "coverage": 0.9119037598204266,
+          "coverage_gap": 0.011903759820426461,
+          "average_set_size": 2.5044542648709314,
+          "singleton_selective_risk": 0.14258837207860028,
+          "fallback_condition_fraction": 0.0
+        },
+        "quality_mondrian": {
+          "coverage": 0.914344837261504,
+          "coverage_gap": 0.014344837261503905,
+          "average_set_size": 2.5334175084175086,
+          "singleton_selective_risk": 0.142012921975183,
+          "fallback_condition_fraction": 0.6111111111111112
+        },
+        "paired_delta_mondrian_minus_pooled": {
+          "coverage": 0.002441077441077355,
+          "average_set_size": 0.0289632435465772,
+          "singleton_selective_risk": -0.0005754501034172799
+        }
+      }
+    },
+    {
+      "alpha": 0.1,
+      "bins": 4,
+      "min_bin_size": 100,
+      "n_paired_conditions": 72,
+      "summary": {
+        "pooled": {
+          "coverage": 0.9119037598204266,
+          "coverage_gap": 0.011903759820426461,
+          "average_set_size": 2.5044542648709314,
+          "singleton_selective_risk": 0.14258837207860028,
+          "fallback_condition_fraction": 0.0
+        },
+        "quality_mondrian": {
+          "coverage": 0.914344837261504,
+          "coverage_gap": 0.014344837261503905,
+          "average_set_size": 2.5334175084175086,
+          "singleton_selective_risk": 0.142012921975183,
+          "fallback_condition_fraction": 0.6111111111111112
+        },
+        "paired_delta_mondrian_minus_pooled": {
+          "coverage": 0.002441077441077355,
+          "average_set_size": 0.0289632435465772,
+          "singleton_selective_risk": -0.0005754501034172799
+        }
+      }
+    },
+    {
+      "alpha": 0.1,
+      "bins": 5,
+      "min_bin_size": 20,
+      "n_paired_conditions": 72,
+      "summary": {
+        "pooled": {
+          "coverage": 0.9119037598204266,
+          "coverage_gap": 0.011903759820426461,
+          "average_set_size": 2.5044542648709314,
+          "singleton_selective_risk": 0.14258837207860028,
+          "fallback_condition_fraction": 0.0
+        },
+        "quality_mondrian": {
+          "coverage": 0.9136854657687993,
+          "coverage_gap": 0.01368546576879908,
+          "average_set_size": 2.532091750841751,
+          "singleton_selective_risk": 0.14323366240873028,
+          "fallback_condition_fraction": 0.6666666666666666
+        },
+        "paired_delta_mondrian_minus_pooled": {
+          "coverage": 0.0017817059483726805,
+          "average_set_size": 0.027637485970819498,
+          "singleton_selective_risk": 0.0006452903301299995
+        }
+      }
+    },
+    {
+      "alpha": 0.1,
+      "bins": 5,
+      "min_bin_size": 50,
+      "n_paired_conditions": 72,
+      "summary": {
+        "pooled": {
+          "coverage": 0.9119037598204266,
+          "coverage_gap": 0.011903759820426461,
+          "average_set_size": 2.5044542648709314,
+          "singleton_selective_risk": 0.14258837207860028,
+          "fallback_condition_fraction": 0.0
+        },
+        "quality_mondrian": {
+          "coverage": 0.9136854657687993,
+          "coverage_gap": 0.01368546576879908,
+          "average_set_size": 2.532091750841751,
+          "singleton_selective_risk": 0.14323366240873028,
+          "fallback_condition_fraction": 0.6666666666666666
+        },
+        "paired_delta_mondrian_minus_pooled": {
+          "coverage": 0.0017817059483726805,
+          "average_set_size": 0.027637485970819498,
+          "singleton_selective_risk": 0.0006452903301299995
+        }
+      }
+    },
+    {
+      "alpha": 0.1,
+      "bins": 5,
+      "min_bin_size": 100,
+      "n_paired_conditions": 72,
+      "summary": {
+        "pooled": {
+          "coverage": 0.9119037598204266,
+          "coverage_gap": 0.011903759820426461,
+          "average_set_size": 2.5044542648709314,
+          "singleton_selective_risk": 0.14258837207860028,
+          "fallback_condition_fraction": 0.0
+        },
+        "quality_mondrian": {
+          "coverage": 0.9136854657687993,
+          "coverage_gap": 0.01368546576879908,
+          "average_set_size": 2.532091750841751,
+          "singleton_selective_risk": 0.14323366240873028,
+          "fallback_condition_fraction": 0.6666666666666666
+        },
+        "paired_delta_mondrian_minus_pooled": {
+          "coverage": 0.0017817059483726805,
+          "average_set_size": 0.027637485970819498,
+          "singleton_selective_risk": 0.0006452903301299995
+        }
+      }
+    },
+    {
+      "alpha": 0.2,
+      "bins": 2,
+      "min_bin_size": 20,
+      "n_paired_conditions": 72,
+      "summary": {
+        "pooled": {
+          "coverage": 0.8203423120089786,
+          "coverage_gap": 0.020342312008978625,
+          "average_set_size": 1.832891414141414,
+          "singleton_selective_risk": 0.22743014113895577,
+          "fallback_condition_fraction": 0.0
+        },
+        "quality_mondrian": {
+          "coverage": 0.821696127946128,
+          "coverage_gap": 0.0216961279461279,
+          "average_set_size": 1.8425154320987656,
+          "singleton_selective_risk": 0.22413803465787188,
+          "fallback_condition_fraction": 0.5
+        },
+        "paired_delta_mondrian_minus_pooled": {
+          "coverage": 0.0013538159371494496,
+          "average_set_size": 0.00962401795735146,
+          "singleton_selective_risk": -0.003292106481083884
+        }
+      }
+    },
+    {
+      "alpha": 0.2,
+      "bins": 2,
+      "min_bin_size": 50,
+      "n_paired_conditions": 72,
+      "summary": {
+        "pooled": {
+          "coverage": 0.8203423120089786,
+          "coverage_gap": 0.020342312008978625,
+          "average_set_size": 1.832891414141414,
+          "singleton_selective_risk": 0.22743014113895577,
+          "fallback_condition_fraction": 0.0
+        },
+        "quality_mondrian": {
+          "coverage": 0.821696127946128,
+          "coverage_gap": 0.0216961279461279,
+          "average_set_size": 1.8425154320987656,
+          "singleton_selective_risk": 0.22413803465787188,
+          "fallback_condition_fraction": 0.5
+        },
+        "paired_delta_mondrian_minus_pooled": {
+          "coverage": 0.0013538159371494496,
+          "average_set_size": 0.00962401795735146,
+          "singleton_selective_risk": -0.003292106481083884
+        }
+      }
+    },
+    {
+      "alpha": 0.2,
+      "bins": 2,
+      "min_bin_size": 100,
+      "n_paired_conditions": 72,
+      "summary": {
+        "pooled": {
+          "coverage": 0.8203423120089786,
+          "coverage_gap": 0.020342312008978625,
+          "average_set_size": 1.832891414141414,
+          "singleton_selective_risk": 0.22743014113895577,
+          "fallback_condition_fraction": 0.0
+        },
+        "quality_mondrian": {
+          "coverage": 0.821696127946128,
+          "coverage_gap": 0.0216961279461279,
+          "average_set_size": 1.8425154320987656,
+          "singleton_selective_risk": 0.22413803465787188,
+          "fallback_condition_fraction": 0.5
+        },
+        "paired_delta_mondrian_minus_pooled": {
+          "coverage": 0.0013538159371494496,
+          "average_set_size": 0.00962401795735146,
+          "singleton_selective_risk": -0.003292106481083884
+        }
+      }
+    },
+    {
+      "alpha": 0.2,
+      "bins": 3,
+      "min_bin_size": 20,
+      "n_paired_conditions": 72,
+      "summary": {
+        "pooled": {
+          "coverage": 0.8203423120089786,
+          "coverage_gap": 0.020342312008978625,
+          "average_set_size": 1.832891414141414,
+          "singleton_selective_risk": 0.22743014113895577,
+          "fallback_condition_fraction": 0.0
+        },
+        "quality_mondrian": {
+          "coverage": 0.8214716610549944,
+          "coverage_gap": 0.021471661054994345,
+          "average_set_size": 1.8433080808080808,
+          "singleton_selective_risk": 0.22502257988743,
+          "fallback_condition_fraction": 0.5555555555555556
+        },
+        "paired_delta_mondrian_minus_pooled": {
+          "coverage": 0.001129349046015804,
+          "average_set_size": 0.01041666666666674,
+          "singleton_selective_risk": -0.002407561251525775
+        }
+      }
+    },
+    {
+      "alpha": 0.2,
+      "bins": 3,
+      "min_bin_size": 50,
+      "n_paired_conditions": 72,
+      "summary": {
+        "pooled": {
+          "coverage": 0.8203423120089786,
+          "coverage_gap": 0.020342312008978625,
+          "average_set_size": 1.832891414141414,
+          "singleton_selective_risk": 0.22743014113895577,
+          "fallback_condition_fraction": 0.0
+        },
+        "quality_mondrian": {
+          "coverage": 0.8214716610549944,
+          "coverage_gap": 0.021471661054994345,
+          "average_set_size": 1.8433080808080808,
+          "singleton_selective_risk": 0.22502257988743,
+          "fallback_condition_fraction": 0.5555555555555556
+        },
+        "paired_delta_mondrian_minus_pooled": {
+          "coverage": 0.001129349046015804,
+          "average_set_size": 0.01041666666666674,
+          "singleton_selective_risk": -0.002407561251525775
+        }
+      }
+    },
+    {
+      "alpha": 0.2,
+      "bins": 3,
+      "min_bin_size": 100,
+      "n_paired_conditions": 72,
+      "summary": {
+        "pooled": {
+          "coverage": 0.8203423120089786,
+          "coverage_gap": 0.020342312008978625,
+          "average_set_size": 1.832891414141414,
+          "singleton_selective_risk": 0.22743014113895577,
+          "fallback_condition_fraction": 0.0
+        },
+        "quality_mondrian": {
+          "coverage": 0.8214716610549944,
+          "coverage_gap": 0.021471661054994345,
+          "average_set_size": 1.8433080808080808,
+          "singleton_selective_risk": 0.22502257988743,
+          "fallback_condition_fraction": 0.5555555555555556
+        },
+        "paired_delta_mondrian_minus_pooled": {
+          "coverage": 0.001129349046015804,
+          "average_set_size": 0.01041666666666674,
+          "singleton_selective_risk": -0.002407561251525775
+        }
+      }
+    },
+    {
+      "alpha": 0.2,
+      "bins": 4,
+      "min_bin_size": 20,
+      "n_paired_conditions": 72,
+      "summary": {
+        "pooled": {
+          "coverage": 0.8203423120089786,
+          "coverage_gap": 0.020342312008978625,
+          "average_set_size": 1.832891414141414,
+          "singleton_selective_risk": 0.22743014113895577,
+          "fallback_condition_fraction": 0.0
+        },
+        "quality_mondrian": {
+          "coverage": 0.8218855218855219,
+          "coverage_gap": 0.02188552188552184,
+          "average_set_size": 1.847439674523008,
+          "singleton_selective_risk": 0.22321765035030358,
+          "fallback_condition_fraction": 0.6111111111111112
+        },
+        "paired_delta_mondrian_minus_pooled": {
+          "coverage": 0.0015432098765433278,
+          "average_set_size": 0.014548260381593847,
+          "singleton_selective_risk": -0.0042124907886521845
+        }
+      }
+    },
+    {
+      "alpha": 0.2,
+      "bins": 4,
+      "min_bin_size": 50,
+      "n_paired_conditions": 72,
+      "summary": {
+        "pooled": {
+          "coverage": 0.8203423120089786,
+          "coverage_gap": 0.020342312008978625,
+          "average_set_size": 1.832891414141414,
+          "singleton_selective_risk": 0.22743014113895577,
+          "fallback_condition_fraction": 0.0
+        },
+        "quality_mondrian": {
+          "coverage": 0.8218855218855219,
+          "coverage_gap": 0.02188552188552184,
+          "average_set_size": 1.847439674523008,
+          "singleton_selective_risk": 0.22321765035030358,
+          "fallback_condition_fraction": 0.6111111111111112
+        },
+        "paired_delta_mondrian_minus_pooled": {
+          "coverage": 0.0015432098765433278,
+          "average_set_size": 0.014548260381593847,
+          "singleton_selective_risk": -0.0042124907886521845
+        }
+      }
+    },
+    {
+      "alpha": 0.2,
+      "bins": 4,
+      "min_bin_size": 100,
+      "n_paired_conditions": 72,
+      "summary": {
+        "pooled": {
+          "coverage": 0.8203423120089786,
+          "coverage_gap": 0.020342312008978625,
+          "average_set_size": 1.832891414141414,
+          "singleton_selective_risk": 0.22743014113895577,
+          "fallback_condition_fraction": 0.0
+        },
+        "quality_mondrian": {
+          "coverage": 0.8218855218855219,
+          "coverage_gap": 0.02188552188552184,
+          "average_set_size": 1.847439674523008,
+          "singleton_selective_risk": 0.22321765035030358,
+          "fallback_condition_fraction": 0.6111111111111112
+        },
+        "paired_delta_mondrian_minus_pooled": {
+          "coverage": 0.0015432098765433278,
+          "average_set_size": 0.014548260381593847,
+          "singleton_selective_risk": -0.0042124907886521845
+        }
+      }
+    },
+    {
+      "alpha": 0.2,
+      "bins": 5,
+      "min_bin_size": 20,
+      "n_paired_conditions": 72,
+      "summary": {
+        "pooled": {
+          "coverage": 0.8203423120089786,
+          "coverage_gap": 0.020342312008978625,
+          "average_set_size": 1.832891414141414,
+          "singleton_selective_risk": 0.22743014113895577,
+          "fallback_condition_fraction": 0.0
+        },
+        "quality_mondrian": {
+          "coverage": 0.8206369248035914,
+          "coverage_gap": 0.020636924803591417,
+          "average_set_size": 1.8422909652076322,
+          "singleton_selective_risk": 0.22265732620994802,
+          "fallback_condition_fraction": 0.6666666666666666
+        },
+        "paired_delta_mondrian_minus_pooled": {
+          "coverage": 0.0002946127946128474,
+          "average_set_size": 0.009399551066218148,
+          "singleton_selective_risk": -0.004772814929007746
+        }
+      }
+    },
+    {
+      "alpha": 0.2,
+      "bins": 5,
+      "min_bin_size": 50,
+      "n_paired_conditions": 72,
+      "summary": {
+        "pooled": {
+          "coverage": 0.8203423120089786,
+          "coverage_gap": 0.020342312008978625,
+          "average_set_size": 1.832891414141414,
+          "singleton_selective_risk": 0.22743014113895577,
+          "fallback_condition_fraction": 0.0
+        },
+        "quality_mondrian": {
+          "coverage": 0.8206369248035914,
+          "coverage_gap": 0.020636924803591417,
+          "average_set_size": 1.8422909652076322,
+          "singleton_selective_risk": 0.22265732620994802,
+          "fallback_condition_fraction": 0.6666666666666666
+        },
+        "paired_delta_mondrian_minus_pooled": {
+          "coverage": 0.0002946127946128474,
+          "average_set_size": 0.009399551066218148,
+          "singleton_selective_risk": -0.004772814929007746
+        }
+      }
+    },
+    {
+      "alpha": 0.2,
+      "bins": 5,
+      "min_bin_size": 100,
+      "n_paired_conditions": 72,
+      "summary": {
+        "pooled": {
+          "coverage": 0.8203423120089786,
+          "coverage_gap": 0.020342312008978625,
+          "average_set_size": 1.832891414141414,
+          "singleton_selective_risk": 0.22743014113895577,
+          "fallback_condition_fraction": 0.0
+        },
+        "quality_mondrian": {
+          "coverage": 0.8206369248035914,
+          "coverage_gap": 0.020636924803591417,
+          "average_set_size": 1.8422909652076322,
+          "singleton_selective_risk": 0.22265732620994802,
+          "fallback_condition_fraction": 0.6666666666666666
+        },
+        "paired_delta_mondrian_minus_pooled": {
+          "coverage": 0.0002946127946128474,
+          "average_set_size": 0.009399551066218148,
+          "singleton_selective_risk": -0.004772814929007746
+        }
+      }
+    }
+  ]
+}

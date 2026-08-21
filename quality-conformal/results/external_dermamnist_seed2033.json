@@ -1,0 +1,605 @@
+{
+  "protocol": "independent-medmnist-oracle-quality-v2-noleak",
+  "dataset": "dermamnist",
+  "epochs": 8,
+  "seed": 2033,
+  "device": "mps",
+  "n_train_fit": 6306,
+  "n_model_selection": 701,
+  "n_calibration": 1003,
+  "n_test": 2005,
+  "quality": "oracle inverse corruption severity",
+  "clean_test_accuracy": 0.7376558603491272,
+  "mixed_test_point_accuracy": 0.5371571072319202,
+  "condition_counts": {
+    "0": 110,
+    "1": 91,
+    "2": 110,
+    "3": 91,
+    "4": 104,
+    "5": 97,
+    "6": 99,
+    "7": 93,
+    "8": 90,
+    "9": 125,
+    "10": 111,
+    "11": 107,
+    "12": 122,
+    "13": 115,
+    "14": 110,
+    "15": 107,
+    "16": 124,
+    "17": 89,
+    "18": 110
+  },
+  "results": [
+    {
+      "method": "lac",
+      "bins": 1,
+      "quality_edges": [],
+      "by_quality": {
+        "quality_0.000000": {
+          "n": 654,
+          "coverage": 0.8226299694189603,
+          "average_set_size": 3.6529051987767582,
+          "singleton_fraction": 0.191131498470948,
+          "empty_fraction": 0.0,
+          "singleton_selective_risk": 0.544,
+          "point_error": 0.5259938837920489
+        },
+        "quality_0.333333": {
+          "n": 603,
+          "coverage": 0.8905472636815921,
+          "average_set_size": 4.016583747927031,
+          "singleton_fraction": 0.0845771144278607,
+          "empty_fraction": 0.0,
+          "singleton_selective_risk": 0.17647058823529413,
+          "point_error": 0.5356550580431177
+        },
+        "quality_0.666667": {
+          "n": 638,
+          "coverage": 0.9890282131661442,
+          "average_set_size": 4.496865203761756,
+          "singleton_fraction": 0.11285266457680251,
+          "empty_fraction": 0.0,
+          "singleton_selective_risk": 0.0,
+          "point_error": 0.36363636363636365
+        },
+        "quality_1.000000": {
+          "n": 110,
+          "coverage": 0.990909090909091,
+          "average_set_size": 3.609090909090909,
+          "singleton_fraction": 0.23636363636363636,
+          "empty_fraction": 0.0,
+          "singleton_selective_risk": 0.038461538461538464,
+          "point_error": 0.2636363636363636
+        }
+      },
+      "n": 2005,
+      "coverage": 0.9052369077306733,
+      "average_set_size": 4.028428927680798,
+      "singleton_fraction": 0.13665835411471322,
+      "empty_fraction": 0.0,
+      "singleton_selective_risk": 0.2846715328467153,
+      "point_error": 0.4628428927680798
+    },
+    {
+      "method": "lac",
+      "bins": 2,
+      "quality_edges": [
+        0.3333333432674408
+      ],
+      "by_quality": {
+        "quality_0.000000": {
+          "n": 654,
+          "coverage": 0.9342507645259939,
+          "average_set_size": 6.32262996941896,
+          "singleton_fraction": 0.009174311926605505,
+          "empty_fraction": 0.0,
+          "singleton_selective_risk": 1.0,
+          "point_error": 0.5259938837920489
+        },
+        "quality_0.333333": {
+          "n": 603,
+          "coverage": 0.8043117744610282,
+          "average_set_size": 2.827529021558872,
+          "singleton_fraction": 0.208955223880597,
+          "empty_fraction": 0.0,
+          "singleton_selective_risk": 0.2857142857142857,
+          "point_error": 0.5356550580431177
+        },
+        "quality_0.666667": {
+          "n": 638,
+          "coverage": 0.9592476489028213,
+          "average_set_size": 3.4106583072100314,
+          "singleton_fraction": 0.1833855799373041,
+          "empty_fraction": 0.0,
+          "singleton_selective_risk": 0.03418803418803419,
+          "point_error": 0.36363636363636365
+        },
+        "quality_1.000000": {
+          "n": 110,
+          "coverage": 0.990909090909091,
+          "average_set_size": 2.8,
+          "singleton_fraction": 0.32727272727272727,
+          "empty_fraction": 0.0,
+          "singleton_selective_risk": 0.027777777777777776,
+          "point_error": 0.2636363636363636
+        }
+      },
+      "n": 2005,
+      "coverage": 0.9062344139650873,
+      "average_set_size": 4.1516209476309225,
+      "singleton_fraction": 0.14214463840399003,
+      "empty_fraction": 0.0,
+      "singleton_selective_risk": 0.1649122807017544,
+      "point_error": 0.4628428927680798
+    },
+    {
+      "method": "lac",
+      "bins": 3,
+      "quality_edges": [
+        0.3333333432674408,
+        0.6666666865348816
+      ],
+      "by_quality": {
+        "quality_0.000000": {
+          "n": 654,
+          "coverage": 0.9342507645259939,
+          "average_set_size": 6.32262996941896,
+          "singleton_fraction": 0.009174311926605505,
+          "empty_fraction": 0.0,
+          "singleton_selective_risk": 1.0,
+          "point_error": 0.5259938837920489
+        },
+        "quality_0.333333": {
+          "n": 603,
+          "coverage": 0.8590381426202321,
+          "average_set_size": 3.5538971807628523,
+          "singleton_fraction": 0.12603648424543948,
+          "empty_fraction": 0.0,
+          "singleton_selective_risk": 0.19736842105263158,
+          "point_error": 0.5356550580431177
+        },
+        "quality_0.666667": {
+          "n": 638,
+          "coverage": 0.9075235109717869,
+          "average_set_size": 2.415360501567398,
+          "singleton_fraction": 0.25862068965517243,
+          "empty_fraction": 0.0,
+          "singleton_selective_risk": 0.048484848484848485,
+          "point_error": 0.36363636363636365
+        },
+        "quality_1.000000": {
+          "n": 110,
+          "coverage": 0.9545454545454546,
+          "average_set_size": 2.0545454545454547,
+          "singleton_fraction": 0.39090909090909093,
+          "empty_fraction": 0.0,
+          "singleton_selective_risk": 0.046511627906976744,
+          "point_error": 0.2636363636363636
+        }
+      },
+      "n": 2005,
+      "coverage": 0.9042394014962594,
+      "average_set_size": 4.012468827930174,
+      "singleton_fraction": 0.14463840399002495,
+      "empty_fraction": 0.0,
+      "singleton_selective_risk": 0.10689655172413794,
+      "point_error": 0.4628428927680798
+    },
+    {
+      "method": "aps",
+      "bins": 1,
+      "quality_edges": [],
+      "by_quality": {
+        "quality_0.000000": {
+          "n": 654,
+          "coverage": 0.8149847094801224,
+          "average_set_size": 4.249235474006116,
+          "singleton_fraction": 0.09021406727828746,
+          "empty_fraction": 0.0764525993883792,
+          "singleton_selective_risk": 0.6271186440677966,
+          "point_error": 0.5259938837920489
+        },
+        "quality_0.333333": {
+          "n": 603,
+          "coverage": 0.8955223880597015,
+          "average_set_size": 4.676616915422885,
+          "singleton_fraction": 0.03482587064676617,
+          "empty_fraction": 0.009950248756218905,
+          "singleton_selective_risk": 0.42857142857142855,
+          "point_error": 0.5356550580431177
+        },
+        "quality_0.666667": {
+          "n": 638,
+          "coverage": 0.9655172413793104,
+          "average_set_size": 5.043887147335423,
+          "singleton_fraction": 0.02037617554858934,
+          "empty_fraction": 0.01567398119122257,
+          "singleton_selective_risk": 0.0,
+          "point_error": 0.36363636363636365
+        },
+        "quality_1.000000": {
+          "n": 110,
+          "coverage": 0.9818181818181818,
+          "average_set_size": 4.4818181818181815,
+          "singleton_fraction": 0.045454545454545456,
+          "empty_fraction": 0.01818181818181818,
+          "singleton_selective_risk": 0.0,
+          "point_error": 0.2636363636363636
+        }
+      },
+      "n": 2005,
+      "coverage": 0.8962593516209476,
+      "average_set_size": 4.643391521197008,
+      "singleton_fraction": 0.04887780548628429,
+      "empty_fraction": 0.03391521197007481,
+      "singleton_selective_risk": 0.46938775510204084,
+      "point_error": 0.4628428927680798
+    },
+    {
+      "method": "aps",
+      "bins": 2,
+      "quality_edges": [
+        0.3333333432674408
+      ],
+      "by_quality": {
+        "quality_0.000000": {
+          "n": 654,
+          "coverage": 0.9388379204892966,
+          "average_set_size": 5.681957186544342,
+          "singleton_fraction": 0.013761467889908258,
+          "empty_fraction": 0.0,
+          "singleton_selective_risk": 0.7777777777777778,
+          "point_error": 0.5259938837920489
+        },
+        "quality_0.333333": {
+          "n": 603,
+          "coverage": 0.8341625207296849,
+          "average_set_size": 3.767827529021559,
+          "singleton_fraction": 0.087893864013267,
+          "empty_fraction": 0.03814262023217247,
+          "singleton_selective_risk": 0.4716981132075472,
+          "point_error": 0.5356550580431177
+        },
+        "quality_0.666667": {
+          "n": 638,
+          "coverage": 0.932601880877743,
+          "average_set_size": 4.283699059561129,
+          "singleton_fraction": 0.05329153605015674,
+          "empty_fraction": 0.04075235109717868,
+          "singleton_selective_risk": 0.029411764705882353,
+          "point_error": 0.36363636363636365
+        },
+        "quality_1.000000": {
+          "n": 110,
+          "coverage": 0.9090909090909091,
+          "average_set_size": 3.4909090909090907,
+          "singleton_fraction": 0.1,
+          "empty_fraction": 0.08181818181818182,
+          "singleton_selective_risk": 0.0,
+          "point_error": 0.2636363636363636
+        }
+      },
+      "n": 2005,
+      "coverage": 0.9037406483790523,
+      "average_set_size": 4.541147132169576,
+      "singleton_fraction": 0.05336658354114713,
+      "empty_fraction": 0.02892768079800499,
+      "singleton_selective_risk": 0.308411214953271,
+      "point_error": 0.4628428927680798
+    },
+    {
+      "method": "aps",
+      "bins": 3,
+      "quality_edges": [
+        0.3333333432674408,
+        0.6666666865348816
+      ],
+      "by_quality": {
+        "quality_0.000000": {
+          "n": 654,
+          "coverage": 0.9388379204892966,
+          "average_set_size": 5.681957186544342,
+          "singleton_fraction": 0.013761467889908258,
+          "empty_fraction": 0.0,
+          "singleton_selective_risk": 0.7777777777777778,
+          "point_error": 0.5259938837920489
+        },
+        "quality_0.333333": {
+          "n": 603,
+          "coverage": 0.867330016583748,
+          "average_set_size": 4.232172470978441,
+          "singleton_fraction": 0.05970149253731343,
+          "empty_fraction": 0.02155887230514096,
+          "singleton_selective_risk": 0.4722222222222222,
+          "point_error": 0.5356550580431177
+        },
+        "quality_0.666667": {
+          "n": 638,
+          "coverage": 0.9184952978056427,
+          "average_set_size": 4.133228840125392,
+          "singleton_fraction": 0.061128526645768025,
+          "empty_fraction": 0.048589341692789965,
+          "singleton_selective_risk": 0.02564102564102564,
+          "point_error": 0.36363636363636365
+        },
+        "quality_1.000000": {
+          "n": 110,
+          "coverage": 0.8727272727272727,
+          "average_set_size": 3.3,
+          "singleton_fraction": 0.08181818181818182,
+          "empty_fraction": 0.11818181818181818,
+          "singleton_selective_risk": 0.0,
+          "point_error": 0.2636363636363636
+        }
+      },
+      "n": 2005,
+      "coverage": 0.9072319201995013,
+      "average_set_size": 4.622443890274314,
+      "singleton_fraction": 0.04638403990024938,
+      "empty_fraction": 0.028428927680798004,
+      "singleton_selective_risk": 0.26881720430107525,
+      "point_error": 0.4628428927680798
+    },
+    {
+      "method": "raps",
+      "bins": 1,
+      "quality_edges": [],
+      "by_quality": {
+        "quality_0.000000": {
+          "n": 654,
+          "coverage": 0.8516819571865444,
+          "average_set_size": 3.5091743119266057,
+          "singleton_fraction": 0.03669724770642202,
+          "empty_fraction": 0.0015290519877675841,
+          "singleton_selective_risk": 0.9166666666666666,
+          "point_error": 0.5259938837920489
+        },
+        "quality_0.333333": {
+          "n": 603,
+          "coverage": 0.8988391376451078,
+          "average_set_size": 3.747927031509121,
+          "singleton_fraction": 0.0,
+          "empty_fraction": 0.0,
+          "singleton_selective_risk": NaN,
+          "point_error": 0.5356550580431177
+        },
+        "quality_0.666667": {
+          "n": 638,
+          "coverage": 0.9733542319749217,
+          "average_set_size": 4.023510971786834,
+          "singleton_fraction": 0.0,
+          "empty_fraction": 0.0,
+          "singleton_selective_risk": NaN,
+          "point_error": 0.36363636363636365
+        },
+        "quality_1.000000": {
+          "n": 110,
+          "coverage": 0.990909090909091,
+          "average_set_size": 3.709090909090909,
+          "singleton_fraction": 0.0,
+          "empty_fraction": 0.0,
+          "singleton_selective_risk": NaN,
+          "point_error": 0.2636363636363636
+        }
+      },
+      "n": 2005,
+      "coverage": 0.9122194513715711,
+      "average_set_size": 3.7556109725685785,
+      "singleton_fraction": 0.011970074812967581,
+      "empty_fraction": 0.0004987531172069825,
+      "singleton_selective_risk": 0.9166666666666666,
+      "point_error": 0.4628428927680798
+    },
+    {
+      "method": "raps",
+      "bins": 2,
+      "quality_edges": [
+        0.3333333432674408
+      ],
+      "by_quality": {
+        "quality_0.000000": {
+          "n": 654,
+          "coverage": 0.9357798165137615,
+          "average_set_size": 4.611620795107034,
+          "singleton_fraction": 0.0,
+          "empty_fraction": 0.0,
+          "singleton_selective_risk": NaN,
+          "point_error": 0.5259938837920489
+        },
+        "quality_0.333333": {
+          "n": 603,
+          "coverage": 0.8374792703150912,
+          "average_set_size": 3.316749585406302,
+          "singleton_fraction": 0.06467661691542288,
+          "empty_fraction": 0.02155887230514096,
+          "singleton_selective_risk": 0.48717948717948717,
+          "point_error": 0.5356550580431177
+        },
+        "quality_0.666667": {
+          "n": 638,
+          "coverage": 0.932601880877743,
+          "average_set_size": 3.666144200626959,
+          "singleton_fraction": 0.032915360501567396,
+          "empty_fraction": 0.032915360501567396,
+          "singleton_selective_risk": 0.0,
+          "point_error": 0.36363636363636365
+        },
+        "quality_1.000000": {
+          "n": 110,
+          "coverage": 0.9272727272727272,
+          "average_set_size": 3.1454545454545455,
+          "singleton_fraction": 0.08181818181818182,
+          "empty_fraction": 0.06363636363636363,
+          "singleton_selective_risk": 0.0,
+          "point_error": 0.2636363636363636
+        }
+      },
+      "n": 2005,
+      "coverage": 0.9047381546134663,
+      "average_set_size": 3.8408977556109725,
+      "singleton_fraction": 0.0344139650872818,
+      "empty_fraction": 0.020448877805486283,
+      "singleton_selective_risk": 0.2753623188405797,
+      "point_error": 0.4628428927680798
+    },
+    {
+      "method": "raps",
+      "bins": 3,
+      "quality_edges": [
+        0.3333333432674408,
+        0.6666666865348816
+      ],
+      "by_quality": {
+        "quality_0.000000": {
+          "n": 654,
+          "coverage": 0.9357798165137615,
+          "average_set_size": 4.611620795107034,
+          "singleton_fraction": 0.0,
+          "empty_fraction": 0.0,
+          "singleton_selective_risk": NaN,
+          "point_error": 0.5259938837920489
+        },
+        "quality_0.333333": {
+          "n": 603,
+          "coverage": 0.8723051409618574,
+          "average_set_size": 3.5638474295190714,
+          "singleton_fraction": 0.01990049751243781,
+          "empty_fraction": 0.009950248756218905,
+          "singleton_selective_risk": 0.5,
+          "point_error": 0.5356550580431177
+        },
+        "quality_0.666667": {
+          "n": 638,
+          "coverage": 0.9184952978056427,
+          "average_set_size": 3.520376175548589,
+          "singleton_fraction": 0.054858934169279,
+          "empty_fraction": 0.04075235109717868,
+          "singleton_selective_risk": 0.02857142857142857,
+          "point_error": 0.36363636363636365
+        },
+        "quality_1.000000": {
+          "n": 110,
+          "coverage": 0.9090909090909091,
+          "average_set_size": 2.918181818181818,
+          "singleton_fraction": 0.1,
+          "empty_fraction": 0.08181818181818182,
+          "singleton_selective_risk": 0.0,
+          "point_error": 0.2636363636363636
+        }
+      },
+      "n": 2005,
+      "coverage": 0.9097256857855361,
+      "average_set_size": 3.856359102244389,
+      "singleton_fraction": 0.02892768079800499,
+      "empty_fraction": 0.020448877805486283,
+      "singleton_selective_risk": 0.1206896551724138,
+      "point_error": 0.4628428927680798
+    },
+    {
+      "method": "lac_confidence_control",
+      "bins": 3,
+      "quality_edges": [
+        0.5872454047203064,
+        0.8867233991622925
+      ],
+      "by_quality": {
+        "quality_0.000000": {
+          "n": 654,
+          "coverage": 0.8302752293577982,
+          "average_set_size": 4.321100917431193,
+          "singleton_fraction": 0.010703363914373088,
+          "empty_fraction": 0.0,
+          "singleton_selective_risk": 1.0,
+          "point_error": 0.5259938837920489
+        },
+        "quality_0.333333": {
+          "n": 603,
+          "coverage": 0.9071310116086235,
+          "average_set_size": 4.779436152570481,
+          "singleton_fraction": 0.0,
+          "empty_fraction": 0.0,
+          "singleton_selective_risk": NaN,
+          "point_error": 0.5356550580431177
+        },
+        "quality_0.666667": {
+          "n": 638,
+          "coverage": 0.9733542319749217,
+          "average_set_size": 4.962382445141066,
+          "singleton_fraction": 0.0,
+          "empty_fraction": 0.0,
+          "singleton_selective_risk": NaN,
+          "point_error": 0.36363636363636365
+        },
+        "quality_1.000000": {
+          "n": 110,
+          "coverage": 1.0,
+          "average_set_size": 5.054545454545455,
+          "singleton_fraction": 0.0,
+          "empty_fraction": 0.0,
+          "singleton_selective_risk": NaN,
+          "point_error": 0.2636363636363636
+        }
+      },
+      "n": 2005,
+      "coverage": 0.9082294264339152,
+      "average_set_size": 4.703241895261845,
+      "singleton_fraction": 0.003491271820448878,
+      "empty_fraction": 0.0,
+      "singleton_selective_risk": 1.0,
+      "point_error": 0.4628428927680798
+    },
+    {
+      "method": "lac_class_conditional_control",
+      "bins": 3,
+      "quality_edges": [],
+      "by_quality": {
+        "quality_0.000000": {
+          "n": 654,
+          "coverage": 0.8379204892966361,
+          "average_set_size": 4.370030581039756,
+          "singleton_fraction": 0.11009174311926606,
+          "empty_fraction": 0.0,
+          "singleton_selective_risk": 0.7083333333333334,
+          "point_error": 0.5259938837920489
+        },
+        "quality_0.333333": {
+          "n": 603,
+          "coverage": 0.8590381426202321,
+          "average_set_size": 4.723051409618574,
+          "singleton_fraction": 0.01824212271973466,
+          "empty_fraction": 0.0,
+          "singleton_selective_risk": 0.2727272727272727,
+          "point_error": 0.5356550580431177
+        },
+        "quality_0.666667": {
+          "n": 638,
+          "coverage": 0.9780564263322884,
+          "average_set_size": 5.064263322884012,
+          "singleton_fraction": 0.017241379310344827,
+          "empty_fraction": 0.0,
+          "singleton_selective_risk": 0.0,
+          "point_error": 0.36363636363636365
+        },
+        "quality_1.000000": {
+          "n": 110,
+          "coverage": 0.990909090909091,
+          "average_set_size": 4.318181818181818,
+          "singleton_fraction": 0.02727272727272727,
+          "empty_fraction": 0.0,
+          "singleton_selective_risk": 0.0,
+          "point_error": 0.2636363636363636
+        }
+      },
+      "n": 2005,
+      "coverage": 0.8972568578553616,
+      "average_set_size": 4.694264339152119,
+      "singleton_fraction": 0.04837905236907731,
+      "empty_fraction": 0.0,
+      "singleton_selective_risk": 0.5567010309278351,
+      "point_error": 0.4628428927680798
+    }
+  ]
+}

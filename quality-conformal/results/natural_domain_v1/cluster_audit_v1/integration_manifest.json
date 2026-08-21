@@ -1,0 +1,29 @@
+{
+  "version": "qualityconformal-clustered-coverage-integration-v1",
+  "cluster_audits_sha256": {
+    "resnet50": "4d497322716210a30a9611a5a10107d185fee47b79082732507c8ef6533ae440",
+    "efficientnet_b0": "47a0fe843fc940adf3af8278201f814fc8d11ebbf7c08e4916ba6e5be4d278d1",
+    "vit_b_16": "00a08f5881846e2593cc08a040640aafdf4b72622b94f692a19aef78f3fdef95"
+  },
+  "analysis_outputs_sha256": {
+    "results/natural_domain_v1/analysis_v1/run_level_metrics.csv": "926441db5b5cb3f6a1d8c263969773b38a64d1a8d82a92322c86e3cfa84ee6b4",
+    "results/natural_domain_v1/analysis_v1/RESULTS_SUMMARY_CN.md": "354ff6de5f85616c422cda11b530fe402ee2ea81e30c1ee565695842f76730f1",
+    "results/natural_domain_v1/analysis_v1/natural_domain_coverage_size.png": "c06a845eb25ecbc79f97e0fca4ccc9d01056b40c12df6aff4baff1209b1950f4",
+    "results/natural_domain_v1/analysis_v1/natural_domain_coverage_size.pdf": "1dcb8ee11879660c6e4e24382412788072bcaa626410ac22a90614dd38193164"
+  },
+  "manuscript_sha256": "2443ae90ea1a607be458eaa9fd65afda86ea3c9f3a4b586cd30cfbbc3ffd661b",
+  "source_manuscript_sha256": "6bf270edce97ea02bbac3f7ea41d3e7aa74fb4c69f78a07947323f2f3f607165",
+  "integrator_sha256": "c173656195b8aff94a4ef08bf837f1e1cd3ee8831661759e1be721b1cb8666f9",
+  "analyzer_sha256": "7d7d693bd0ff8e3064cebe9b60c08fc6f30c670446a751cb375f8e8f3fb616cf",
+  "plotter_sha256": "fd4a842ed4a02df62b2408be421bcdde7405921a1752891a2aed5a1d4663899d",
+  "transaction_policy": "same_filesystem_stage_validate_rollback_manifest_last_under_exclusive_lock",
+  "publication_order": [
+    "run_level_metrics.csv",
+    "RESULTS_SUMMARY_CN.md",
+    "natural_domain_coverage_size.png",
+    "natural_domain_coverage_size.pdf",
+    "PAPER_DRAFT_CN_v0.2.md",
+    "integration_manifest.json"
+  ],
+  "evidence_scope": "descriptive_fixed_checkpoint_fixed_calibration_stress_test"
+}

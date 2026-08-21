@@ -1,0 +1,10 @@
+data/
+*.pt
+*.npy
+*.npz
+*.log
+*.lock
+__pycache__/
+.pytest_cache/
+QualityConformal_*.docx
+PAPER_DRAFT_CN*.md

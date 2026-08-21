@@ -21,10 +21,10 @@ These directories are the public, code-oriented companions to ongoing research. 
 
 | Project | Research focus | Public scope |
 |---------|----------------|--------------|
-| [dermacal](./dermacal) | Calibration and selective prediction under image-quality degradation | Tested calibration and corruption primitives |
+| [dermacal](./dermacal) | Published calibration study under image-quality degradation | Paper-linked implementation, experiments and aggregate evidence |
 | [adaptive-kdfa](./adaptive-kdfa) | Cross-architecture knowledge transfer in heterogeneous federated learning | Tested KD/feature-alignment objectives and communication accounting |
 | [dpfl-medical-ai](./dpfl-medical-ai) | Differentially private federated medical prediction | Reproducible public-data reference implementation |
-| [quality-conformal](./quality-conformal) | Quality-conditional conformal selective prediction | Protocol, validity boundaries and release roadmap |
+| [quality-conformal](./quality-conformal) | Quality-conditional conformal selective prediction | Current paper-linked code, protocols, tests and aggregate evidence |
 | [federated-calibration](./federated-calibration) | Worst-institution reliability under federated heterogeneity | Confirmatory protocol and evidence boundaries |
 | [distributed-evidence-audit](./distributed-evidence-audit) | Auditability of efficiency evidence in distributed optimisation | Review protocol, required evidence fields and reproducibility boundaries |
 

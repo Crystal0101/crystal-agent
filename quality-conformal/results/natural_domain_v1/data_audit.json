@@ -1,0 +1,122 @@
+{
+  "protocol": "qualityconformal-natural-domain-v1-five-class",
+  "seed": 2026,
+  "classes": [
+    "actinic_keratosis",
+    "basal_cell_carcinoma",
+    "melanoma",
+    "nevus",
+    "seborrheic_keratosis"
+  ],
+  "ham": {
+    "metadata": "<HAM10000_DATA_DIR>/HAM10000_metadata.csv",
+    "metadata_sha256": "06aee5e603d313ba69de38263053c792a1dff030eb9c44a96ceb477ceefb99a5",
+    "raw_rows": 10015,
+    "retained": 9758,
+    "excluded_by_label": {
+      "df": 115,
+      "vasc": 142
+    }
+  },
+  "pad": {
+    "metadata": "<PAD_UFES20_DATA_DIR>/raw/metadata.csv",
+    "metadata_sha256": "14d145235cedb022548257acb0d84dcd949e2c916f65d2baa7c38ed5339e9527",
+    "raw_rows": 2298,
+    "retained": 2106,
+    "excluded_by_label": {
+      "SCC": 192
+    }
+  },
+  "ham_splits": {
+    "train": {
+      "n_images": 5831,
+      "n_groups": 4379,
+      "class_images": {
+        "actinic_keratosis": 196,
+        "basal_cell_carcinoma": 312,
+        "melanoma": 666,
+        "nevus": 3993,
+        "seborrheic_keratosis": 664
+      },
+      "class_groups": {
+        "actinic_keratosis": 137,
+        "basal_cell_carcinoma": 196,
+        "melanoma": 368,
+        "nevus": 3242,
+        "seborrheic_keratosis": 436
+      }
+    },
+    "selection": {
+      "n_images": 980,
+      "n_groups": 731,
+      "class_images": {
+        "actinic_keratosis": 35,
+        "basal_cell_carcinoma": 57,
+        "melanoma": 111,
+        "nevus": 668,
+        "seborrheic_keratosis": 109
+      },
+      "class_groups": {
+        "actinic_keratosis": 23,
+        "basal_cell_carcinoma": 33,
+        "melanoma": 62,
+        "nevus": 540,
+        "seborrheic_keratosis": 73
+      }
+    },
+    "calibration": {
+      "n_images": 1467,
+      "n_groups": 1095,
+      "class_images": {
+        "actinic_keratosis": 45,
+        "basal_cell_carcinoma": 70,
+        "melanoma": 167,
+        "nevus": 1024,
+        "seborrheic_keratosis": 161
+      },
+      "class_groups": {
+        "actinic_keratosis": 34,
+        "basal_cell_carcinoma": 49,
+        "melanoma": 92,
+        "nevus": 811,
+        "seborrheic_keratosis": 109
+      }
+    },
+    "test": {
+      "n_images": 1480,
+      "n_groups": 1094,
+      "class_images": {
+        "actinic_keratosis": 51,
+        "basal_cell_carcinoma": 75,
+        "melanoma": 169,
+        "nevus": 1020,
+        "seborrheic_keratosis": 165
+      },
+      "class_groups": {
+        "actinic_keratosis": 34,
+        "basal_cell_carcinoma": 49,
+        "melanoma": 92,
+        "nevus": 810,
+        "seborrheic_keratosis": 109
+      }
+    }
+  },
+  "pad_external": {
+    "n_images": 2106,
+    "n_groups": 1297,
+    "class_images": {
+      "actinic_keratosis": 730,
+      "basal_cell_carcinoma": 845,
+      "melanoma": 52,
+      "nevus": 244,
+      "seborrheic_keratosis": 235
+    },
+    "class_groups": {
+      "actinic_keratosis": 525,
+      "basal_cell_carcinoma": 513,
+      "melanoma": 36,
+      "nevus": 185,
+      "seborrheic_keratosis": 176
+    }
+  }
+}

@@ -1,0 +1,11 @@
+data/
+results/baseline/
+results/corrupted/
+results/qaca/_quality_cache/
+results/qaca/_val_cache/
+*.pt
+*.npy
+*.npz
+*.log
+.venv/
+__pycache__/

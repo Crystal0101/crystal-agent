@@ -1,0 +1,1154 @@
+{
+  "protocol": "qualityconformal-natural-domain-v1-five-class",
+  "model": "vit_b_16",
+  "seed": 2026,
+  "device": "mps",
+  "smoke": false,
+  "classes": [
+    "actinic_keratosis",
+    "basal_cell_carcinoma",
+    "melanoma",
+    "nevus",
+    "seborrheic_keratosis"
+  ],
+  "checkpoint": "<QUALITYCONFORMAL_RESULTS_DIR>/vit_b_16_five_class_seed2026.pt",
+  "checkpoint_sha256": "74702b234ea8ef726ee9f8b402242cfad31c21e465245de65e3fa9d66b4b2852",
+  "quality_normalizer": {
+    "p5": 4.592370510101318,
+    "p95": 31.880359649658203,
+    "edges": [
+      0.35571231444676715,
+      0.5940435727437336
+    ]
+  },
+  "external_quality_clipping": {
+    "low": 0.31718898385565053,
+    "high": 0.017094017094017096
+  },
+  "training_history": [
+    {
+      "epoch": 1,
+      "train_loss": 1.2651761113789781,
+      "selection_loss": 0.8778342422173948,
+      "seconds": 186.13375091552734
+    },
+    {
+      "epoch": 2,
+      "train_loss": 1.0045646292291157,
+      "selection_loss": 0.7792241497915618,
+      "seconds": 197.82683062553406
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.9000040885157496,
+      "selection_loss": 0.8831831589037058,
+      "seconds": 204.4848988056183
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.8708145632442899,
+      "selection_loss": 1.0182030643735613,
+      "seconds": 199.82097601890564
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.7268161950522724,
+      "selection_loss": 0.7712396577912934,
+      "seconds": 213.5983099937439
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.6876719057779741,
+      "selection_loss": 0.6573586439599797,
+      "seconds": 224.50137495994568
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.5886454011058546,
+      "selection_loss": 0.7473587461880276,
+      "seconds": 230.35855674743652
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.5527193582532255,
+      "selection_loss": 0.7663995694140999,
+      "seconds": 230.05589485168457
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.527697634689805,
+      "selection_loss": 0.6235582507386499,
+      "seconds": 232.32048416137695
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.47809414830824826,
+      "selection_loss": 0.9749394134599335,
+      "seconds": 239.2145972251892
+    },
+    {
+      "epoch": 11,
+      "train_loss": 0.4255000073184813,
+      "selection_loss": 0.8004922930075198,
+      "seconds": 249.4074821472168
+    },
+    {
+      "epoch": 12,
+      "train_loss": 0.39875960959013934,
+      "selection_loss": 0.6920216554281663,
+      "seconds": 257.65918588638306
+    },
+    {
+      "epoch": 13,
+      "train_loss": 0.3013696051550104,
+      "selection_loss": 0.837018419406852,
+      "seconds": 233.48114323616028
+    },
+    {
+      "epoch": 14,
+      "train_loss": 0.2826844196420983,
+      "selection_loss": 0.8664376852463703,
+      "seconds": 222.43042421340942
+    },
+    {
+      "epoch": 15,
+      "train_loss": 0.33592810065430756,
+      "selection_loss": 0.6006641089916229,
+      "seconds": 216.5939199924469
+    },
+    {
+      "epoch": 16,
+      "train_loss": 0.27557263945126653,
+      "selection_loss": 0.7465822446102999,
+      "seconds": 222.97018909454346
+    },
+    {
+      "epoch": 17,
+      "train_loss": 0.3070387180439094,
+      "selection_loss": 0.7435035559595847,
+      "seconds": 222.49767327308655
+    },
+    {
+      "epoch": 18,
+      "train_loss": 0.2825849263699953,
+      "selection_loss": 0.7426738641699966,
+      "seconds": 220.7399218082428
+    },
+    {
+      "epoch": 19,
+      "train_loss": 0.15810031240096512,
+      "selection_loss": 0.6217275578148511,
+      "seconds": 219.57004308700562
+    },
+    {
+      "epoch": 20,
+      "train_loss": 0.18832038520816013,
+      "selection_loss": 0.6011696325272929,
+      "seconds": 219.56861400604248
+    },
+    {
+      "epoch": 21,
+      "train_loss": 0.16718350966414525,
+      "selection_loss": 0.7583155027457646,
+      "seconds": 220.8466761112213
+    },
+    {
+      "epoch": 22,
+      "train_loss": 0.18238850327630615,
+      "selection_loss": 0.7577367579450413,
+      "seconds": 220.95716094970703
+    }
+  ],
+  "evaluations": {
+    "test": [
+      {
+        "method": "pooled_lac",
+        "fit_summary": {
+          "alpha": 0.1,
+          "pooled_threshold": 0.905450776219368,
+          "quality_edges": [],
+          "stratum_thresholds": {
+            "0": 0.905450776219368
+          },
+          "stratum_sizes": {
+            "0": 1467
+          },
+          "fallback_strata": []
+        },
+        "overall": {
+          "n": 1480,
+          "coverage": 0.904054054054054,
+          "average_set_size": 1.4641891891891892,
+          "singleton_fraction": 0.6493243243243243,
+          "empty_fraction": 0.0,
+          "singleton_selective_risk": 0.10197710718002082,
+          "point_error": 0.2141891891891892,
+          "coverage_exact_95ci": [
+            0.8878993938787941,
+            0.9185833628817807
+          ]
+        },
+        "by_quality": {
+          "0": {
+            "n": 463,
+            "coverage": 0.8682505399568035,
+            "average_set_size": 1.5226781857451404,
+            "singleton_fraction": 0.6004319654427646,
+            "empty_fraction": 0.0,
+            "singleton_selective_risk": 0.1474820143884892,
+            "point_error": 0.24406047516198703,
+            "coverage_exact_95ci": [
+              0.8340002937038775,
+              0.8977023235177469
+            ]
+          },
+          "1": {
+            "n": 453,
+            "coverage": 0.9050772626931567,
+            "average_set_size": 1.4988962472406182,
+            "singleton_fraction": 0.6357615894039735,
+            "empty_fraction": 0.0,
+            "singleton_selective_risk": 0.10416666666666667,
+            "point_error": 0.22958057395143489,
+            "coverage_exact_95ci": [
+              0.8742715420785048,
+              0.9304506351496321
+            ]
+          },
+          "2": {
+            "n": 564,
+            "coverage": 0.9326241134751773,
+            "average_set_size": 1.3882978723404256,
+            "singleton_fraction": 0.700354609929078,
+            "empty_fraction": 0.0,
+            "singleton_selective_risk": 0.06835443037974684,
+            "point_error": 0.1773049645390071,
+            "coverage_exact_95ci": [
+              0.9086913875046239,
+              0.9518831334013937
+            ]
+          }
+        }
+      },
+      {
+        "method": "quality_lac",
+        "fit_summary": {
+          "alpha": 0.1,
+          "pooled_threshold": 0.905450776219368,
+          "quality_edges": [
+            0.35571231444676715,
+            0.5940435727437336
+          ],
+          "stratum_thresholds": {
+            "0": 0.9458556026220322,
+            "1": 0.8544774651527405,
+            "2": 0.8147818744182587
+          },
+          "stratum_sizes": {
+            "0": 489,
+            "1": 489,
+            "2": 489
+          },
+          "fallback_strata": []
+        },
+        "overall": {
+          "n": 1480,
+          "coverage": 0.8993243243243243,
+          "average_set_size": 1.45,
+          "singleton_fraction": 0.6655405405405406,
+          "empty_fraction": 0.0,
+          "singleton_selective_risk": 0.10253807106598985,
+          "point_error": 0.2141891891891892,
+          "coverage_exact_95ci": [
+            0.8828553392190177,
+            0.9141879449417014
+          ]
+        },
+        "by_quality": {
+          "0": {
+            "n": 463,
+            "coverage": 0.9006479481641468,
+            "average_set_size": 1.7580993520518358,
+            "singleton_fraction": 0.5032397408207343,
+            "empty_fraction": 0.0,
+            "singleton_selective_risk": 0.10300429184549356,
+            "point_error": 0.24406047516198703,
+            "coverage_exact_95ci": [
+              0.8697058354913498,
+              0.92634066595275
+            ]
+          },
+          "1": {
+            "n": 453,
+            "coverage": 0.891832229580574,
+            "average_set_size": 1.4105960264900663,
+            "singleton_fraction": 0.6688741721854304,
+            "empty_fraction": 0.0,
+            "singleton_selective_risk": 0.10891089108910891,
+            "point_error": 0.22958057395143489,
+            "coverage_exact_95ci": [
+              0.8595253213662902,
+              0.9188988116801899
+            ]
+          },
+          "2": {
+            "n": 564,
+            "coverage": 0.9042553191489362,
+            "average_set_size": 1.2287234042553192,
+            "singleton_fraction": 0.7960992907801419,
+            "empty_fraction": 0.0,
+            "singleton_selective_risk": 0.09799554565701558,
+            "point_error": 0.1773049645390071,
+            "coverage_exact_95ci": [
+              0.8769222713320415,
+              0.9272540505773232
+            ]
+          }
+        }
+      },
+      {
+        "method": "pooled_aps",
+        "fit_summary": {
+          "alpha": 0.1,
+          "pooled_threshold": 0.9994567036628723,
+          "quality_edges": [],
+          "stratum_thresholds": {
+            "0": 0.9994567036628723
+          },
+          "stratum_sizes": {
+            "0": 1467
+          },
+          "fallback_strata": []
+        },
+        "overall": {
+          "n": 1480,
+          "coverage": 0.9013513513513514,
+          "average_set_size": 2.4527027027027026,
+          "singleton_fraction": 0.19797297297297298,
+          "empty_fraction": 0.08445945945945946,
+          "singleton_selective_risk": 0.0034129692832764505,
+          "point_error": 0.2141891891891892,
+          "coverage_exact_95ci": [
+            0.8850157680535651,
+            0.9160730160417093
+          ]
+        },
+        "by_quality": {
+          "0": {
+            "n": 463,
+            "coverage": 0.91792656587473,
+            "average_set_size": 2.799136069114471,
+            "singleton_fraction": 0.14254859611231102,
+            "empty_fraction": 0.06263498920086392,
+            "singleton_selective_risk": 0.0,
+            "point_error": 0.24406047516198703,
+            "coverage_exact_95ci": [
+              0.8890871954534822,
+              0.9412669801185773
+            ]
+          },
+          "1": {
+            "n": 453,
+            "coverage": 0.9072847682119205,
+            "average_set_size": 2.467991169977925,
+            "singleton_fraction": 0.2185430463576159,
+            "empty_fraction": 0.08167770419426049,
+            "singleton_selective_risk": 0.010101010101010102,
+            "point_error": 0.22958057395143489,
+            "coverage_exact_95ci": [
+              0.8767436907932135,
+              0.9323610813965243
+            ]
+          },
+          "2": {
+            "n": 564,
+            "coverage": 0.8829787234042553,
+            "average_set_size": 2.1560283687943262,
+            "singleton_fraction": 0.22695035460992907,
+            "empty_fraction": 0.10460992907801418,
+            "singleton_selective_risk": 0.0,
+            "point_error": 0.1773049645390071,
+            "coverage_exact_95ci": [
+              0.8535363434750651,
+              0.9083302175366036
+            ]
+          }
+        }
+      },
+      {
+        "method": "quality_aps",
+        "fit_summary": {
+          "alpha": 0.1,
+          "pooled_threshold": 0.9994567036628723,
+          "quality_edges": [
+            0.35571231444676715,
+            0.5940435727437336
+          ],
+          "stratum_thresholds": {
+            "0": 0.999386191368103,
+            "1": 0.9995020627975464,
+            "2": 0.9994807839393616
+          },
+          "stratum_sizes": {
+            "0": 489,
+            "1": 489,
+            "2": 489
+          },
+          "fallback_strata": []
+        },
+        "overall": {
+          "n": 1480,
+          "coverage": 0.904054054054054,
+          "average_set_size": 2.4574324324324324,
+          "singleton_fraction": 0.1972972972972973,
+          "empty_fraction": 0.0804054054054054,
+          "singleton_selective_risk": 0.00684931506849315,
+          "point_error": 0.2141891891891892,
+          "coverage_exact_95ci": [
+            0.8878993938787941,
+            0.9185833628817807
+          ]
+        },
+        "by_quality": {
+          "0": {
+            "n": 463,
+            "coverage": 0.9028077753779697,
+            "average_set_size": 2.7408207343412525,
+            "singleton_fraction": 0.14038876889848811,
+            "empty_fraction": 0.0734341252699784,
+            "singleton_selective_risk": 0.015384615384615385,
+            "point_error": 0.24406047516198703,
+            "coverage_exact_95ci": [
+              0.8721136848962089,
+              0.9282217190986025
+            ]
+          },
+          "1": {
+            "n": 453,
+            "coverage": 0.9271523178807947,
+            "average_set_size": 2.514348785871965,
+            "singleton_fraction": 0.2229580573951435,
+            "empty_fraction": 0.06181015452538632,
+            "singleton_selective_risk": 0.009900990099009901,
+            "point_error": 0.22958057395143489,
+            "coverage_exact_95ci": [
+              0.8992134630599894,
+              0.9493273823530096
+            ]
+          },
+          "2": {
+            "n": 564,
+            "coverage": 0.8865248226950354,
+            "average_set_size": 2.1790780141843973,
+            "singleton_fraction": 0.22340425531914893,
+            "empty_fraction": 0.10106382978723404,
+            "singleton_selective_risk": 0.0,
+            "point_error": 0.1773049645390071,
+            "coverage_exact_95ci": [
+              0.8574128665579173,
+              0.911505758260025
+            ]
+          }
+        }
+      },
+      {
+        "method": "pooled_raps",
+        "fit_summary": {
+          "alpha": 0.1,
+          "pooled_threshold": 0.9995057582855225,
+          "quality_edges": [],
+          "stratum_thresholds": {
+            "0": 0.9995057582855225
+          },
+          "stratum_sizes": {
+            "0": 1467
+          },
+          "fallback_strata": []
+        },
+        "overall": {
+          "n": 1480,
+          "coverage": 0.9027027027027027,
+          "average_set_size": 2.2283783783783786,
+          "singleton_fraction": 0.19594594594594594,
+          "empty_fraction": 0.07297297297297298,
+          "singleton_selective_risk": 0.0034482758620689655,
+          "point_error": 0.2141891891891892,
+          "coverage_exact_95ci": [
+            0.8864571379971897,
+            0.9173286364334462
+          ]
+        },
+        "by_quality": {
+          "0": {
+            "n": 463,
+            "coverage": 0.9049676025917927,
+            "average_set_size": 2.470842332613391,
+            "singleton_fraction": 0.14038876889848811,
+            "empty_fraction": 0.058315334773218146,
+            "singleton_selective_risk": 0.0,
+            "point_error": 0.24406047516198703,
+            "coverage_exact_95ci": [
+              0.8745255121498986,
+              0.9300986817409785
+            ]
+          },
+          "1": {
+            "n": 453,
+            "coverage": 0.9227373068432672,
+            "average_set_size": 2.23841059602649,
+            "singleton_fraction": 0.2229580573951435,
+            "empty_fraction": 0.059602649006622516,
+            "singleton_selective_risk": 0.009900990099009901,
+            "point_error": 0.22958057395143489,
+            "coverage_exact_95ci": [
+              0.8941825708836146,
+              0.9455960406590879
+            ]
+          },
+          "2": {
+            "n": 564,
+            "coverage": 0.8847517730496454,
+            "average_set_size": 2.021276595744681,
+            "singleton_fraction": 0.2198581560283688,
+            "empty_fraction": 0.09574468085106383,
+            "singleton_selective_risk": 0.0,
+            "point_error": 0.1773049645390071,
+            "coverage_exact_95ci": [
+              0.8554736276672792,
+              0.9099189840699603
+            ]
+          }
+        }
+      },
+      {
+        "method": "quality_raps",
+        "fit_summary": {
+          "alpha": 0.1,
+          "pooled_threshold": 0.9995057582855225,
+          "quality_edges": [
+            0.35571231444676715,
+            0.5940435727437336
+          ],
+          "stratum_thresholds": {
+            "0": 0.9994694590568542,
+            "1": 0.9995203018188477,
+            "2": 0.9995142221450806
+          },
+          "stratum_sizes": {
+            "0": 489,
+            "1": 489,
+            "2": 489
+          },
+          "fallback_strata": []
+        },
+        "overall": {
+          "n": 1480,
+          "coverage": 0.9047297297297298,
+          "average_set_size": 2.2283783783783786,
+          "singleton_fraction": 0.19932432432432431,
+          "empty_fraction": 0.07094594594594594,
+          "singleton_selective_risk": 0.003389830508474576,
+          "point_error": 0.2141891891891892,
+          "coverage_exact_95ci": [
+            0.888620859226919,
+            0.9192103856099023
+          ]
+        },
+        "by_quality": {
+          "0": {
+            "n": 463,
+            "coverage": 0.9028077753779697,
+            "average_set_size": 2.4557235421166306,
+            "singleton_fraction": 0.1447084233261339,
+            "empty_fraction": 0.06047516198704104,
+            "singleton_selective_risk": 0.0,
+            "point_error": 0.24406047516198703,
+            "coverage_exact_95ci": [
+              0.8721136848962089,
+              0.9282217190986025
+            ]
+          },
+          "1": {
+            "n": 453,
+            "coverage": 0.9271523178807947,
+            "average_set_size": 2.2450331125827816,
+            "singleton_fraction": 0.22737306843267108,
+            "empty_fraction": 0.05518763796909492,
+            "singleton_selective_risk": 0.009708737864077669,
+            "point_error": 0.22958057395143489,
+            "coverage_exact_95ci": [
+              0.8992134630599894,
+              0.9493273823530096
+            ]
+          },
+          "2": {
+            "n": 564,
+            "coverage": 0.8882978723404256,
+            "average_set_size": 2.028368794326241,
+            "singleton_fraction": 0.22163120567375885,
+            "empty_fraction": 0.09219858156028368,
+            "singleton_selective_risk": 0.0,
+            "point_error": 0.1773049645390071,
+            "coverage_exact_95ci": [
+              0.8593540995749471,
+              0.9130904992295823
+            ]
+          }
+        }
+      },
+      {
+        "method": "class_conditional_lac",
+        "overall": {
+          "n": 1480,
+          "coverage": 0.9013513513513514,
+          "average_set_size": 1.8114864864864866,
+          "singleton_fraction": 0.4810810810810811,
+          "empty_fraction": 0.0,
+          "singleton_selective_risk": 0.0702247191011236,
+          "point_error": 0.2141891891891892,
+          "coverage_exact_95ci": [
+            0.8850157680535651,
+            0.9160730160417093
+          ]
+        },
+        "class_sizes": [
+          45,
+          70,
+          167,
+          1024,
+          161
+        ]
+      },
+      {
+        "method": "confidence_mondrian_control",
+        "overall": {
+          "n": 1480,
+          "coverage": 0.9094594594594595,
+          "average_set_size": 1.6506756756756757,
+          "singleton_fraction": 0.4797297297297297,
+          "empty_fraction": 0.026351351351351353,
+          "singleton_selective_risk": 0.04788732394366197,
+          "point_error": 0.2141891891891892,
+          "coverage_exact_95ci": [
+            0.8936776187664729,
+            0.9235929814638573
+          ]
+        },
+        "fit_summary": {
+          "alpha": 0.1,
+          "pooled_threshold": 0.905450776219368,
+          "quality_edges": [
+            0.887889544169108,
+            0.9958201050758362
+          ],
+          "stratum_thresholds": {
+            "0": 0.933125875890255,
+            "1": 0.9722272716462612,
+            "2": 0.0031074881553649902
+          },
+          "stratum_sizes": {
+            "0": 489,
+            "1": 489,
+            "2": 489
+          },
+          "fallback_strata": []
+        }
+      }
+    ],
+    "external": [
+      {
+        "method": "pooled_lac",
+        "fit_summary": {
+          "alpha": 0.1,
+          "pooled_threshold": 0.905450776219368,
+          "quality_edges": [],
+          "stratum_thresholds": {
+            "0": 0.905450776219368
+          },
+          "stratum_sizes": {
+            "0": 1467
+          },
+          "fallback_strata": []
+        },
+        "overall": {
+          "n": 2106,
+          "coverage": 0.587369420702754,
+          "average_set_size": 1.691358024691358,
+          "singleton_fraction": 0.4838556505223172,
+          "empty_fraction": 0.0,
+          "singleton_selective_risk": 0.5230618253189402,
+          "point_error": 0.5897435897435898,
+          "coverage_exact_95ci": [
+            0.5659964945136475,
+            0.6084987909759885
+          ]
+        },
+        "by_quality": {
+          "0": {
+            "n": 1367,
+            "coverage": 0.5998536942209217,
+            "average_set_size": 1.6832479882955376,
+            "singleton_fraction": 0.4879297732260424,
+            "empty_fraction": 0.0,
+            "singleton_selective_risk": 0.5007496251874063,
+            "point_error": 0.5749817117776153,
+            "coverage_exact_95ci": [
+              0.5733246311084126,
+              0.625952536112591
+            ]
+          },
+          "1": {
+            "n": 362,
+            "coverage": 0.56353591160221,
+            "average_set_size": 1.729281767955801,
+            "singleton_fraction": 0.4696132596685083,
+            "empty_fraction": 0.0,
+            "singleton_selective_risk": 0.611764705882353,
+            "point_error": 0.6408839779005525,
+            "coverage_exact_95ci": [
+              0.5107216520888572,
+              0.6153025195203048
+            ]
+          },
+          "2": {
+            "n": 377,
+            "coverage": 0.5649867374005305,
+            "average_set_size": 1.6843501326259946,
+            "singleton_fraction": 0.4827586206896552,
+            "empty_fraction": 0.0,
+            "singleton_selective_risk": 0.521978021978022,
+            "point_error": 0.5941644562334217,
+            "coverage_exact_95ci": [
+              0.5132717546478318,
+              0.6156732967965647
+            ]
+          }
+        }
+      },
+      {
+        "method": "quality_lac",
+        "fit_summary": {
+          "alpha": 0.1,
+          "pooled_threshold": 0.905450776219368,
+          "quality_edges": [
+            0.35571231444676715,
+            0.5940435727437336
+          ],
+          "stratum_thresholds": {
+            "0": 0.9458556026220322,
+            "1": 0.8544774651527405,
+            "2": 0.8147818744182587
+          },
+          "stratum_sizes": {
+            "0": 489,
+            "1": 489,
+            "2": 489
+          },
+          "fallback_strata": []
+        },
+        "overall": {
+          "n": 2106,
+          "coverage": 0.600664767331434,
+          "average_set_size": 1.7830009496676162,
+          "singleton_fraction": 0.4472934472934473,
+          "empty_fraction": 0.0,
+          "singleton_selective_risk": 0.5201698513800425,
+          "point_error": 0.5897435897435898,
+          "coverage_exact_95ci": [
+            0.5793818894281513,
+            0.6216670052142383
+          ]
+        },
+        "by_quality": {
+          "0": {
+            "n": 1367,
+            "coverage": 0.648134601316752,
+            "average_set_size": 1.956108266276518,
+            "singleton_fraction": 0.3584491587417703,
+            "empty_fraction": 0.0,
+            "singleton_selective_risk": 0.46530612244897956,
+            "point_error": 0.5749817117776153,
+            "coverage_exact_95ci": [
+              0.6221561930384645,
+              0.673474471061822
+            ]
+          },
+          "1": {
+            "n": 362,
+            "coverage": 0.5138121546961326,
+            "average_set_size": 1.5138121546961325,
+            "singleton_fraction": 0.5883977900552486,
+            "empty_fraction": 0.0,
+            "singleton_selective_risk": 0.6150234741784038,
+            "point_error": 0.6408839779005525,
+            "coverage_exact_95ci": [
+              0.4610127439186811,
+              0.5663838739375965
+            ]
+          },
+          "2": {
+            "n": 377,
+            "coverage": 0.5119363395225465,
+            "average_set_size": 1.4137931034482758,
+            "singleton_fraction": 0.6339522546419099,
+            "empty_fraction": 0.0,
+            "singleton_selective_risk": 0.5481171548117155,
+            "point_error": 0.5941644562334217,
+            "coverage_exact_95ci": [
+              0.4602301509799596,
+              0.5634536847931109
+            ]
+          }
+        }
+      },
+      {
+        "method": "pooled_aps",
+        "fit_summary": {
+          "alpha": 0.1,
+          "pooled_threshold": 0.9994567036628723,
+          "quality_edges": [],
+          "stratum_thresholds": {
+            "0": 0.9994567036628723
+          },
+          "stratum_sizes": {
+            "0": 1467
+          },
+          "fallback_strata": []
+        },
+        "overall": {
+          "n": 2106,
+          "coverage": 0.8689458689458689,
+          "average_set_size": 3.4981006647673314,
+          "singleton_fraction": 0.009971509971509971,
+          "empty_fraction": 0.0,
+          "singleton_selective_risk": 0.2857142857142857,
+          "point_error": 0.5897435897435898,
+          "coverage_exact_95ci": [
+            0.8537815401504,
+            0.8830748513415053
+          ]
+        },
+        "by_quality": {
+          "0": {
+            "n": 1367,
+            "coverage": 0.8705193855157278,
+            "average_set_size": 3.510607168983175,
+            "singleton_fraction": 0.008778346744696415,
+            "empty_fraction": 0.0,
+            "singleton_selective_risk": 0.08333333333333333,
+            "point_error": 0.5749817117776153,
+            "coverage_exact_95ci": [
+              0.8515577433062569,
+              0.887871471976023
+            ]
+          },
+          "1": {
+            "n": 362,
+            "coverage": 0.8701657458563536,
+            "average_set_size": 3.494475138121547,
+            "singleton_fraction": 0.011049723756906077,
+            "empty_fraction": 0.0,
+            "singleton_selective_risk": 0.5,
+            "point_error": 0.6408839779005525,
+            "coverage_exact_95ci": [
+              0.8311115642668415,
+              0.9030202528955622
+            ]
+          },
+          "2": {
+            "n": 377,
+            "coverage": 0.8620689655172413,
+            "average_set_size": 3.456233421750663,
+            "singleton_fraction": 0.013262599469496022,
+            "empty_fraction": 0.0,
+            "singleton_selective_risk": 0.6,
+            "point_error": 0.5941644562334217,
+            "coverage_exact_95ci": [
+              0.8230851397126646,
+              0.8952415002022267
+            ]
+          }
+        }
+      },
+      {
+        "method": "quality_aps",
+        "fit_summary": {
+          "alpha": 0.1,
+          "pooled_threshold": 0.9994567036628723,
+          "quality_edges": [
+            0.35571231444676715,
+            0.5940435727437336
+          ],
+          "stratum_thresholds": {
+            "0": 0.999386191368103,
+            "1": 0.9995020627975464,
+            "2": 0.9994807839393616
+          },
+          "stratum_sizes": {
+            "0": 489,
+            "1": 489,
+            "2": 489
+          },
+          "fallback_strata": []
+        },
+        "overall": {
+          "n": 2106,
+          "coverage": 0.8656220322886989,
+          "average_set_size": 3.4715099715099713,
+          "singleton_fraction": 0.011870845204178538,
+          "empty_fraction": 0.0,
+          "singleton_selective_risk": 0.32,
+          "point_error": 0.5897435897435898,
+          "coverage_exact_95ci": [
+            0.8503090346947674,
+            0.8799092379462043
+          ]
+        },
+        "by_quality": {
+          "0": {
+            "n": 1367,
+            "coverage": 0.8639356254572056,
+            "average_set_size": 3.461594732991953,
+            "singleton_fraction": 0.011704462326261888,
+            "empty_fraction": 0.0,
+            "singleton_selective_risk": 0.1875,
+            "point_error": 0.5749817117776153,
+            "coverage_exact_95ci": [
+              0.8446118667601452,
+              0.8816792790708654
+            ]
+          },
+          "1": {
+            "n": 362,
+            "coverage": 0.8729281767955801,
+            "average_set_size": 3.5110497237569063,
+            "singleton_fraction": 0.011049723756906077,
+            "empty_fraction": 0.0,
+            "singleton_selective_risk": 0.5,
+            "point_error": 0.6408839779005525,
+            "coverage_exact_95ci": [
+              0.8341626305819426,
+              0.9054450498294431
+            ]
+          },
+          "2": {
+            "n": 377,
+            "coverage": 0.8647214854111406,
+            "average_set_size": 3.4694960212201593,
+            "singleton_fraction": 0.013262599469496022,
+            "empty_fraction": 0.0,
+            "singleton_selective_risk": 0.6,
+            "point_error": 0.5941644562334217,
+            "coverage_exact_95ci": [
+              0.8259961871119699,
+              0.89759072787887
+            ]
+          }
+        }
+      },
+      {
+        "method": "pooled_raps",
+        "fit_summary": {
+          "alpha": 0.1,
+          "pooled_threshold": 0.9995057582855225,
+          "quality_edges": [],
+          "stratum_thresholds": {
+            "0": 0.9995057582855225
+          },
+          "stratum_sizes": {
+            "0": 1467
+          },
+          "fallback_strata": []
+        },
+        "overall": {
+          "n": 2106,
+          "coverage": 0.808641975308642,
+          "average_set_size": 2.983855650522317,
+          "singleton_fraction": 0.008547008547008548,
+          "empty_fraction": 0.0,
+          "singleton_selective_risk": 0.3333333333333333,
+          "point_error": 0.5897435897435898,
+          "coverage_exact_95ci": [
+            0.791179156350533,
+            0.8252412597728525
+          ]
+        },
+        "by_quality": {
+          "0": {
+            "n": 1367,
+            "coverage": 0.8207754206291149,
+            "average_set_size": 2.9956108266276518,
+            "singleton_fraction": 0.006583760058522311,
+            "empty_fraction": 0.0,
+            "singleton_selective_risk": 0.1111111111111111,
+            "point_error": 0.5749817117776153,
+            "coverage_exact_95ci": [
+              0.7993954503356429,
+              0.8407664282226347
+            ]
+          },
+          "1": {
+            "n": 362,
+            "coverage": 0.7955801104972375,
+            "average_set_size": 2.9751381215469612,
+            "singleton_fraction": 0.011049723756906077,
+            "empty_fraction": 0.0,
+            "singleton_selective_risk": 0.5,
+            "point_error": 0.6408839779005525,
+            "coverage_exact_95ci": [
+              0.7503102779730947,
+              0.8359388505103161
+            ]
+          },
+          "2": {
+            "n": 377,
+            "coverage": 0.7771883289124668,
+            "average_set_size": 2.949602122015915,
+            "singleton_fraction": 0.013262599469496022,
+            "empty_fraction": 0.0,
+            "singleton_selective_risk": 0.6,
+            "point_error": 0.5941644562334217,
+            "coverage_exact_95ci": [
+              0.7317621211423385,
+              0.8182005735604791
+            ]
+          }
+        }
+      },
+      {
+        "method": "quality_raps",
+        "fit_summary": {
+          "alpha": 0.1,
+          "pooled_threshold": 0.9995057582855225,
+          "quality_edges": [
+            0.35571231444676715,
+            0.5940435727437336
+          ],
+          "stratum_thresholds": {
+            "0": 0.9994694590568542,
+            "1": 0.9995203018188477,
+            "2": 0.9995142221450806
+          },
+          "stratum_sizes": {
+            "0": 489,
+            "1": 489,
+            "2": 489
+          },
+          "fallback_strata": []
+        },
+        "overall": {
+          "n": 2106,
+          "coverage": 0.8072174738841406,
+          "average_set_size": 2.976258309591643,
+          "singleton_fraction": 0.00949667616334283,
+          "empty_fraction": 0.0,
+          "singleton_selective_risk": 0.3,
+          "point_error": 0.5897435897435898,
+          "coverage_exact_95ci": [
+            0.7897091778350049,
+            0.8238662648974362
+          ]
+        },
+        "by_quality": {
+          "0": {
+            "n": 1367,
+            "coverage": 0.8185808339429408,
+            "average_set_size": 2.981711777615216,
+            "singleton_fraction": 0.008046817849305048,
+            "empty_fraction": 0.0,
+            "singleton_selective_risk": 0.09090909090909091,
+            "point_error": 0.5749817117776153,
+            "coverage_exact_95ci": [
+              0.7971091626976006,
+              0.838673194061492
+            ]
+          },
+          "1": {
+            "n": 362,
+            "coverage": 0.7955801104972375,
+            "average_set_size": 2.983425414364641,
+            "singleton_fraction": 0.011049723756906077,
+            "empty_fraction": 0.0,
+            "singleton_selective_risk": 0.5,
+            "point_error": 0.6408839779005525,
+            "coverage_exact_95ci": [
+              0.7503102779730947,
+              0.8359388505103161
+            ]
+          },
+          "2": {
+            "n": 377,
+            "coverage": 0.7771883289124668,
+            "average_set_size": 2.949602122015915,
+            "singleton_fraction": 0.013262599469496022,
+            "empty_fraction": 0.0,
+            "singleton_selective_risk": 0.6,
+            "point_error": 0.5941644562334217,
+            "coverage_exact_95ci": [
+              0.7317621211423385,
+              0.8182005735604791
+            ]
+          }
+        }
+      },
+      {
+        "method": "class_conditional_lac",
+        "overall": {
+          "n": 2106,
+          "coverage": 0.6695156695156695,
+          "average_set_size": 2.2369420702754037,
+          "singleton_fraction": 0.26590693257359926,
+          "empty_fraction": 0.0,
+          "singleton_selective_risk": 0.5428571428571428,
+          "point_error": 0.5897435897435898,
+          "coverage_exact_95ci": [
+            0.6489631227088932,
+            0.6895953442052228
+          ]
+        },
+        "class_sizes": [
+          45,
+          70,
+          167,
+          1024,
+          161
+        ]
+      },
+      {
+        "method": "confidence_mondrian_control",
+        "overall": {
+          "n": 2106,
+          "coverage": 0.6433998100664767,
+          "average_set_size": 2.0042735042735043,
+          "singleton_fraction": 0.251661918328585,
+          "empty_fraction": 0.014719848053181387,
+          "singleton_selective_risk": 0.5018867924528302,
+          "point_error": 0.5897435897435898,
+          "coverage_exact_95ci": [
+            0.6225165653717609,
+            0.6638831435615514
+          ]
+        },
+        "fit_summary": {
+          "alpha": 0.1,
+          "pooled_threshold": 0.905450776219368,
+          "quality_edges": [
+            0.887889544169108,
+            0.9958201050758362
+          ],
+          "stratum_thresholds": {
+            "0": 0.933125875890255,
+            "1": 0.9722272716462612,
+            "2": 0.0031074881553649902
+          },
+          "stratum_sizes": {
+            "0": 489,
+            "1": 489,
+            "2": 489
+          },
+          "fallback_strata": []
+        }
+      }
+    ]
+  }
+}
