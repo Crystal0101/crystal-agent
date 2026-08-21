@@ -51,7 +51,7 @@ jobs:
             dermacal/pyproject.toml
             quality-conformal/requirements.txt
       - run: pip install -e "dermacal[dev]" -r quality-conformal/requirements.txt
-      - run: pytest -q tests
+      - run: python -m pytest -q tests
         working-directory: dermacal
-      - run: pytest -q tests
+      - run: python -m pytest -q tests
         working-directory: quality-conformal
