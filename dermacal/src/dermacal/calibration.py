@@ -1,5 +1,8 @@
 from __future__ import annotations
+
 from dataclasses import dataclass
+from itertools import pairwise
+
 import numpy as np
 
 
@@ -15,7 +18,7 @@ def expected_calibration_error(
 ) -> float:
     confidence, prediction = probabilities.max(1), probabilities.argmax(1)
     edges, score = np.linspace(0, 1, bins + 1), 0.0
-    for lower, upper in zip(edges[:-1], edges[1:], strict=True):
+    for lower, upper in pairwise(edges):
         mask = (confidence > lower) & (confidence <= upper)
         if mask.any():
             score += mask.mean() * abs(
@@ -43,7 +46,7 @@ class QACA:
         return softmax(logits, self.temperatures(quality))
 
     @classmethod
-    def fit(cls, logits: np.ndarray, labels: np.ndarray, quality: np.ndarray) -> "QACA":
+    def fit(cls, logits: np.ndarray, labels: np.ndarray, quality: np.ndarray) -> QACA:
         candidates = (
             cls(base, alpha)
             for base in np.linspace(0.5, 3, 11)
